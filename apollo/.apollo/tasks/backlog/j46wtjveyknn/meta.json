@@ -1,0 +1,16 @@
+{
+  "id": "j46wtjveyknn",
+  "title": "Add support for Voxtral Transcribe audio transcription",
+  "type": "task",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-08",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

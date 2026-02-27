@@ -1,0 +1,66 @@
+{
+  "activeSpaceId": "default",
+  "spaces": [
+    {
+      "id": "default",
+      "name": "General",
+      "emoji": "🏠",
+      "description": "Default workspace",
+      "sources": [],
+      "sharing": {
+        "mode": "private",
+        "emails": []
+      },
+      "items": [
+        {
+          "id": "welcome",
+          "path": "/welcome",
+          "displayName": "Welcome",
+          "icon": "HomeIcon",
+          "order": 0
+        },
+        {
+          "id": "tasks",
+          "path": "/tasks",
+          "displayName": "Tasks",
+          "icon": "ListIcon",
+          "order": 1
+        },
+        {
+          "id": "section-artifacts",
+          "type": "section",
+          "title": "Artifacts",
+          "order": 2
+        },
+        {
+          "id": "slides",
+          "path": "/slides",
+          "displayName": "Slides",
+          "icon": "ScreenIcon",
+          "order": 3
+        },
+        {
+          "id": "recordings",
+          "path": "/recordings",
+          "displayName": "Recordings",
+          "icon": "VideoIcon",
+          "order": 4
+        },
+        {
+          "id": "canvas",
+          "path": "/canvas",
+          "displayName": "Canvas",
+          "icon": "TopologyIcon",
+          "order": 5
+        },
+        {
+          "id": "prototypes",
+          "path": "/prototypes",
+          "displayName": "Prototypes",
+          "icon": "CubesIcon",
+          "order": 6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "task-manager",
+  "color": "#0052CC",
+  "enabledIntegrations": ["jira"],
+  "tools": {
+    "jira": ["search_issues", "get_issue", "create_issue", "update_issue", "add_comment"]
+  }
+}

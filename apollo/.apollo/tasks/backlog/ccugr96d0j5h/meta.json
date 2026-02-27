@@ -1,0 +1,19 @@
+{
+  "id": "ccugr96d0j5h",
+  "title": "Extended Displays: Multi-Window Awareness and Coordination",
+  "type": "spike",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-10T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "concept",
+    "ux",
+    "architecture",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

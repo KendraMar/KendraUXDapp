@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="appleMusic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FA2D48"/>
+      <stop offset="100%" style="stop-color:#FB5C74"/>
+    </linearGradient>
+  </defs>
+  <rect width="24" height="24" rx="5" fill="url(#appleMusic)"/>
+  <path d="M17.5 6.5v8.25c0 1.25-1.25 2.25-2.75 2.25s-2.75-1-2.75-2.25 1.25-2.25 2.75-2.25c.55 0 1.05.12 1.5.35V8.5l-6 1.5v6.75c0 1.25-1.25 2.25-2.75 2.25S4.75 18 4.75 16.75s1.25-2.25 2.75-2.25c.55 0 1.05.12 1.5.35V7.5l8.5-2v1z" fill="white"/>
+</svg>

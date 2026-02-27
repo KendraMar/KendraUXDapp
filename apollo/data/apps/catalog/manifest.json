@@ -1,0 +1,24 @@
+{
+  "id": "catalog",
+  "displayName": "Catalog",
+  "description": "Browse and install integrations, agents, applications, and more from the Apollo community catalog",
+  "icon": "CatalogIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/catalog",
+    "displayName": "Catalog",
+    "icon": "CatalogIcon"
+  },
+  "routes": [
+    {
+      "path": "/catalog",
+      "page": "Catalog"
+    },
+    {
+      "path": "/catalog/:id",
+      "page": "CatalogDetail"
+    }
+  ],
+  "apiPath": "/api/catalog"
+}

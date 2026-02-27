@@ -1,0 +1,19 @@
+{
+  "id": "playground",
+  "displayName": "Playground",
+  "description": "Experimental playground for testing and prototyping",
+  "icon": "FlaskIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/playground",
+    "displayName": "Playground",
+    "icon": "FlaskIcon"
+  },
+  "routes": [
+    {
+      "path": "/playground",
+      "page": "Playground"
+    }
+  ]
+}

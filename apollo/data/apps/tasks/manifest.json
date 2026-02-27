@@ -1,0 +1,42 @@
+{
+  "id": "tasks",
+  "displayName": "Tasks",
+  "description": "Task management with Kanban, list, and canvas views",
+  "icon": "ListIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/tasks",
+    "displayName": "Tasks",
+    "icon": "ListIcon"
+  },
+  "routes": [
+    {
+      "path": "/tasks",
+      "page": "Tasks"
+    }
+  ],
+  "apiPath": "/api/tasks",
+  "widgets": [
+    {
+      "id": "task-summary",
+      "name": "Task Summary",
+      "description": "Overview of tasks by status",
+      "type": "stats",
+      "defaultSize": { "w": 4, "h": 3 },
+      "dataEndpoint": "/api/tasks",
+      "dataTransform": "taskSummary",
+      "refreshInterval": 60
+    },
+    {
+      "id": "recent-tasks",
+      "name": "Recent Tasks",
+      "description": "Latest tasks across all sources",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/tasks",
+      "dataTransform": "taskList",
+      "refreshInterval": 60
+    }
+  ]
+}

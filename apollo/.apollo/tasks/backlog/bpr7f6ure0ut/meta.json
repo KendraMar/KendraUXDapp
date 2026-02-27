@@ -1,0 +1,16 @@
+{
+  "id": "bpr7f6ure0ut",
+  "title": "Automatic RSS feed item summarization",
+  "type": "task",
+  "status": "backlog",
+  "priority": "high",
+  "created": "2026-02-02",
+  "due": "2026-02-05",
+  "assignees": [],
+  "labels": [
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

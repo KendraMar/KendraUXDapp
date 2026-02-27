@@ -1,0 +1,109 @@
+/* ============================================
+   Resizable Sidebar Styles
+   ============================================ */
+
+.apollo-sidebar-resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 100;
+  background: transparent;
+  transition: background-color 0.15s ease;
+  /* Add padding to increase touch target area */
+  padding: 0 8px;
+  margin-right: -8px;
+  /* Ensure touch events work properly */
+  touch-action: none;
+  -webkit-touch-callout: none;
+}
+
+/* Larger touch target on touch devices */
+@media (pointer: coarse) {
+  .apollo-sidebar-resize-handle {
+    width: 12px;
+    padding: 0 12px;
+    margin-right: -12px;
+  }
+}
+
+.apollo-sidebar-resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 32px;
+  background: var(--pf-t--global--border--color--default);
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.15s ease, height 0.15s ease;
+  pointer-events: none;
+}
+
+/* Make indicator more visible on touch devices */
+@media (pointer: coarse) {
+  .apollo-sidebar-resize-handle::before {
+    width: 3px;
+    height: 48px;
+    opacity: 0.3;
+  }
+}
+
+.apollo-sidebar-resize-handle:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.apollo-sidebar-resize-handle:hover::before {
+  opacity: 1;
+  height: 48px;
+}
+
+/* Touch device styling */
+@media (pointer: coarse) {
+  .apollo-sidebar-resize-handle:hover::before {
+    opacity: 0.6;
+    height: 64px;
+  }
+}
+
+.apollo-sidebar-resize-handle:active {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+.apollo-sidebar-resize-handle:active::before {
+  opacity: 1;
+  background: var(--pf-t--global--color--brand--default);
+}
+
+/* Enhanced active state for touch devices */
+@media (pointer: coarse) {
+  .apollo-sidebar-resize-handle:active {
+    background: rgba(56, 189, 248, 0.3);
+  }
+  
+  .apollo-sidebar-resize-handle:active::before {
+    height: 72px;
+    width: 4px;
+  }
+}
+
+/* Focus state for keyboard accessibility */
+.apollo-sidebar-resize-handle:focus {
+  outline: none;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.apollo-sidebar-resize-handle:focus::before {
+  opacity: 1;
+  background: var(--pf-t--global--color--brand--default);
+}
+
+/* Ensure the sidebar body has relative positioning for the handle */
+.pf-v6-c-page__sidebar-body {
+  position: relative;
+}
+

@@ -1,0 +1,16 @@
+{
+  "id": "jiras",
+  "displayName": "Jiras",
+  "description": "View your assigned Jira issues",
+  "icon": "ListIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/jiras",
+    "displayName": "Jiras",
+    "icon": "ListIcon"
+  },
+  "routes": [
+    { "path": "/jiras", "page": "Jiras" }
+  ]
+}

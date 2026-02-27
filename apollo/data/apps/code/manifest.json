@@ -1,0 +1,24 @@
+{
+  "id": "code",
+  "displayName": "Code",
+  "description": "Browse and manage code snippets and projects",
+  "icon": "CodeIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/code",
+    "displayName": "Code",
+    "icon": "CodeIcon"
+  },
+  "routes": [
+    {
+      "path": "/code",
+      "page": "Code"
+    },
+    {
+      "path": "/code/:id",
+      "page": "CodeDetail"
+    }
+  ],
+  "apiPath": "/api/code"
+}

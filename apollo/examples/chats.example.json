@@ -1,0 +1,22 @@
+{
+  "pinnedChats": [
+    {
+      "id": "chat-1737500000000",
+      "spaceId": "default",
+      "query": "What are the best practices for React component design?",
+      "response": "I'd be happy to help you with that! Here are the key best practices for React component design:\n\n1. **Single Responsibility**: Each component should do one thing well\n2. **Composition over Inheritance**: Use component composition\n3. **Props for Configuration**: Pass data via props\n4. **State Management**: Keep state as local as possible\n5. **Memoization**: Use React.memo for expensive renders\n\nWould you like me to elaborate on any of these?",
+      "history": [
+        { "type": "user", "content": "What are the best practices for React component design?" },
+        { "type": "ai", "content": "I'd be happy to help you with that!..." }
+      ],
+      "assistant": {
+        "id": "fox",
+        "name": "Fox",
+        "avatar": "/static/media/assistant-fox.svg",
+        "description": "Creative & resourceful"
+      },
+      "createdAt": "2025-01-21T10:00:00.000Z",
+      "updatedAt": "2025-01-21T10:00:00.000Z"
+    }
+  ]
+}

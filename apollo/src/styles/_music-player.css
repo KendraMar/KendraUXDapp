@@ -1,0 +1,228 @@
+/* ===================================
+   MINI MUSIC PLAYER (Masthead)
+   =================================== */
+
+.masthead-mini-player {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--pf-v6-global--BackgroundColor--200);
+  border-radius: 8px;
+  margin-left: 0.5rem;
+}
+
+.mini-player-artwork {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.mini-player-artwork:hover {
+  transform: scale(1.05);
+}
+
+.mini-player-artwork-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pf-v6-global--BackgroundColor--300);
+}
+
+.mini-player-info {
+  max-width: 120px;
+  cursor: pointer;
+}
+
+.mini-player-info:hover .mini-player-title {
+  color: var(--pf-v6-global--primary-color--100);
+}
+
+.mini-player-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease;
+}
+
+.mini-player-artist {
+  font-size: 0.675rem;
+  color: var(--pf-v6-global--Color--200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.mini-player-btn {
+  padding: 0.25rem;
+  min-width: auto;
+}
+
+.mini-player-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mini-player-play-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===================================
+   Mini Recording Widget (Masthead)
+   =================================== */
+
+.masthead-mini-recorder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: linear-gradient(135deg, rgba(201, 25, 11, 0.15), rgba(201, 25, 11, 0.08));
+  border: 1px solid rgba(201, 25, 11, 0.3);
+  border-radius: 8px;
+  margin-left: 0.5rem;
+}
+
+.mini-recorder-indicator {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(201, 25, 11, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.mini-recorder-indicator:hover {
+  transform: scale(1.05);
+}
+
+.mini-recorder-icon {
+  width: 14px;
+  height: 14px;
+  color: #c9190b;
+  z-index: 1;
+}
+
+.mini-recorder-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #c9190b;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: recorder-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes recorder-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.mini-recorder-info {
+  max-width: 120px;
+  cursor: pointer;
+}
+
+.mini-recorder-info:hover .mini-recorder-title {
+  color: #c9190b;
+}
+
+.mini-recorder-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease;
+  color: var(--pf-v6-global--Color--100);
+}
+
+.mini-recorder-duration {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c9190b;
+  font-variant-numeric: tabular-nums;
+}
+
+.mini-recorder-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.mini-recorder-btn {
+  padding: 0.25rem;
+  min-width: auto;
+}
+
+.mini-recorder-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mini-recorder-stop-btn svg {
+  width: 16px;
+  height: 16px;
+  color: #c9190b;
+}
+
+.mini-recorder-stop-btn:hover svg {
+  color: #a30000;
+}
+
+/* Music playing indicator animation */
+.music-playing-indicator {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+
+.music-playing-indicator span {
+  width: 3px;
+  background-color: var(--pf-v6-global--primary-color--100);
+  animation: music-bar 0.5s ease infinite alternate;
+}
+
+.music-playing-indicator span:nth-child(1) {
+  height: 60%;
+  animation-delay: 0s;
+}
+
+.music-playing-indicator span:nth-child(2) {
+  height: 100%;
+  animation-delay: 0.2s;
+}
+
+.music-playing-indicator span:nth-child(3) {
+  height: 40%;
+  animation-delay: 0.4s;
+}
+
+@keyframes music-bar {
+  from { height: 30%; }
+  to { height: 100%; }
+}
+

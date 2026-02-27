@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- OpenShift AI logo - OpenShift symbol with AI indicator -->
+  <defs>
+    <linearGradient id="osai-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EE0000"/>
+      <stop offset="100%" style="stop-color:#CC0000"/>
+    </linearGradient>
+  </defs>
+  <!-- Main OpenShift arrow shape -->
+  <path fill="url(#osai-grad)" d="M32 4L8 18v28l24 14 24-14V18L32 4zm0 8l16 9.3v18.7L32 49.3 16 40V21.3L32 12z"/>
+  <path fill="#EE0000" d="M32 20l-8 4.7v9.3l8 4.7 8-4.7v-9.3L32 20z"/>
+  <!-- AI sparkle indicator -->
+  <circle cx="50" cy="14" r="6" fill="#FFF" stroke="#EE0000" stroke-width="1.5"/>
+  <path fill="#EE0000" d="M50 10v8M46 14h8" stroke="#EE0000" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

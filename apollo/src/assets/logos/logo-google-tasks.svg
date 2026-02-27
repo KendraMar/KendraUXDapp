@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Google Tasks logo - Blue circle with white checkmark -->
+  <circle cx="24" cy="24" r="20" fill="#4285F4"/>
+  <path d="M20.5 29.5l-5-5 1.41-1.41L20.5 26.67l10.59-10.59L32.5 17.5l-12 12z" fill="white"/>
+</svg>

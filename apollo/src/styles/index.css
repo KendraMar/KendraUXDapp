@@ -1,0 +1,51 @@
+/**
+ * Apollo UI Styles
+ * Organized into partials by feature/component area.
+ * Loaded after PatternFly styles via src/index.js.
+ */
+
+/* Design tokens (CSS custom properties) */
+@import './_tokens.css';
+
+/* Shared utilities (RSS, Kagi, markdown, screenshots, space switcher) */
+@import './_utilities.css';
+
+/* Layout & structure */
+@import './_layout.css';
+@import './_sidebar.css';
+
+/* Masthead & omnibar */
+@import './_masthead.css';
+
+/* Conversation panels (suggestions, floating panel, pinned, docked) */
+@import './_conversation.css';
+
+/* Navigation customization, drag-drop, section headings */
+@import './_navigation.css';
+
+/* Notifications panel */
+@import './_notifications.css';
+
+/* Page-specific styles */
+@import './_welcome.css';
+@import './_kubernetes.css';
+@import './_chat.css';
+@import './_prototype.css';
+@import './_settings.css';
+@import './_kagi.css';
+
+/* Dashboard */
+@import './_dashboard.css';
+
+/* Feature styles */
+@import './_music-player.css';
+@import './_annotation.css';
+
+/* Custom page builder */
+@import './_custom-page.css';
+
+/* Create space setup */
+@import './_create-space.css';
+
+/* Shared components */
+@import './_collection-layout.css';

@@ -1,0 +1,20 @@
+{
+  "id": "music",
+  "displayName": "Music",
+  "description": "Apple Music integration for music playback",
+  "icon": "VideoIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/music",
+    "displayName": "Music",
+    "icon": "VideoIcon"
+  },
+  "routes": [
+    {
+      "path": "/music",
+      "page": "Music"
+    }
+  ],
+  "apiPath": "/api/applemusic"
+}

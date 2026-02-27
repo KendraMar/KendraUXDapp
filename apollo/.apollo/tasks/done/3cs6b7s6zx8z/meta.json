@@ -1,0 +1,20 @@
+{
+  "id": "3cs6b7s6zx8z",
+  "title": "Artifact sharing via Git repositories",
+  "type": "feature",
+  "status": "done",
+  "priority": "high",
+  "created": "2026-02-08T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "sharing",
+    "collaboration",
+    "git",
+    "infrastructure",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

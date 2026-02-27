@@ -1,0 +1,19 @@
+{
+  "id": "jn7u8zif7ydf",
+  "title": "Sharing strategy for large binary files (images, videos, recordings)",
+  "type": "spike",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-09T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "sharing",
+    "infrastructure",
+    "spike",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

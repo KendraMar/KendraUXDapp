@@ -1,0 +1,32 @@
+{
+  "id": "slack",
+  "displayName": "Slack",
+  "description": "Slack integration for team communication",
+  "icon": "SlackHashIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/slack",
+    "displayName": "Slack",
+    "icon": "SlackHashIcon"
+  },
+  "routes": [
+    {
+      "path": "/slack",
+      "page": "Slack"
+    }
+  ],
+  "apiPath": "/api/slack",
+  "widgets": [
+    {
+      "id": "unread-messages",
+      "name": "Unread Messages",
+      "description": "Total unread messages across channels",
+      "type": "stats",
+      "defaultSize": { "w": 3, "h": 3 },
+      "dataEndpoint": "/api/slack/unread",
+      "dataTransform": "slackUnread",
+      "refreshInterval": 30
+    }
+  ]
+}

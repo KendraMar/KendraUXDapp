@@ -1,0 +1,19 @@
+{
+  "id": "artifacts",
+  "displayName": "Artifacts",
+  "description": "Browse and manage project artifacts, documents, and deliverables",
+  "icon": "ArchiveIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/artifacts",
+    "displayName": "Artifacts",
+    "icon": "ArchiveIcon"
+  },
+  "routes": [
+    {
+      "path": "/artifacts",
+      "page": "Artifacts"
+    }
+  ]
+}

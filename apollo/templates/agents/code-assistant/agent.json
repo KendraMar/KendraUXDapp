@@ -1,0 +1,9 @@
+{
+  "id": "code-assistant",
+  "color": "#FC6D26",
+  "enabledIntegrations": ["gitlab", "jira"],
+  "tools": {
+    "gitlab": ["get_project", "list_merge_requests", "get_file_content", "search_code"],
+    "jira": ["search_issues", "get_issue"]
+  }
+}

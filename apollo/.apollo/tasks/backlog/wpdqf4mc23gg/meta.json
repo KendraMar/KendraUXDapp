@@ -1,0 +1,20 @@
+{
+  "id": "wpdqf4mc23gg",
+  "title": "Tasks Timeline View: Gantt-style Horizontal Timeline",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-12T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "frontend",
+    "feature",
+    "tasks",
+    "timeline",
+    "apollo"
+  ],
+  "component": "tasks",
+  "starred": false,
+  "flag": null
+}

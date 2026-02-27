@@ -1,0 +1,14 @@
+{
+  "id": "x1sxlknrm4i1",
+  "title": "Automatic day/night theme: adapt to environment on first load",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-12T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": ["frontend", "ux", "theming"],
+  "component": "theming",
+  "starred": false,
+  "flag": null
+}

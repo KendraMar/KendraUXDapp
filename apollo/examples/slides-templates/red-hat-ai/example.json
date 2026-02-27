@@ -1,0 +1,145 @@
+{
+  "title": "Red Hat AI Inference Server",
+  "aspectRatio": "16:9",
+  "slides": [
+    {
+      "type": "title",
+      "heading": "Consistent, fast and cost-effective inference for the hybrid cloud",
+      "subheading": "Introduction to Red Hat AI Inference Server"
+    },
+    {
+      "type": "content",
+      "heading": "Inference is where the real world value happens",
+      "content": [
+        { "type": "bullet", "text": "Powers the AI experience where users interact with models" },
+        { "type": "bullet", "text": "Can happen anywhere across hardware, models, and the hybrid cloud" },
+        { "type": "bullet", "text": "Creates value for AI initiatives by delivering on desired business outcomes" }
+      ],
+      "source": "What is AI Inference?, Jan 2025, Red Hat"
+    },
+    {
+      "type": "three-column",
+      "heading": "The Operational Challenges in the Inference Era",
+      "columns": [
+        {
+          "title": "Infrastructure cost",
+          "text": "Requires substantial compute power to deliver expected experience"
+        },
+        {
+          "title": "Operational complexities",
+          "text": "Non-standardized approach creates inefficiencies"
+        },
+        {
+          "title": "Deployment constraints",
+          "text": "Inference across hybrid environments can lack flexibility"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "heading": "Red Hat AI overview",
+      "subheading": "Trusted, Consistent and Comprehensive foundation"
+    },
+    {
+      "type": "three-column",
+      "heading": "Overview of Red Hat AI Inference Server",
+      "columns": [
+        {
+          "title": "Fast",
+          "items": [
+            "Any gen AI model",
+            "High performance vLLM runtime"
+          ]
+        },
+        {
+          "title": "Cost-effective",
+          "items": [
+            "Any AI Accelerator",
+            "Optimized model compression"
+          ]
+        },
+        {
+          "title": "Optimized",
+          "items": [
+            "Any environment",
+            "Edge to cloud deployment"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "heading": "Red Hat AI Inference Server",
+      "content": [
+        { "type": "h3", "text": "Inference runtime for the hybrid cloud" },
+        { "type": "bullet", "text": "Run your models of choice across any accelerator and any environment" },
+        { "type": "h3", "text": "Compress Models" },
+        { "type": "bullet", "text": "Reduce compute and costs while preserving accuracy" },
+        { "type": "h3", "text": "Red Hat AI Hugging Face repository" },
+        { "type": "bullet", "text": "Access a collection of third-party validated and optimized models ready for inference" }
+      ]
+    },
+    {
+      "type": "stack",
+      "heading": "Production GenAI Inference Stack",
+      "subheading": "Red Hat AI's offerings provide value at all layers of the stack",
+      "layers": [
+        {
+          "label": "Orchestration",
+          "boxes": [
+            { "text": "OpenShift AI", "style": "red" }
+          ]
+        },
+        {
+          "label": "Inference",
+          "boxes": [
+            { "text": "RHAIIS", "style": "red" },
+            { "text": "RHAIIS", "style": "red" },
+            { "text": "RHAIIS", "style": "red" },
+            { "text": "RHAIIS", "style": "red" },
+            { "text": "RHAIIS", "style": "red" }
+          ]
+        },
+        {
+          "label": "Operating System",
+          "boxes": [
+            { "text": "RHEL AI" },
+            { "text": "RHEL AI" },
+            { "text": "RHEL AI" },
+            { "text": "RHEL AI" },
+            { "text": "RHEL AI" }
+          ]
+        },
+        {
+          "label": "Hardware",
+          "boxes": [
+            { "text": "GPU Server", "style": "gray" },
+            { "text": "GPU Server", "style": "gray" },
+            { "text": "GPU Server", "style": "gray" },
+            { "text": "GPU Server", "style": "gray" },
+            { "text": "GPU Server", "style": "gray" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "case-study",
+      "heading": "Case study: optimized model repository",
+      "company": "A Media Company",
+      "companyLabel": "Customer",
+      "challenge": "The SRE team was tasked with managing an H100 cluster supporting a diverse suite of Mistral models used across the company. Their key challenge was ensuring efficient deployment and evaluation of these models while maintaining performance and consistency across platforms.",
+      "solution": "The team leveraged FP8 pre-quantized checkpoints for the entire suite of Mistral models. These optimized checkpoints streamlined deployment on the H100 cluster and enabled consistency across hardware setups.",
+      "result": "Optimizing Mistral family deployment on NVIDIA Hopper GPUs"
+    },
+    {
+      "type": "thank-you",
+      "heading": "Thank you",
+      "tagline": "Red Hat is the world's leading provider of enterprise open source software solutions. Award-winning support, training, and consulting services make Red Hat a trusted adviser to the Fortune 500.",
+      "social": [
+        "linkedin.com/company/red-hat",
+        "youtube.com/user/RedHatVideos",
+        "twitter.com/RedHat"
+      ]
+    }
+  ]
+}

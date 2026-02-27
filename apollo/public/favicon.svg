@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Apollo Logo - Favicon version -->
+    
+    <!-- Background circle for visibility -->
+    <circle cx="200" cy="200" r="200" fill="#1b1d21"/>
+    
+    <!-- Main sphere outline -->
+    <circle 
+        cx="200" 
+        cy="200" 
+        r="140" 
+        stroke="#0066CC" 
+        stroke-width="28" 
+        fill="none"
+    />
+    
+    <!-- Single sweeping arc - suggests horizon/curvature -->
+    <path 
+        d="M 75 245 Q 200 125, 325 245" 
+        stroke="#0066CC" 
+        stroke-width="28" 
+        stroke-linecap="round"
+        fill="none"
+    />
+</svg>

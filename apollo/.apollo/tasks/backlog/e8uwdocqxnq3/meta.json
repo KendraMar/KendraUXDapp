@@ -1,0 +1,21 @@
+{
+  "id": "e8uwdocqxnq3",
+  "title": "Peer-to-Peer Video Conferencing App (Common Room)",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-10T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "feature",
+    "frontend",
+    "backend",
+    "networking",
+    "webrtc",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

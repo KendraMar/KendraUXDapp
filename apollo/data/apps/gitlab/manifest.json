@@ -1,0 +1,42 @@
+{
+  "id": "gitlab",
+  "displayName": "GitLab",
+  "description": "GitLab integration for code repositories and merge requests",
+  "icon": "GitlabIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/gitlab",
+    "displayName": "GitLab",
+    "icon": "GitlabIcon"
+  },
+  "routes": [
+    {
+      "path": "/gitlab",
+      "page": "GitLab"
+    }
+  ],
+  "apiPath": "/api/gitlab",
+  "widgets": [
+    {
+      "id": "open-mrs",
+      "name": "Open Merge Requests",
+      "description": "Count of open merge requests",
+      "type": "stats",
+      "defaultSize": { "w": 3, "h": 3 },
+      "dataEndpoint": "/api/gitlab/merge-requests",
+      "dataTransform": "mrCount",
+      "refreshInterval": 120
+    },
+    {
+      "id": "recent-mrs",
+      "name": "Recent Merge Requests",
+      "description": "Latest merge requests across projects",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/gitlab/merge-requests",
+      "dataTransform": "mrList",
+      "refreshInterval": 120
+    }
+  ]
+}

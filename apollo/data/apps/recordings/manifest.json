@@ -1,0 +1,24 @@
+{
+  "id": "recordings",
+  "displayName": "Recordings",
+  "description": "Record, import, and manage audio/video recordings with transcription",
+  "icon": "VideoIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/recordings",
+    "displayName": "Recordings",
+    "icon": "VideoIcon"
+  },
+  "routes": [
+    {
+      "path": "/recordings",
+      "page": "Recordings"
+    },
+    {
+      "path": "/recordings/:id",
+      "page": "RecordingDetail"
+    }
+  ],
+  "apiPath": "/api/recordings"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "canvas",
+  "displayName": "Canvas",
+  "description": "Visual canvas for creating and connecting nodes",
+  "icon": "TopologyIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/canvas",
+    "displayName": "Canvas",
+    "icon": "TopologyIcon"
+  },
+  "routes": [
+    {
+      "path": "/canvas",
+      "page": "Canvas"
+    },
+    {
+      "path": "/canvas/:id",
+      "page": "CanvasDetail"
+    }
+  ],
+  "apiPath": "/api/canvas"
+}

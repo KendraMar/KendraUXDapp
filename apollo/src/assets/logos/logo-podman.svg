@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Podman logo - simplified seal/podman mascot -->
+  <defs>
+    <linearGradient id="podman-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#892CA0"/>
+      <stop offset="100%" style="stop-color:#6B1F7C"/>
+    </linearGradient>
+  </defs>
+  <!-- Body -->
+  <ellipse cx="32" cy="40" rx="20" ry="16" fill="url(#podman-grad)"/>
+  <!-- Head -->
+  <circle cx="32" cy="22" r="14" fill="url(#podman-grad)"/>
+  <!-- Ears/flippers -->
+  <ellipse cx="14" cy="20" rx="6" ry="4" fill="#892CA0" transform="rotate(-30 14 20)"/>
+  <ellipse cx="50" cy="20" rx="6" ry="4" fill="#892CA0" transform="rotate(30 50 20)"/>
+  <!-- Face -->
+  <ellipse cx="32" cy="26" rx="8" ry="6" fill="#F5F5F5"/>
+  <!-- Eyes -->
+  <circle cx="27" cy="20" r="3" fill="#FFF"/>
+  <circle cx="37" cy="20" r="3" fill="#FFF"/>
+  <circle cx="28" cy="20" r="1.5" fill="#333"/>
+  <circle cx="38" cy="20" r="1.5" fill="#333"/>
+  <!-- Nose -->
+  <ellipse cx="32" cy="26" rx="3" ry="2" fill="#333"/>
+  <!-- Whisker dots -->
+  <circle cx="24" cy="28" r="1" fill="#666"/>
+  <circle cx="22" cy="26" r="1" fill="#666"/>
+  <circle cx="40" cy="28" r="1" fill="#666"/>
+  <circle cx="42" cy="26" r="1" fill="#666"/>
+</svg>

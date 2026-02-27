@@ -1,0 +1,107 @@
+# Apollo .apollo Configuration
+# This file controls how Apollo reads and displays design metadata
+
+apollo:
+  version: 1
+  
+  # Project metadata
+  project:
+    name: "Apollo"
+    description: "A unified workspace for design artifacts, prototypes, and collaboration"
+    repository: "https://github.com/organization/apollo"
+  
+  # Feature toggles for Apollo integration
+  features:
+    # Display design history in the Prototypes viewer context sidebar
+    history_panel: true
+    # Show context sources and related artifacts
+    context_sidebar: true
+    # Allow AI assistant to use .apollo content for context
+    ai_context: true
+    # Show stakeholder information
+    stakeholders_panel: true
+    # Display decision log
+    decisions_panel: true
+  
+  # Sidebar panel configuration
+  panels:
+    history:
+      title: "Design History"
+      max_entries: 50
+      date_format: "relative"  # "relative" | "absolute" | "both"
+    context:
+      title: "Context & Sources"
+      group_by: "type"  # "type" | "date" | "none"
+    decisions:
+      title: "Decisions"
+      show_status: true
+    stakeholders:
+      title: "Stakeholders"
+      show_raci: true
+  
+  # Automatic sync configuration (future feature)
+  sync:
+    enabled: false
+    auto_update: false
+    sources:
+      # Sync from git commits to update history
+      - type: git_commits
+        enabled: false
+        branch: "main"
+        include_patterns:
+          - "*.md"
+          - "*.tsx"
+          - "*.css"
+        exclude_patterns:
+          - "node_modules/**"
+          - "dist/**"
+      
+      # Sync from Jira for task tracking
+      - type: jira
+        enabled: false
+        project_key: ""
+        
+      # Sync from Slack for discussions
+      - type: slack
+        enabled: false
+        channels: []
+      
+      # Sync from meeting recordings
+      - type: recordings
+        enabled: false
+        transcription_service: "gemini"
+
+  # Relationship mapping configuration
+  relationships:
+    # Auto-detect relationships between artifacts
+    auto_detect: true
+    # Types of relationships to track
+    types:
+      - "implements"      # Feature implements a design
+      - "references"      # Artifact references another
+      - "supersedes"      # New version replaces old
+      - "relates_to"      # General relationship
+      - "blocks"          # Dependency relationship
+      - "child_of"        # Hierarchical relationship
+
+# Path mappings for prototype detection
+prototypes:
+  # Patterns to identify prototype files/folders
+  patterns:
+    - "src/pages/**/*.js"
+    - "src/pages/**/*.tsx"
+    - "examples/**"
+  
+  # Associate .apollo features with prototype paths
+  feature_mapping:
+    # Example: features/dashboard maps to src/pages/Dashboard.js
+    # dashboard: "src/pages/Dashboard.js"
+
+# Export configuration
+export:
+  formats:
+    - markdown
+    - json
+  include_history: true
+  include_sources: true
+  include_stakeholders: true

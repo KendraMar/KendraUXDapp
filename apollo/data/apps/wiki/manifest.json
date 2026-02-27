@@ -1,0 +1,19 @@
+{
+  "id": "wiki",
+  "displayName": "Wiki",
+  "description": "Confluence documentation and team wiki",
+  "icon": "BookOpenIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/wiki",
+    "displayName": "Wiki",
+    "icon": "BookOpenIcon"
+  },
+  "routes": [
+    {
+      "path": "/wiki",
+      "page": "Wiki"
+    }
+  ]
+}

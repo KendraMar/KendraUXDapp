@@ -1,0 +1,139 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Apollo Logo Variant 6 - Aurora Borealis
+        Flowing aurora-like ribbons with ethereal glow
+    -->
+    
+    <style>
+        @keyframes aurora1 {
+            0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.8; }
+            50% { transform: translateY(-15px) scaleY(1.1); opacity: 1; }
+        }
+        
+        @keyframes aurora2 {
+            0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.7; }
+            50% { transform: translateY(10px) scaleY(0.9); opacity: 0.9; }
+        }
+        
+        @keyframes aurora3 {
+            0%, 100% { transform: translateY(5px) scaleY(0.95); opacity: 0.6; }
+            50% { transform: translateY(-10px) scaleY(1.05); opacity: 0.85; }
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes colorWave1 {
+            0%, 100% { stop-color: #06b6d4; }
+            33% { stop-color: #8b5cf6; }
+            66% { stop-color: #10b981; }
+        }
+        
+        @keyframes colorWave2 {
+            0%, 100% { stop-color: #8b5cf6; }
+            33% { stop-color: #ec4899; }
+            66% { stop-color: #06b6d4; }
+        }
+        
+        .aurora-ribbon-1 {
+            animation: aurora1 6s ease-in-out infinite;
+            transform-origin: center;
+        }
+        
+        .aurora-ribbon-2 {
+            animation: aurora2 5s ease-in-out infinite;
+            transform-origin: center;
+        }
+        
+        .aurora-ribbon-3 {
+            animation: aurora3 7s ease-in-out infinite;
+            transform-origin: center;
+        }
+        
+        .star-shimmer {
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        .aurora-container:hover .color-a1 {
+            animation: colorWave1 3s ease-in-out infinite;
+        }
+        
+        .aurora-container:hover .color-a2 {
+            animation: colorWave2 2.5s ease-in-out infinite;
+        }
+        
+        .aurora-container:hover .aurora-ribbon-1 {
+            animation: aurora1 3s ease-in-out infinite;
+        }
+        
+        .aurora-container:hover .aurora-ribbon-2 {
+            animation: aurora2 2.5s ease-in-out infinite;
+        }
+        
+        .aurora-container:hover .aurora-ribbon-3 {
+            animation: aurora3 3.5s ease-in-out infinite;
+        }
+    </style>
+    
+    <defs>
+        <clipPath id="circleClipV6">
+            <circle cx="200" cy="200" r="148"/>
+        </clipPath>
+        
+        <filter id="auroraGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+        </filter>
+        
+        <linearGradient id="auroraGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop class="color-a1" offset="0%" stop-color="#06b6d4"/>
+            <stop class="color-a2" offset="50%" stop-color="#8b5cf6"/>
+            <stop class="color-a1" offset="100%" stop-color="#10b981"/>
+        </linearGradient>
+        
+        <linearGradient id="auroraGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop class="color-a2" offset="0%" stop-color="#8b5cf6"/>
+            <stop offset="50%" stop-color="#ec4899"/>
+            <stop class="color-a1" offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+        
+        <linearGradient id="auroraGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop class="color-a2" offset="50%" stop-color="#06b6d4"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+        </linearGradient>
+        
+        <radialGradient id="auroraBg" cx="50%" cy="100%" r="80%">
+            <stop offset="0%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#020617"/>
+        </radialGradient>
+    </defs>
+    
+    <g class="aurora-container">
+        <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="24" fill="none"/>
+        
+        <g clip-path="url(#circleClipV6)">
+            <circle cx="200" cy="200" r="148" fill="url(#auroraBg)"/>
+            
+            <!-- Stars -->
+            <circle class="star-shimmer" cx="120" cy="100" r="2" fill="#fff" style="animation-delay: 0s"/>
+            <circle class="star-shimmer" cx="280" cy="120" r="1.5" fill="#fff" style="animation-delay: 0.5s"/>
+            <circle class="star-shimmer" cx="160" cy="140" r="1" fill="#fff" style="animation-delay: 1s"/>
+            <circle class="star-shimmer" cx="240" cy="90" r="1.5" fill="#fff" style="animation-delay: 1.5s"/>
+            <circle class="star-shimmer" cx="300" cy="160" r="1" fill="#fff" style="animation-delay: 0.3s"/>
+            
+            <!-- Glow layer -->
+            <g filter="url(#auroraGlow)">
+                <path class="aurora-ribbon-1" d="M 50 220 Q 120 180, 200 200 T 350 180" stroke="url(#auroraGrad1)" stroke-width="30" fill="none" stroke-linecap="round"/>
+                <path class="aurora-ribbon-2" d="M 50 260 Q 150 220, 200 240 T 350 220" stroke="url(#auroraGrad2)" stroke-width="25" fill="none" stroke-linecap="round"/>
+                <path class="aurora-ribbon-3" d="M 50 300 Q 130 260, 200 280 T 350 260" stroke="url(#auroraGrad3)" stroke-width="20" fill="none" stroke-linecap="round"/>
+            </g>
+            
+            <!-- Sharp ribbons on top -->
+            <path class="aurora-ribbon-1" d="M 50 220 Q 120 180, 200 200 T 350 180" stroke="url(#auroraGrad1)" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <path class="aurora-ribbon-2" d="M 50 260 Q 150 220, 200 240 T 350 220" stroke="url(#auroraGrad2)" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.85"/>
+            <path class="aurora-ribbon-3" d="M 50 300 Q 130 260, 200 280 T 350 260" stroke="url(#auroraGrad3)" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+        </g>
+    </g>
+</svg>

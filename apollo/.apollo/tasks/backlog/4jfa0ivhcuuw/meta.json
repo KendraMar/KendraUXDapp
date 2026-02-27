@@ -1,0 +1,16 @@
+{
+  "id": "4jfa0ivhcuuw",
+  "title": "Use search to navigate to any page, search for recent (cached) text of recent documents, and search remotely as a last resort",
+  "type": "task",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-07",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "apollo"
+  ],
+  "component": "search",
+  "starred": false,
+  "flag": null
+}

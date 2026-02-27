@@ -1,0 +1,16 @@
+{
+  "id": "tuuqhzq43lxh",
+  "title": "Tasks: add support for deadlines",
+  "type": "task",
+  "status": "done",
+  "priority": "medium",
+  "created": "2026-02-02",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

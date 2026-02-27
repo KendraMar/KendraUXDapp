@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apollo Capture - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Apollo Capture</h1>
+      <p class="subtitle">Browser history tracking for Apollo</p>
+    </header>
+    
+    <main>
+      <div class="card">
+        <h2>Server Connection</h2>
+        
+        <div class="connection-status" id="connectionStatus">
+          <span class="status-indicator" id="statusIndicator"></span>
+          <span class="status-text" id="statusText">Checking connection...</span>
+          <button id="registerBtn" class="btn-small" style="display: none;">Register</button>
+        </div>
+        
+        <div class="extension-info" id="extensionInfo"></div>
+        
+        <div class="setting">
+          <label for="serverUrl">Apollo Server URL</label>
+          <div class="input-with-button">
+            <input type="text" id="serverUrl" placeholder="http://localhost:1226">
+            <button id="testConnectionBtn" class="btn-secondary" title="Test connection">
+              <span class="btn-icon">↻</span>
+            </button>
+          </div>
+          <small>The URL where your Apollo server is running</small>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2>Capture Settings</h2>
+        
+        <div class="setting">
+          <label class="toggle">
+            <input type="checkbox" id="enabled" checked>
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <span class="toggle-label">Capture Enabled</span>
+          </label>
+        </div>
+        
+        <div class="setting">
+          <label for="excludedDomains">Excluded Domains</label>
+          <textarea id="excludedDomains" rows="6" placeholder="One domain per line"></textarea>
+          <small>Pages on these domains won't be captured</small>
+        </div>
+        
+        <div class="actions">
+          <button id="saveBtn" class="btn-primary">Save Settings</button>
+        </div>
+        
+        <div class="status" id="status"></div>
+      </div>
+      
+      <div class="card">
+        <h2>Open Tabs</h2>
+        <div class="card-header-actions">
+          <button id="captureTabsBtn" class="btn-primary">Capture All Tabs</button>
+        </div>
+        <div id="tabsStatus" class="tabs-status"></div>
+        <div id="tabs" class="tabs-list">
+          <p class="empty">Click "Capture All Tabs" to snapshot your current tabs</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2>Recent History</h2>
+        <div id="history" class="history-list">
+          <p class="loading">Loading...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="settings.js"></script>
+</body>
+</html>

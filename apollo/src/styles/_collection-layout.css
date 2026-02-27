@@ -1,0 +1,27 @@
+/* ── CollectionLayout ─────────────────────────────────────────────────
+ * Shared styles for the card/list collection view component.
+ * ──────────────────────────────────────────────────────────────────── */
+
+/* Card grid base */
+.collection-card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Responsive overrides — always 1 col on small screens, max 2 on medium */
+@media (max-width: 768px) {
+  .collection-card-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .collection-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Clickable table rows get a subtle hover */
+.collection-layout-toolbar + div .pf-v6-c-table tr[class*="clickable"]:hover td {
+  background-color: var(--pf-v6-global--BackgroundColor--200);
+}
