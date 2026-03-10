@@ -1,0 +1,327 @@
+/* ========================================
+   Notifications Panel Styles
+   ======================================== */
+
+.notifications-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.notifications-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+  background: var(--pf-t--global--color--status--danger--default);
+  border-radius: 9px;
+  pointer-events: none;
+}
+
+.notifications-button-active {
+  background: var(--pf-t--global--background--color--secondary--default) !important;
+}
+
+.notifications-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 360px;
+  max-height: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  animation: notifications-panel-appear 0.2s ease-out;
+}
+
+@keyframes notifications-panel-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pf-v6-theme-dark .notifications-panel {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notifications-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pf-v6-theme-dark .notifications-panel-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.notifications-panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pf-v6-global--Color--100);
+}
+
+.notifications-mark-read {
+  font-size: 13px;
+}
+
+.notifications-panel-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 360px;
+}
+
+.notifications-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.notifications-item:last-child {
+  border-bottom: none;
+}
+
+.notifications-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.pf-v6-theme-dark .notifications-item {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.pf-v6-theme-dark .notifications-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.notifications-item-unread {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.pf-v6-theme-dark .notifications-item-unread {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.notifications-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notifications-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pf-v6-global--Color--100);
+  margin-bottom: 4px;
+}
+
+.notifications-item-description {
+  font-size: 13px;
+  color: var(--pf-v6-global--Color--200);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.notifications-item-time {
+  font-size: 12px;
+  color: var(--pf-v6-global--Color--300);
+}
+
+.notifications-unread-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--pf-t--global--color--brand--default);
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+/* Commit list inside notification */
+.notifications-commit-list {
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.pf-v6-theme-dark .notifications-commit-list {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.notifications-commit-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  line-height: 1.4;
+}
+
+.notifications-commit-hash {
+  font-family: var(--pf-v6-global--FontFamily--mono, monospace);
+  font-size: 11px;
+  color: var(--pf-t--global--color--brand--default);
+  flex-shrink: 0;
+}
+
+.notifications-commit-subject {
+  color: var(--pf-v6-global--Color--200);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notifications-commit-more {
+  color: var(--pf-v6-global--Color--300);
+  font-size: 11px;
+  padding-top: 4px;
+  font-style: italic;
+}
+
+/* Update action buttons */
+.notifications-update-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Success / Error result states */
+.notifications-update-success {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.notifications-update-error {
+  background: rgba(239, 68, 68, 0.08) !important;
+}
+
+.pf-v6-theme-dark .notifications-update-success {
+  background: rgba(16, 185, 129, 0.12) !important;
+}
+
+.pf-v6-theme-dark .notifications-update-error {
+  background: rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Empty state */
+.notifications-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.notifications-empty-icon {
+  font-size: 28px;
+  color: var(--pf-v6-global--Color--300);
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.notifications-empty-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pf-v6-global--Color--200);
+  margin-bottom: 4px;
+}
+
+.notifications-empty-time {
+  font-size: 12px;
+  color: var(--pf-v6-global--Color--300);
+}
+
+.notifications-footer-hint {
+  font-size: 12px;
+  color: var(--pf-v6-global--Color--300);
+}
+
+.notifications-panel-footer {
+  padding: 12px 16px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pf-v6-theme-dark .notifications-panel-footer {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Document Revision History Styles */
+.revision-list-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.revision-list-item:hover {
+  background: var(--pf-v6-global--BackgroundColor--200);
+}
+
+.revision-list-item.is-active {
+  background: var(--pf-v6-global--active-color--100);
+  color: var(--pf-v6-global--Color--light-100);
+}
+
+.revision-preview {
+  font-family: var(--pf-v6-global--FontFamily--text);
+  line-height: 1.6;
+}
+
+.revision-preview h1,
+.revision-preview h2,
+.revision-preview h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.auto-save-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.auto-save-indicator.saved {
+  color: var(--pf-v6-global--success-color--100);
+}
+
+.auto-save-indicator.saving {
+  color: var(--pf-v6-global--Color--200);
+}
+
+.pf-v6-theme-dark .auto-save-indicator.saved {
+  color: var(--pf-v6-global--success-color--200);
+}
+

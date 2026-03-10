@@ -1,0 +1,9 @@
+{
+  "id": "meeting-summarizer",
+  "color": "#10B981",
+  "enabledIntegrations": ["google-calendar", "slack"],
+  "tools": {
+    "google-calendar": ["list_events", "get_event"],
+    "slack": ["get_channel_history", "search_messages"]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "rbqnq1sfw53q",
+  "title": "Per-Artifact Version Control and History System",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-02T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "feature",
+    "infrastructure",
+    "content-management",
+    "crdt",
+    "local-first",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

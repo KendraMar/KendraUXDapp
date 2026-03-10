@@ -1,0 +1,24 @@
+{
+  "id": "bulletin",
+  "displayName": "Bulletin",
+  "description": "Team bulletins and announcements",
+  "icon": "ClipboardIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/bulletin",
+    "displayName": "Bulletin",
+    "icon": "ClipboardIcon"
+  },
+  "routes": [
+    {
+      "path": "/bulletin",
+      "page": "Bulletin"
+    },
+    {
+      "path": "/bulletin/:id",
+      "page": "BulletinDetail"
+    }
+  ],
+  "apiPath": "/api/bulletins"
+}

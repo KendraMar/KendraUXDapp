@@ -1,0 +1,19 @@
+{
+  "id": "assets",
+  "displayName": "Assets",
+  "description": "Browse and manage design assets and visual resources",
+  "icon": "PaletteIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/assets",
+    "displayName": "Assets",
+    "icon": "PaletteIcon"
+  },
+  "routes": [
+    {
+      "path": "/assets",
+      "page": "Assets"
+    }
+  ]
+}

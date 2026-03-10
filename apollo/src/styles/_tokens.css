@@ -1,0 +1,61 @@
+/* ===================================
+   GLASS PANEL DESIGN TOKENS
+   =================================== */
+
+/* Light mode: frosted white glass */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.70);
+  --glass-bg-dragged: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-border-subtle: rgba(0, 0, 0, 0.06);
+  --glass-text: rgba(0, 0, 0, 0.85);
+  --glass-text-subtle: rgba(0, 0, 0, 0.45);
+  --glass-divider: rgba(0, 0, 0, 0.08);
+  --glass-hover-bg: rgba(0, 0, 0, 0.06);
+  --glass-hover-text: rgba(0, 0, 0, 0.85);
+  --glass-drag-bar: rgba(0, 0, 0, 0.25);
+  --glass-input-bg: rgba(0, 0, 0, 0.05);
+  --glass-input-text: rgba(0, 0, 0, 0.85);
+  --glass-input-border: rgba(0, 0, 0, 0.12);
+  --glass-input-placeholder: rgba(0, 0, 0, 0.35);
+  --glass-followup-bg: rgba(0, 0, 0, 0.03);
+  --glass-msg-ai-bg: rgba(0, 0, 0, 0.04);
+  --glass-msg-ai-text: rgba(0, 0, 0, 0.8);
+  --glass-loading-bg: rgba(0, 0, 0, 0.04);
+  --glass-shadow-1: rgba(0, 0, 0, 0.12);
+  --glass-shadow-2: rgba(0, 0, 0, 0.06);
+  --glass-shadow-dragged-1: rgba(0, 0, 0, 0.2);
+  --glass-shadow-dragged-2: rgba(0, 0, 0, 0.12);
+  --glass-inset-top: rgba(255, 255, 255, 0.6);
+  --glass-inset-ring: rgba(255, 255, 255, 0.3);
+  --glass-caret-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode: smoky dark glass */
+.pf-v6-theme-dark {
+  --glass-bg: rgba(10, 15, 25, 0.70);
+  --glass-bg-dragged: rgba(10, 15, 25, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-subtle: rgba(255, 255, 255, 0.06);
+  --glass-text: rgba(255, 255, 255, 0.92);
+  --glass-text-subtle: rgba(255, 255, 255, 0.5);
+  --glass-divider: rgba(255, 255, 255, 0.06);
+  --glass-hover-bg: rgba(255, 255, 255, 0.1);
+  --glass-hover-text: rgba(255, 255, 255, 0.9);
+  --glass-drag-bar: rgba(255, 255, 255, 0.4);
+  --glass-input-bg: rgba(255, 255, 255, 0.08);
+  --glass-input-text: rgba(255, 255, 255, 0.92);
+  --glass-input-border: rgba(255, 255, 255, 0.12);
+  --glass-input-placeholder: rgba(255, 255, 255, 0.4);
+  --glass-followup-bg: rgba(0, 0, 0, 0.12);
+  --glass-msg-ai-bg: rgba(255, 255, 255, 0.06);
+  --glass-msg-ai-text: rgba(255, 255, 255, 0.88);
+  --glass-loading-bg: rgba(255, 255, 255, 0.05);
+  --glass-shadow-1: rgba(0, 0, 0, 0.4);
+  --glass-shadow-2: rgba(0, 0, 0, 0.25);
+  --glass-shadow-dragged-1: rgba(0, 0, 0, 0.6);
+  --glass-shadow-dragged-2: rgba(0, 0, 0, 0.4);
+  --glass-inset-top: rgba(255, 255, 255, 0.06);
+  --glass-inset-ring: rgba(255, 255, 255, 0.04);
+  --glass-caret-shadow: rgba(0, 0, 0, 0.4);
+}

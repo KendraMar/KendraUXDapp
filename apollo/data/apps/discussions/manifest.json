@@ -1,0 +1,36 @@
+{
+  "id": "discussions",
+  "displayName": "Discussions",
+  "description": "Team discussions and threaded conversations",
+  "icon": "CommentsIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/discussions",
+    "displayName": "Discussions",
+    "icon": "CommentsIcon"
+  },
+  "routes": [
+    {
+      "path": "/discussions",
+      "page": "Discussions"
+    },
+    {
+      "path": "/discussions/:id",
+      "page": "DiscussionDetail"
+    }
+  ],
+  "apiPath": "/api/discussions",
+  "widgets": [
+    {
+      "id": "recent-discussions",
+      "name": "Recent Discussions",
+      "description": "Latest team discussions",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/discussions",
+      "dataTransform": "discussionList",
+      "refreshInterval": 60
+    }
+  ]
+}

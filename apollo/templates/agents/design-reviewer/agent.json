@@ -1,0 +1,8 @@
+{
+  "id": "design-reviewer",
+  "color": "#F24E1E",
+  "enabledIntegrations": ["figma"],
+  "tools": {
+    "figma": ["get_file", "get_comments", "get_versions"]
+  }
+}

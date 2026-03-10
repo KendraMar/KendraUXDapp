@@ -1,0 +1,273 @@
+/* ==========================================================================
+   Dashboard Styles
+   Grid layout, widget cards, edit mode, tabs, and drawer styling.
+   ========================================================================== */
+
+/* -- Dashboard Header -- */
+.dashboard-header-section {
+  padding-bottom: 0.5rem !important;
+}
+
+/* -- Dashboard Tabs -- */
+.dashboard-tabs-container {
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.dashboard-tabs .pf-v6-c-tabs__list {
+  gap: 0;
+}
+
+.dashboard-tab-menu-toggle {
+  padding: 0.125rem !important;
+  font-size: 0.75rem !important;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.pf-v6-c-tabs__item:hover .dashboard-tab-menu-toggle,
+.dashboard-tab-menu-toggle[aria-expanded='true'] {
+  opacity: 1;
+}
+
+.dashboard-tabs-section {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* -- Dashboard Grid -- */
+.dashboard-grid-section {
+  padding-top: 1rem;
+}
+
+.dashboard-grid {
+  position: relative;
+}
+
+.dashboard-grid--editing {
+  min-height: 400px;
+}
+
+/* Grid item */
+.dashboard-grid-item {
+  border-radius: var(--pf-t--global--border--radius--medium);
+}
+
+/* react-grid-layout overrides */
+.dashboard-responsive-grid {
+  position: relative;
+}
+
+.dashboard-responsive-grid .react-grid-item {
+  transition: all 200ms ease;
+  border-radius: var(--pf-t--global--border--radius--medium);
+}
+
+.dashboard-responsive-grid .react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 100;
+  opacity: 0.9;
+  box-shadow: var(--pf-t--global--box-shadow--lg);
+}
+
+.dashboard-responsive-grid .react-grid-placeholder {
+  background-color: var(--pf-t--global--color--brand--default);
+  opacity: 0.1;
+  border-radius: var(--pf-t--global--border--radius--medium);
+  border: 2px dashed var(--pf-t--global--color--brand--default);
+}
+
+/* Resize handle */
+.dashboard-grid--editing .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+.dashboard-grid--editing .react-resizable-handle::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--pf-t--global--text--color--subtle);
+  border-bottom: 2px solid var(--pf-t--global--text--color--subtle);
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+}
+
+.dashboard-grid--editing .react-grid-item:hover .react-resizable-handle::after {
+  opacity: 1;
+}
+
+/* -- Widget Card -- */
+.dashboard-widget-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--pf-t--global--border--radius--medium);
+  transition: box-shadow 0.15s ease;
+}
+
+.dashboard-widget-card--editing {
+  border: 1px dashed var(--pf-t--global--border--color--default);
+}
+
+.dashboard-widget-card--editing:hover {
+  border-color: var(--pf-t--global--color--brand--default);
+  box-shadow: var(--pf-t--global--box-shadow--sm);
+}
+
+.dashboard-widget-card-header {
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem !important;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.dashboard-widget-card-body {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Drag handle */
+.dashboard-widget-drag-handle {
+  cursor: grab;
+  color: var(--pf-t--global--text--color--subtle);
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-widget-drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Widget action buttons */
+.dashboard-widget-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: var(--pf-t--global--border--radius--small);
+  color: var(--pf-t--global--text--color--subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.dashboard-widget-action-btn:hover {
+  color: var(--pf-t--global--text--color--regular);
+  background-color: var(--pf-t--global--background--color--secondary--default);
+}
+
+.dashboard-widget-remove-btn:hover {
+  color: var(--pf-t--global--color--status--danger--default);
+}
+
+/* -- Widget Type Styles -- */
+
+/* Stats widget */
+.dashboard-stats-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-stats-widget--clickable {
+  border-radius: var(--pf-t--global--border--radius--medium);
+  transition: background-color 0.15s ease;
+}
+
+.dashboard-stats-widget--clickable:hover {
+  background-color: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.dashboard-stats-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* List widget */
+.dashboard-list-widget .pf-v6-c-data-list {
+  border-top: none;
+}
+
+.dashboard-list-widget .pf-v6-c-data-list__item {
+  border-bottom-color: var(--pf-t--global--border--color--default);
+}
+
+.dashboard-list-item--clickable {
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.dashboard-list-item--clickable:hover {
+  background-color: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.dashboard-list-item--clickable:hover .dashboard-list-item-title {
+  color: var(--pf-t--global--color--brand--default);
+  text-decoration: underline;
+}
+
+/* Feed widget */
+.dashboard-feed-item:last-child {
+  border-bottom: none !important;
+}
+
+.dashboard-feed-item--clickable {
+  transition: background-color 0.12s ease;
+}
+
+.dashboard-feed-item--clickable:hover {
+  background-color: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.dashboard-feed-item--clickable:hover .dashboard-feed-item-text {
+  color: var(--pf-t--global--color--brand--default);
+  text-decoration: underline;
+}
+
+/* Note widget */
+.dashboard-note-widget .pf-v6-c-form-control {
+  border: none;
+  box-shadow: none;
+}
+
+/* -- Add Widget Drawer -- */
+.dashboard-add-widget-card {
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.dashboard-add-widget-card:hover {
+  box-shadow: var(--pf-t--global--box-shadow--sm);
+  border-color: var(--pf-t--global--color--brand--default);
+}
+
+/* -- Drawer overrides -- */
+.dashboard-drawer .pf-v6-c-drawer__panel {
+  border-left: 1px solid var(--pf-t--global--border--color--default);
+}
+
+/* -- Responsive adjustments -- */
+@media (max-width: 900px) {
+  .dashboard-tabs-container {
+    padding: 0 0.5rem;
+  }
+
+  .dashboard-grid-section {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header-section .pf-v6-c-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+# Apollo UI Project Rules
+
+## Browser Testing
+- Do NOT automatically test features in the browser after implementing them
+- Only use browser tools when explicitly asked to test or verify something
+- Trust that the code works if there are no linter errors
+
+## General Guidelines
+- Focus on implementing the requested changes
+- Provide a summary of what was done without automatic verification
+
+

@@ -1,0 +1,19 @@
+{
+  "id": "6hd5g71kfppb",
+  "title": "Canvas Whiteboard Enhancement: Miro/Excalidraw-Style Tools",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "high",
+  "created": "2026-02-12T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "frontend",
+    "feature",
+    "canvas",
+    "apollo"
+  ],
+  "component": "canvas",
+  "starred": false,
+  "flag": null
+}

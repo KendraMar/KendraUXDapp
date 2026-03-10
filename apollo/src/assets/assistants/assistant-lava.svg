@@ -1,0 +1,193 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Apollo Logo Variant 4 - Animated Lava Lamp
+        Oozy orb effect with gentle morphing animation
+        Hover triggers color swirl animation
+    -->
+    
+    <style>
+        /* Base morphing animation for the blobs */
+        @keyframes morph1 {
+            0%, 100% {
+                d: path("M 160 180 C 180 120, 280 130, 290 200 C 300 270, 220 310, 160 280 C 100 250, 120 220, 160 180");
+            }
+            25% {
+                d: path("M 150 190 C 160 110, 270 120, 300 190 C 330 260, 240 320, 170 300 C 100 280, 110 240, 150 190");
+            }
+            50% {
+                d: path("M 170 170 C 200 100, 290 140, 280 210 C 270 280, 200 320, 150 270 C 100 220, 130 200, 170 170");
+            }
+            75% {
+                d: path("M 155 185 C 170 115, 260 125, 295 195 C 320 265, 230 315, 165 290 C 100 265, 115 230, 155 185");
+            }
+        }
+        
+        @keyframes morph2 {
+            0%, 100% {
+                d: path("M 180 220 C 200 170, 260 180, 250 230 C 240 280, 190 290, 170 260 C 150 230, 160 200, 180 220");
+            }
+            33% {
+                d: path("M 190 210 C 220 160, 270 190, 255 240 C 240 290, 180 300, 165 265 C 150 230, 170 195, 190 210");
+            }
+            66% {
+                d: path("M 175 225 C 190 175, 255 175, 245 225 C 235 275, 195 285, 175 255 C 155 225, 165 210, 175 225");
+            }
+        }
+        
+        @keyframes morph3 {
+            0%, 100% {
+                d: path("M 200 160 C 230 130, 270 150, 255 180 C 240 210, 200 210, 190 185 C 180 160, 185 145, 200 160");
+            }
+            50% {
+                d: path("M 195 165 C 220 125, 275 155, 260 185 C 245 215, 195 220, 185 190 C 175 160, 180 150, 195 165");
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Hover color shift animation */
+        @keyframes colorShift1 {
+            0%, 100% { stop-color: #4f46e5; }
+            50% { stop-color: #7c3aed; }
+        }
+        
+        @keyframes colorShift2 {
+            0%, 100% { stop-color: #8b5cf6; }
+            50% { stop-color: #a855f7; }
+        }
+        
+        @keyframes colorShift3 {
+            0%, 100% { stop-color: #c4b5fd; }
+            50% { stop-color: #ddd6fe; }
+        }
+        
+        /* Apply animations */
+        .lava-blob-1 {
+            animation: morph1 8s ease-in-out infinite;
+        }
+        
+        .lava-blob-2 {
+            animation: morph2 6s ease-in-out infinite;
+        }
+        
+        .lava-blob-3 {
+            animation: morph3 5s ease-in-out infinite, float 4s ease-in-out infinite;
+        }
+        
+        .highlight-orb {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Hover state triggers faster, more intense color shifting */
+        .logo-container:hover .color-stop-1 {
+            animation: colorShift1 2s ease-in-out infinite;
+        }
+        
+        .logo-container:hover .color-stop-2 {
+            animation: colorShift2 2.5s ease-in-out infinite;
+        }
+        
+        .logo-container:hover .color-stop-3 {
+            animation: colorShift3 1.8s ease-in-out infinite;
+        }
+        
+        .logo-container:hover .lava-blob-1 {
+            animation: morph1 4s ease-in-out infinite;
+        }
+        
+        .logo-container:hover .lava-blob-2 {
+            animation: morph2 3s ease-in-out infinite;
+        }
+        
+        .logo-container:hover .lava-blob-3 {
+            animation: morph3 2.5s ease-in-out infinite, float 2s ease-in-out infinite;
+        }
+    </style>
+    
+    <defs>
+        <clipPath id="circleClipV4">
+            <circle cx="200" cy="200" r="148"/>
+        </clipPath>
+        
+        <linearGradient id="lavaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop class="color-stop-1" offset="0%" stop-color="#4f46e5"/>
+            <stop class="color-stop-2" offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+        
+        <linearGradient id="lavaGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop class="color-stop-2" offset="0%" stop-color="#8b5cf6"/>
+            <stop class="color-stop-1" offset="100%" stop-color="#6366f1"/>
+        </linearGradient>
+        
+        <linearGradient id="lavaGrad3" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop class="color-stop-3" offset="0%" stop-color="#c4b5fd"/>
+            <stop class="color-stop-2" offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+        
+        <radialGradient id="highlightGrad" cx="50%" cy="30%" r="50%">
+            <stop offset="0%" stop-color="#f5f3ff" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#e0e7ff" stop-opacity="0"/>
+        </radialGradient>
+        
+        <!-- Background gradient for depth -->
+        <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1e1b4b"/>
+            <stop offset="100%" stop-color="#312e81"/>
+        </radialGradient>
+    </defs>
+    
+    <g class="logo-container">
+        <!-- Main sphere outline -->
+        <circle 
+            cx="200" 
+            cy="200" 
+            r="160" 
+            stroke="currentColor" 
+            stroke-width="24" 
+            fill="none"
+        />
+        
+        <!-- Internal lava lamp effect -->
+        <g clip-path="url(#circleClipV4)">
+            <!-- Deep background -->
+            <circle cx="200" cy="200" r="148" fill="url(#bgGrad)"/>
+            
+            <!-- Primary morphing blob -->
+            <path 
+                class="lava-blob-1"
+                d="M 160 180 C 180 120, 280 130, 290 200 C 300 270, 220 310, 160 280 C 100 250, 120 220, 160 180"
+                fill="url(#lavaGrad1)"
+                opacity="0.9"
+            />
+            
+            <!-- Secondary morphing blob -->
+            <path 
+                class="lava-blob-2"
+                d="M 180 220 C 200 170, 260 180, 250 230 C 240 280, 190 290, 170 260 C 150 230, 160 200, 180 220"
+                fill="url(#lavaGrad2)"
+                opacity="0.85"
+            />
+            
+            <!-- Tertiary floating blob -->
+            <path 
+                class="lava-blob-3"
+                d="M 200 160 C 230 130, 270 150, 255 180 C 240 210, 200 210, 190 185 C 180 160, 185 145, 200 160"
+                fill="url(#lavaGrad3)"
+                opacity="0.9"
+            />
+            
+            <!-- Highlight orb for glassy effect -->
+            <ellipse 
+                class="highlight-orb"
+                cx="170" 
+                cy="150" 
+                rx="35" 
+                ry="25"
+                fill="url(#highlightGrad)"
+            />
+        </g>
+    </g>
+</svg>

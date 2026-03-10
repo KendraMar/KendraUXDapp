@@ -1,0 +1,145 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Apollo Logo Variant 7 - Cosmic Nebula
+        Swirling cosmic dust with glowing core
+    -->
+    
+    <style>
+        @keyframes nebulaRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes nebulaPulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
+        
+        @keyframes corePulse {
+            0%, 100% { opacity: 0.8; r: 25; }
+            50% { opacity: 1; r: 30; }
+        }
+        
+        @keyframes coreGlow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes dustFloat {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-5px) translateX(3px); }
+            50% { transform: translateY(-2px) translateX(-2px); }
+            75% { transform: translateY(3px) translateX(-4px); }
+        }
+        
+        .nebula-arm-1 {
+            animation: nebulaRotate 60s linear infinite;
+            transform-origin: 200px 200px;
+        }
+        
+        .nebula-arm-2 {
+            animation: nebulaRotate 45s linear infinite reverse;
+            transform-origin: 200px 200px;
+        }
+        
+        .nebula-cloud {
+            animation: nebulaPulse 4s ease-in-out infinite;
+        }
+        
+        .nebula-core {
+            animation: corePulse 3s ease-in-out infinite;
+        }
+        
+        .nebula-core-glow {
+            animation: coreGlow 2s ease-in-out infinite;
+        }
+        
+        .dust-particle {
+            animation: dustFloat 5s ease-in-out infinite;
+        }
+        
+        .nebula-container:hover .nebula-arm-1 {
+            animation: nebulaRotate 20s linear infinite;
+        }
+        
+        .nebula-container:hover .nebula-arm-2 {
+            animation: nebulaRotate 15s linear infinite reverse;
+        }
+        
+        .nebula-container:hover .nebula-core {
+            animation: corePulse 1.5s ease-in-out infinite;
+        }
+    </style>
+    
+    <defs>
+        <clipPath id="circleClipV7">
+            <circle cx="200" cy="200" r="148"/>
+        </clipPath>
+        
+        <filter id="nebulaBlur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+        </filter>
+        
+        <filter id="coreBlur" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
+        </filter>
+        
+        <radialGradient id="nebulaCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+            <stop offset="30%" stop-color="#a5b4fc" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+        </radialGradient>
+        
+        <radialGradient id="nebulaArm1" cx="30%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#ec4899" stop-opacity="0.8"/>
+            <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </radialGradient>
+        
+        <radialGradient id="nebulaArm2" cx="70%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.7"/>
+            <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+        </radialGradient>
+        
+        <radialGradient id="nebulaBg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1e1b4b"/>
+            <stop offset="100%" stop-color="#030712"/>
+        </radialGradient>
+    </defs>
+    
+    <g class="nebula-container">
+        <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="24" fill="none"/>
+        
+        <g clip-path="url(#circleClipV7)">
+            <circle cx="200" cy="200" r="148" fill="url(#nebulaBg)"/>
+            
+            <!-- Nebula arms -->
+            <g filter="url(#nebulaBlur)">
+                <ellipse class="nebula-arm-1 nebula-cloud" cx="200" cy="200" rx="120" ry="60" fill="url(#nebulaArm1)"/>
+                <ellipse class="nebula-arm-2 nebula-cloud" cx="200" cy="200" rx="100" ry="50" fill="url(#nebulaArm2)" style="animation-delay: -2s"/>
+            </g>
+            
+            <!-- Dust particles -->
+            <g class="dust-particle" style="animation-delay: 0s">
+                <circle cx="140" cy="160" r="2" fill="#ec4899" opacity="0.6"/>
+            </g>
+            <g class="dust-particle" style="animation-delay: 1s">
+                <circle cx="260" cy="180" r="1.5" fill="#06b6d4" opacity="0.5"/>
+            </g>
+            <g class="dust-particle" style="animation-delay: 2s">
+                <circle cx="180" cy="240" r="2" fill="#8b5cf6" opacity="0.6"/>
+            </g>
+            <g class="dust-particle" style="animation-delay: 0.5s">
+                <circle cx="230" cy="140" r="1.5" fill="#a5b4fc" opacity="0.5"/>
+            </g>
+            
+            <!-- Core glow -->
+            <circle class="nebula-core-glow" cx="200" cy="200" r="60" fill="url(#nebulaCore)" filter="url(#coreBlur)"/>
+            
+            <!-- Bright core -->
+            <circle class="nebula-core" cx="200" cy="200" r="25" fill="url(#nebulaCore)"/>
+            <circle cx="200" cy="200" r="8" fill="#fff" opacity="0.9"/>
+        </g>
+    </g>
+</svg>

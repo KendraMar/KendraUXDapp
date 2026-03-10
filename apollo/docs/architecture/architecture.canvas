@@ -1,0 +1,268 @@
+{
+  "nodes": [
+    {
+      "id": "frontend-layer",
+      "type": "text",
+      "x": 100,
+      "y": 50,
+      "width": 400,
+      "height": 100,
+      "color": "1",
+      "text": "# Frontend Layer\n\nReact-based single-page application built with PatternFly 6"
+    },
+    {
+      "id": "entry-point",
+      "type": "file",
+      "file": "entry-point.md",
+      "x": 50,
+      "y": 200,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "app-component",
+      "type": "file",
+      "file": "app-component.md",
+      "x": 400,
+      "y": 200,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "routing",
+      "type": "file",
+      "file": "routing.md",
+      "x": 750,
+      "y": 200,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "components",
+      "type": "file",
+      "file": "components.md",
+      "x": 50,
+      "y": 400,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "pages",
+      "type": "file",
+      "file": "pages.md",
+      "x": 400,
+      "y": 400,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "patternfly",
+      "type": "file",
+      "file": "patternfly-library.md",
+      "x": 750,
+      "y": 400,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "backend-layer",
+      "type": "text",
+      "x": 100,
+      "y": 650,
+      "width": 400,
+      "height": 100,
+      "color": "2",
+      "text": "# Backend Layer\n\nExpress.js server providing API endpoints and static file serving"
+    },
+    {
+      "id": "express-server",
+      "type": "file",
+      "file": "express-server.md",
+      "x": 50,
+      "y": 800,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "api-endpoints",
+      "type": "file",
+      "file": "api-endpoints.md",
+      "x": 400,
+      "y": 800,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "static-serving",
+      "type": "file",
+      "file": "static-serving.md",
+      "x": 750,
+      "y": 800,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "build-layer",
+      "type": "text",
+      "x": 100,
+      "y": 1050,
+      "width": 400,
+      "height": 100,
+      "color": "3",
+      "text": "# Build System\n\nWebpack bundler with Babel transpilation"
+    },
+    {
+      "id": "webpack",
+      "type": "file",
+      "file": "webpack-config.md",
+      "x": 200,
+      "y": 1200,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "babel",
+      "type": "file",
+      "file": "babel-transpilation.md",
+      "x": 550,
+      "y": 1200,
+      "width": 300,
+      "height": 150
+    },
+    {
+      "id": "storage-layer",
+      "type": "text",
+      "x": 100,
+      "y": 1450,
+      "width": 400,
+      "height": 100,
+      "color": "4",
+      "text": "# Storage Layer\n\nLocal file system cache for persistent data"
+    },
+    {
+      "id": "cache-storage",
+      "type": "file",
+      "file": "cache-storage.md",
+      "x": 375,
+      "y": 1600,
+      "width": 300,
+      "height": 150
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "fromNode": "frontend-layer",
+      "fromSide": "bottom",
+      "toNode": "entry-point",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-2",
+      "fromNode": "entry-point",
+      "fromSide": "right",
+      "toNode": "app-component",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-3",
+      "fromNode": "app-component",
+      "fromSide": "right",
+      "toNode": "routing",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-4",
+      "fromNode": "app-component",
+      "fromSide": "bottom",
+      "toNode": "components",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-5",
+      "fromNode": "routing",
+      "fromSide": "bottom",
+      "toNode": "pages",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-6",
+      "fromNode": "components",
+      "fromSide": "right",
+      "toNode": "patternfly",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-7",
+      "fromNode": "pages",
+      "fromSide": "right",
+      "toNode": "patternfly",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-8",
+      "fromNode": "backend-layer",
+      "fromSide": "bottom",
+      "toNode": "express-server",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-9",
+      "fromNode": "express-server",
+      "fromSide": "right",
+      "toNode": "api-endpoints",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-10",
+      "fromNode": "api-endpoints",
+      "fromSide": "right",
+      "toNode": "static-serving",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-11",
+      "fromNode": "api-endpoints",
+      "fromSide": "bottom",
+      "toNode": "cache-storage",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-12",
+      "fromNode": "build-layer",
+      "fromSide": "bottom",
+      "toNode": "webpack",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-13",
+      "fromNode": "webpack",
+      "fromSide": "right",
+      "toNode": "babel",
+      "toSide": "left"
+    },
+    {
+      "id": "edge-14",
+      "fromNode": "webpack",
+      "fromSide": "bottom",
+      "toNode": "static-serving",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-15",
+      "fromNode": "pages",
+      "fromSide": "bottom",
+      "toNode": "api-endpoints",
+      "toSide": "top"
+    },
+    {
+      "id": "edge-16",
+      "fromNode": "storage-layer",
+      "fromSide": "bottom",
+      "toNode": "cache-storage",
+      "toSide": "top"
+    }
+  ]
+}
+
+

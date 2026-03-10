@@ -1,0 +1,2722 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`App tests should render default App component 1`] = `
+<DocumentFragment>
+  <div
+    class="pf-v6-c-page"
+  >
+    <div
+      class="pf-v6-c-skip-to-content"
+    >
+      <a
+        class="pf-v6-c-button pf-m-primary"
+        data-ouia-component-id="OUIA-Generated-Button-primary-1"
+        data-ouia-component-type="PF6/Button"
+        data-ouia-safe="true"
+        href="#primary-app-container"
+      >
+        <span
+          class="pf-v6-c-button__text"
+        >
+          Skip to Content
+        </span>
+      </a>
+    </div>
+    <header
+      class="pf-v6-c-masthead pf-m-display-inline-on-md"
+    >
+      <div
+        class="pf-v6-c-masthead__main"
+      >
+        <div
+          class="pf-v6-c-masthead__brand"
+          data-codemods="true"
+        >
+          <span
+            class="pf-v6-c-masthead__logo"
+            data-codemods="true"
+            style="cursor: pointer;"
+          >
+            <img
+              alt="Red Hat Logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Red_Hat_logo.svg/2560px-Red_Hat_logo.svg.png"
+              style="height: 40px; width: auto;"
+            />
+          </span>
+        </div>
+        <div
+          style="margin-left: 4px; margin-right: 4px;"
+        >
+          <div
+            style="display: contents;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="Red Hat Hybrid Cloud Console menu"
+              class="pf-v6-c-menu-toggle"
+              data-ouia-component-id="OUIA-Generated-MenuToggle-1"
+              data-ouia-component-type="PF6/MenuToggle"
+              data-ouia-safe="true"
+              style="font-size: 14px;"
+              type="button"
+            >
+              <span
+                class="pf-v6-c-menu-toggle__text"
+              >
+                Red Hat Hybrid Cloud Console
+              </span>
+              <span
+                class="pf-v6-c-menu-toggle__controls"
+              >
+                <span
+                  class="pf-v6-c-menu-toggle__toggle-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v6-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          style="margin-right: 4px; width: auto; min-width: auto; transition: all 0.3s ease; position: relative;"
+        >
+          <style>
+            
+            .pf-v6-c-masthead__logo {
+              width: auto !important;
+            }
+            .masthead-search-expanded {
+              --pf-v6-c-search-input--Width: 552px !important;
+              --pf-v6-c-search-input__text-input--Width: 552px !important;
+              --pf-v6-c-search-input--MinWidth: 552px !important;
+            }
+            .masthead-search-expanded .pf-v6-c-search-input,
+            .masthead-search-expanded .pf-v6-c-search-input__text-input,
+            .masthead-search-expanded .pf-v6-c-form-control {
+              width: 552px !important;
+              min-width: 552px !important;
+            }
+            .search-results-dropdown {
+              position: absolute;
+              top: calc(100% + 4px);
+              left: 0;
+              right: 0;
+              z-index: 1000;
+              background: var(--pf-v6-global--BackgroundColor--100);
+              border: var(--pf-v6-global--BorderWidth--sm) solid var(--pf-v6-global--BorderColor--200);
+              border-radius: var(--pf-v6-global--BorderRadius--md);
+              box-shadow: var(--pf-v6-global--BoxShadow--lg);
+              max-height: 400px;
+              overflow-y: auto;
+              padding: 24px;
+            }
+            .search-result-category-badge {
+              font-size: var(--pf-v6-global--FontSize--xs);
+              font-weight: var(--pf-v6-global--FontWeight--semi-bold);
+              color: var(--pf-v6-global--primary-color--100);
+              background-color: var(--pf-v6-global--primary-color--200);
+              padding: var(--pf-v6-global--spacer--xs) var(--pf-v6-global--spacer--sm);
+              border-radius: var(--pf-v6-global--BorderRadius--sm);
+              text-transform: uppercase;
+              letter-spacing: 0.025em;
+              white-space: nowrap;
+              margin-left: auto;
+            }
+          
+          </style>
+          <div
+            style="display: contents;"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="pf-v6-c-input-group pf-m-search-expandable"
+              >
+                <div
+                  class="pf-v6-c-input-group__item pf-m-search-input"
+                  inert=""
+                >
+                  <div
+                    class="pf-v6-c-text-input-group"
+                  >
+                    <div
+                      class="pf-v6-c-text-input-group__main pf-m-icon"
+                    >
+                      <span
+                        class="pf-v6-c-text-input-group__text"
+                      >
+                        <span
+                          class="pf-v6-c-text-input-group__icon"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="pf-v6-svg"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                            />
+                          </svg>
+                        </span>
+                        <input
+                          aria-label="Global search"
+                          class="pf-v6-c-text-input-group__text-input"
+                          placeholder="Search across all services..."
+                          type="text"
+                          value=""
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pf-v6-c-input-group__item pf-m-plain pf-m-search-expand"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-label="Expandable search input toggle"
+                    class="pf-v6-c-button pf-m-plain"
+                    data-ouia-component-id="OUIA-Generated-Button-plain-1"
+                    data-ouia-component-type="PF6/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    <span
+                      class="pf-v6-c-button__icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 512 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="pf-v6-c-input-group__item pf-m-plain pf-m-search-action"
+                  inert=""
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-label="Expandable search input toggle"
+                    class="pf-v6-c-button pf-m-plain"
+                    data-ouia-component-id="OUIA-Generated-Button-plain-2"
+                    data-ouia-component-type="PF6/Button"
+                    data-ouia-safe="true"
+                    type="button"
+                  >
+                    <span
+                      class="pf-v6-c-button__icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="pf-v6-svg"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 352 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pf-v6-c-masthead__content"
+      >
+        <div
+          style="display: flex; align-items: center; gap: 8px; margin-left: auto;"
+        >
+          <div
+            style="display: contents;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="Settings"
+              class="pf-v6-c-button pf-m-control"
+              data-ouia-component-id="OUIA-Generated-Button-control-1"
+              data-ouia-component-type="PF6/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              <span
+                class="pf-v6-c-button__text"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="Help"
+              class="pf-v6-c-button pf-m-control"
+              data-ouia-component-id="OUIA-Generated-Button-control-2"
+              data-ouia-component-type="PF6/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              <span
+                class="pf-v6-c-button__text"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  width="1em"
+                >
+                  <path
+                    d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="Alerts"
+              class="pf-v6-c-button pf-m-control"
+              data-ouia-component-id="OUIA-Generated-Button-control-3"
+              data-ouia-component-type="PF6/Button"
+              data-ouia-safe="true"
+              type="button"
+            >
+              <span
+                class="pf-v6-c-button__text"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 896 1024"
+                  width="1em"
+                >
+                  <path
+                    d="M448,0 C465.333333,0 480.333333,6.33333333 493,19 C505.666667,31.6666667 512,46.6666667 512,64 L512,106 L514.23,106.45 C587.89,121.39 648.48,157.24 696,214 C744,271.333333 768,338.666667 768,416 C768,500 780,568.666667 804,622 C818.666667,652.666667 841.333333,684 872,716 C873.773676,718.829136 875.780658,721.505113 878,724 C890,737.333333 896,752.333333 896,769 C896,785.666667 890,800.333333 878,813 C866,825.666667 850.666667,832 832,832 L63.3,832 C44.9533333,831.84 29.8533333,825.506667 18,813 C6,800.333333 0,785.666667 0,769 C0,752.333333 6,737.333333 18,724 L24,716 L25.06,714.9 C55.1933333,683.28 77.5066667,652.313333 92,622 C116,568.666667 128,500 128,416 C128,338.666667 152,271.333333 200,214 C248,156.666667 309.333333,120.666667 384,106 L384,63.31 C384.166667,46.27 390.5,31.5 403,19 C415.666667,6.33333333 430.666667,0 448,0 Z M576,896 L576,897.08 C575.74,932.6 563.073333,962.573333 538,987 C512.666667,1011.66667 482.666667,1024 448,1024 C413.333333,1024 383.333333,1011.66667 358,987 C332.666667,962.333333 320,932 320,896 L576,896 Z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <button
+              aria-expanded="false"
+              aria-label="User menu"
+              class="pf-v6-c-menu-toggle"
+              data-ouia-component-id="OUIA-Generated-MenuToggle-2"
+              data-ouia-component-type="PF6/MenuToggle"
+              data-ouia-safe="true"
+              type="button"
+            >
+              <span
+                class="pf-v6-c-menu-toggle__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-v6-svg"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="pf-v6-c-menu-toggle__text"
+              >
+                Kendra
+              </span>
+              <span
+                class="pf-v6-c-menu-toggle__controls"
+              >
+                <span
+                  class="pf-v6-c-menu-toggle__toggle-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="pf-v6-svg"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div
+      class="pf-v6-c-page__main-container"
+    >
+      <main
+        class="pf-v6-c-page__main"
+        id="primary-app-container"
+        tabindex="-1"
+      >
+        <div
+          class="pf-v6-c-drawer pf-m-inline"
+        >
+          <div
+            class="pf-v6-c-drawer__main"
+          >
+            <div
+              class="pf-v6-c-drawer__content"
+            >
+              <div
+                class="pf-v6-c-drawer pf-m-inline"
+              >
+                <div
+                  class="pf-v6-c-drawer__main"
+                >
+                  <div
+                    class="pf-v6-c-drawer__content"
+                  >
+                    <style>
+                      
+    .pf-v6-c-card.explore-capability-card {
+      cursor: pointer !important;
+      border: 1px solid var(--pf-v6-global--BorderColor--100) !important;
+      transition: all 0.2s ease-in-out !important;
+    }
+    .pf-v6-c-card.explore-capability-card:hover {
+      border: 1px solid var(--pf-v6-global--primary-color--100) !important;
+      box-shadow: var(--pf-v6-global--BoxShadow--md) !important;
+      background-color: var(--pf-v6-global--BackgroundColor--300) !important;
+      transform: translateY(-2px) !important;
+    }
+    .pf-v6-c-card.explore-capability-card:active {
+      transform: translateY(0px) !important;
+    }
+    /* Ensure proper wrapping behavior for all screen sizes */
+    .pf-v6-l-gallery {
+      flex-wrap: wrap !important;
+      display: flex !important;
+    }
+    .pf-v6-l-gallery &gt; * {
+      flex-shrink: 1 !important;
+      flex-grow: 1 !important;
+      min-width: 280px !important;
+    }
+    
+    /* Override PatternFly Gallery defaults for custom sized cards */
+    .pf-v6-l-gallery &gt; .settings-card-wide,
+    .pf-v6-l-gallery &gt; .explore-capabilities-wide,
+    .pf-v6-l-gallery &gt; .subscriptions-extra-wide {
+      flex-grow: 0 !important;
+    }
+    
+    /* Make first row cards (RHEL, OpenShift, Ansible, Recently Visited) same height */
+    .pf-v6-c-card.first-row-card {
+      height: 280px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-self: stretch !important;
+    }
+    
+    /* Ensure card body grows to fill available space */
+    .pf-v6-c-card.first-row-card .pf-v6-c-card__body {
+      flex-grow: 1 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+    
+    /* Ensure card header and footer have consistent sizing */
+    .pf-v6-c-card.first-row-card .pf-v6-c-card__header,
+    .pf-v6-c-card.first-row-card .pf-v6-c-card__footer {
+      flex-shrink: 0 !important;
+    }
+    
+    /* Create a more compact layout by reducing gap after first row */
+    .pf-v6-l-gallery {
+      gap: 16px !important;
+    }
+    
+    /* Column spans for larger screens - PatternFly Gallery uses flexbox */
+    @media (min-width: 1200px) {
+      /* Specific adjustments for better visual alignment */
+      .explore-capabilities-wide {
+        margin-top: -8px !important;
+      }
+      
+      /* Ensure first row cards have consistent height */
+      .pf-v6-c-card.first-row-card {
+        height: 280px !important;
+      }
+      
+      /* Settings card - 2 columns out of 8 column grid = 25% */
+      .settings-card-wide {
+        flex: 0 0 calc(25% - 16px) !important;
+        max-width: calc(25% - 16px) !important;
+        min-width: calc(25% - 16px) !important;
+      }
+      
+      /* Explore capabilities card - 6 columns out of 8 column grid = 75% */
+      .explore-capabilities-wide {
+        flex: 0 0 calc(75% - 16px) !important;
+        max-width: calc(75% - 16px) !important;
+        min-width: calc(75% - 16px) !important;
+      }
+      
+      /* Subscriptions card - 8 columns out of 8 column grid = 100% */
+      .subscriptions-extra-wide {
+        flex: 0 0 calc(100% - 16px) !important;
+        max-width: calc(100% - 16px) !important;
+        min-width: calc(100% - 16px) !important;
+      }
+    }
+    
+    @media (min-width: 992px) and (max-width: 1199px) {
+      /* Settings card - 33% on medium screens */
+      .settings-card-wide {
+        flex: 0 0 calc(33.333% - 16px) !important;
+        max-width: calc(33.333% - 16px) !important;
+        min-width: calc(33.333% - 16px) !important;
+      }
+      
+      /* Explore capabilities card - 66% on medium screens */
+      .explore-capabilities-wide {
+        flex: 0 0 calc(66.666% - 16px) !important;
+        max-width: calc(66.666% - 16px) !important;
+        min-width: calc(66.666% - 16px) !important;
+      }
+      
+      /* Subscriptions card - 100% on medium screens */
+      .subscriptions-extra-wide {
+        flex: 0 0 calc(100% - 16px) !important;
+        max-width: calc(100% - 16px) !important;
+        min-width: calc(100% - 16px) !important;
+      }
+    }
+    
+    /* On smaller screens, all cards take full width */
+    @media (max-width: 991px) {
+      .settings-card-wide,
+      .explore-capabilities-wide,
+      .subscriptions-extra-wide {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        min-width: 280px !important;
+      }
+    }
+  
+                    </style>
+                    <section
+                      class="pf-v6-c-page__main-section"
+                    >
+                      <div
+                        class="pf-v6-c-page__main-body"
+                      >
+                        <div
+                          class="pf-v6-l-flex pf-m-space-items-md pf-m-column"
+                        >
+                          <div
+                            class=""
+                          >
+                            <div
+                              style="max-width: 1566px; margin: 0px auto; width: 100%;"
+                            >
+                              <div
+                                class="pf-v6-l-flex pf-m-align-items-flex-start pf-m-justify-content-space-between"
+                              >
+                                <div
+                                  class="pf-m-flex-1"
+                                >
+                                  <div
+                                    class="pf-v6-l-flex pf-m-space-items-xs pf-m-column"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <h1
+                                        class="pf-v6-c-title pf-m-2xl"
+                                        data-ouia-component-id="OUIA-Generated-Title-1"
+                                        data-ouia-component-type="PF6/Title"
+                                        data-ouia-safe="true"
+                                      >
+                                        Hi, Kendra
+                                      </h1>
+                                    </div>
+                                    <div
+                                      class=""
+                                    >
+                                      <h2
+                                        class="pf-v6-c-title pf-m-lg"
+                                        data-ouia-component-id="OUIA-Generated-Title-2"
+                                        data-ouia-component-type="PF6/Title"
+                                        data-ouia-safe="true"
+                                      >
+                                        Welcome to your Hybrid Cloud Console.
+                                      </h2>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class=""
+                                >
+                                  <div
+                                    class="pf-v6-l-flex pf-m-space-items-sm"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <button
+                                        class="pf-v6-c-button pf-m-link"
+                                        data-ouia-component-id="OUIA-Generated-Button-link-1"
+                                        data-ouia-component-type="PF6/Button"
+                                        data-ouia-safe="true"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="pf-v6-c-button__text"
+                                        >
+                                          Reset to default
+                                        </span>
+                                      </button>
+                                    </div>
+                                    <div
+                                      class=""
+                                    >
+                                      <button
+                                        class="pf-v6-c-button pf-m-primary"
+                                        data-ouia-component-id="OUIA-Generated-Button-primary-2"
+                                        data-ouia-component-type="PF6/Button"
+                                        data-ouia-safe="true"
+                                        type="button"
+                                      >
+                                        <span
+                                          class="pf-v6-c-button__text"
+                                        >
+                                          + Add widgets
+                                        </span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class=""
+                          >
+                            <div
+                              style="max-width: 1566px; margin: 0px auto; width: 100%;"
+                            >
+                              <hr
+                                class="pf-v6-c-divider"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class=""
+                          >
+                            <div
+                              style="max-width: 1566px; margin: 0px auto; width: 100%;"
+                            >
+                              <div
+                                class="pf-v6-l-gallery pf-m-gutter"
+                                style="--pf-v6-l-gallery--GridTemplateColumns--min: 280px; --pf-v6-l-gallery--GridTemplateColumns--min-on-sm: 280px; --pf-v6-l-gallery--GridTemplateColumns--min-on-md: 280px; --pf-v6-l-gallery--GridTemplateColumns--min-on-lg: 280px; --pf-v6-l-gallery--GridTemplateColumns--min-on-xl: 280px; --pf-v6-l-gallery--GridTemplateColumns--max: none;"
+                              >
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide first-row-card"
+                                  data-ouia-component-id="OUIA-Generated-Card-1"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-3"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Red Hat Enterprise Linux
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-3"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-4"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-1"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Proactively assess, secure, and stabilize the business-critical services that you scale from your RHEL systems.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-2"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        Insights for RHEL
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 448 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide first-row-card"
+                                  data-ouia-component-id="OUIA-Generated-Card-2"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-4"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Red Hat OpenShift
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-5"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-6"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-2"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Build, run, and scale container-based applications - now with developer tools, CI/CD, and release management.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-3"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        OpenShift
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 448 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide first-row-card"
+                                  data-ouia-component-id="OUIA-Generated-Card-3"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-5"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Ansible Automation Platform
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-7"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-8"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-3"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Create, share, and manage automations - from development and operations, to security and network teams.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-4"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        Ansible
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 448 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide first-row-card"
+                                  data-ouia-component-id="OUIA-Generated-Card-4"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-6"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Recently Visited
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-9"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-10"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                    >
+                                      <div
+                                        class=""
+                                      >
+                                        <div
+                                          class="pf-v6-c-content"
+                                          data-ouia-component-id="OUIA-Generated-Content-4"
+                                          data-ouia-component-type="PF6/Content"
+                                          data-ouia-safe="true"
+                                          data-pf-content="true"
+                                        >
+                                          Quick access to your most recently visited services and resources.
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="pf-m-flex-1"
+                                      >
+                                        <ul
+                                          class="pf-v6-c-list pf-m-plain"
+                                          role="list"
+                                        >
+                                          <li
+                                            class=""
+                                          >
+                                            <span>
+                                              <button
+                                                class="pf-v6-c-button pf-m-link"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-5"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  Dashboard
+                                                </span>
+                                              </button>
+                                            </span>
+                                          </li>
+                                          <li
+                                            class=""
+                                          >
+                                            <span>
+                                              <button
+                                                class="pf-v6-c-button pf-m-link"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-6"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  Alert Manager
+                                                </span>
+                                              </button>
+                                            </span>
+                                          </li>
+                                          <li
+                                            class=""
+                                          >
+                                            <span>
+                                              <button
+                                                class="pf-v6-c-button pf-m-link"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-7"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  Data Integration
+                                                </span>
+                                              </button>
+                                            </span>
+                                          </li>
+                                          <li
+                                            class=""
+                                          >
+                                            <span>
+                                              <button
+                                                class="pf-v6-c-button pf-m-link"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-8"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  My User Access
+                                                </span>
+                                              </button>
+                                            </span>
+                                          </li>
+                                          <li
+                                            class=""
+                                          >
+                                            <span>
+                                              <button
+                                                class="pf-v6-c-button pf-m-link"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-9"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  Event Log
+                                                </span>
+                                              </button>
+                                            </span>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-5"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-none pf-m-column"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <h4
+                                                class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                                data-ouia-component-id="OUIA-Generated-Title-7"
+                                                data-ouia-component-type="PF6/Title"
+                                                data-ouia-safe="true"
+                                              >
+                                                Settings
+                                              </h4>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                class="pf-v6-c-button pf-m-link pf-m-small"
+                                                data-ouia-component-id="OUIA-Generated-Button-link-10"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  Manage settings
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-11"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-12"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                    >
+                                      <div
+                                        class=""
+                                      >
+                                        <div
+                                          class="pf-v6-l-flex pf-m-space-items-xs pf-m-column"
+                                        >
+                                          <div
+                                            class=""
+                                          >
+                                            <div
+                                              class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                            >
+                                              <div
+                                                class=""
+                                              >
+                                                <small
+                                                  class="pf-v6-c-content--small"
+                                                  data-ouia-component-id="OUIA-Generated-Content-5"
+                                                  data-ouia-component-type="PF6/Content"
+                                                  data-ouia-safe="true"
+                                                  data-pf-content="true"
+                                                  style="color: var(--pf-v6-global--Color--200);"
+                                                >
+                                                  Recently fired events
+                                                </small>
+                                              </div>
+                                              <div
+                                                class=""
+                                              >
+                                                <p
+                                                  class="pf-v6-c-content--p"
+                                                  data-ouia-component-id="OUIA-Generated-Content-6"
+                                                  data-ouia-component-type="PF6/Content"
+                                                  data-ouia-safe="true"
+                                                  data-pf-content="true"
+                                                  style="font-weight: bold; font-size: 1.2rem;"
+                                                >
+                                                  7
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class=""
+                                          >
+                                            <div
+                                              class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                            >
+                                              <div
+                                                class=""
+                                              >
+                                                <small
+                                                  class="pf-v6-c-content--small"
+                                                  data-ouia-component-id="OUIA-Generated-Content-7"
+                                                  data-ouia-component-type="PF6/Content"
+                                                  data-ouia-safe="true"
+                                                  data-pf-content="true"
+                                                  style="color: var(--pf-v6-global--Color--200);"
+                                                >
+                                                  All data integrations
+                                                </small>
+                                              </div>
+                                              <div
+                                                class=""
+                                              >
+                                                <p
+                                                  class="pf-v6-c-content--p"
+                                                  data-ouia-component-id="OUIA-Generated-Content-8"
+                                                  data-ouia-component-type="PF6/Content"
+                                                  data-ouia-safe="true"
+                                                  data-pf-content="true"
+                                                  style="font-weight: bold; font-size: 1.2rem;"
+                                                >
+                                                  12
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-6"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-8"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Image Builder
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-13"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-14"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-9"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Create customized system images for disks, VMs, and cloud platforms. Image Builder automates configurations, saving you time and ensuring consistent, deployment-ready images every time.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-11"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        Images
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 448 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height explore-capabilities-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-7"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-9"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Explore capabilities
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-15"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-16"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-l-flex pf-m-space-items-lg pf-m-column"
+                                    >
+                                      <div
+                                        class=""
+                                      >
+                                        <div
+                                          class="pf-v6-l-flex pf-m-space-items-md pf-m-row"
+                                        >
+                                          <div
+                                            class="pf-m-flex-1"
+                                          >
+                                            <div
+                                              class="pf-v6-c-card pf-m-compact pf-m-secondary explore-capability-card"
+                                              data-ouia-component-id="OUIA-Generated-Card-8"
+                                              data-ouia-component-type="PF6/Card"
+                                              data-ouia-safe="true"
+                                              id=""
+                                            >
+                                              <div
+                                                class="pf-v6-c-card__body"
+                                              >
+                                                <div
+                                                  class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                                >
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <h4
+                                                      class="pf-v6-c-title pf-m-md"
+                                                      data-ouia-component-id="OUIA-Generated-Title-10"
+                                                      data-ouia-component-type="PF6/Title"
+                                                      data-ouia-safe="true"
+                                                    >
+                                                      Get started with a tour
+                                                    </h4>
+                                                  </div>
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <small
+                                                      class="pf-v6-c-content--small"
+                                                      data-ouia-component-id="OUIA-Generated-Content-10"
+                                                      data-ouia-component-type="PF6/Content"
+                                                      data-ouia-safe="true"
+                                                      data-pf-content="true"
+                                                    >
+                                                      Take a quick guided tour to understand how the Red Hat Hybrid Cloud Console's capabilities will increase your efficiency
+                                                    </small>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="pf-m-flex-1"
+                                          >
+                                            <div
+                                              class="pf-v6-c-card pf-m-compact pf-m-secondary explore-capability-card"
+                                              data-ouia-component-id="OUIA-Generated-Card-9"
+                                              data-ouia-component-type="PF6/Card"
+                                              data-ouia-safe="true"
+                                              id=""
+                                            >
+                                              <div
+                                                class="pf-v6-c-card__body"
+                                              >
+                                                <div
+                                                  class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                                >
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <h4
+                                                      class="pf-v6-c-title pf-m-md"
+                                                      data-ouia-component-id="OUIA-Generated-Title-11"
+                                                      data-ouia-component-type="PF6/Title"
+                                                      data-ouia-safe="true"
+                                                    >
+                                                      Try OpenShift on AWS
+                                                    </h4>
+                                                  </div>
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <small
+                                                      class="pf-v6-c-content--small"
+                                                      data-ouia-component-id="OUIA-Generated-Content-11"
+                                                      data-ouia-component-type="PF6/Content"
+                                                      data-ouia-safe="true"
+                                                      data-pf-content="true"
+                                                    >
+                                                      Quickly build, deploy, and scale applications with Red Hat OpenShift Service on AWS (ROSA), our fully-managed turnkey application platform.
+                                                    </small>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="pf-m-flex-1"
+                                          >
+                                            <div
+                                              class="pf-v6-c-card pf-m-compact pf-m-secondary explore-capability-card"
+                                              data-ouia-component-id="OUIA-Generated-Card-10"
+                                              data-ouia-component-type="PF6/Card"
+                                              data-ouia-safe="true"
+                                              id=""
+                                            >
+                                              <div
+                                                class="pf-v6-c-card__body"
+                                              >
+                                                <div
+                                                  class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                                >
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <h4
+                                                      class="pf-v6-c-title pf-m-md"
+                                                      data-ouia-component-id="OUIA-Generated-Title-12"
+                                                      data-ouia-component-type="PF6/Title"
+                                                      data-ouia-safe="true"
+                                                    >
+                                                      Try our products in the Developer Sandbox
+                                                    </h4>
+                                                  </div>
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <small
+                                                      class="pf-v6-c-content--small"
+                                                      data-ouia-component-id="OUIA-Generated-Content-12"
+                                                      data-ouia-component-type="PF6/Content"
+                                                      data-ouia-safe="true"
+                                                      data-pf-content="true"
+                                                    >
+                                                      The Developer Sandbox offers no-cost access to Red Hat products and technologies for trial use - no setup or configuration necessary.
+                                                    </small>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class=""
+                                      >
+                                        <div
+                                          class="pf-v6-l-flex pf-m-space-items-md pf-m-row pf-m-justify-content-flex-start"
+                                        >
+                                          <div
+                                            class="pf-m-flex-1"
+                                            style="max-width: calc(33.333% - 8px);"
+                                          >
+                                            <div
+                                              class="pf-v6-c-card pf-m-compact pf-m-secondary explore-capability-card"
+                                              data-ouia-component-id="OUIA-Generated-Card-11"
+                                              data-ouia-component-type="PF6/Card"
+                                              data-ouia-safe="true"
+                                              id=""
+                                            >
+                                              <div
+                                                class="pf-v6-c-card__body"
+                                              >
+                                                <div
+                                                  class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                                >
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <h4
+                                                      class="pf-v6-c-title pf-m-md"
+                                                      data-ouia-component-id="OUIA-Generated-Title-13"
+                                                      data-ouia-component-type="PF6/Title"
+                                                      data-ouia-safe="true"
+                                                    >
+                                                      Analyze RHEL environments
+                                                    </h4>
+                                                  </div>
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <small
+                                                      class="pf-v6-c-content--small"
+                                                      data-ouia-component-id="OUIA-Generated-Content-13"
+                                                      data-ouia-component-type="PF6/Content"
+                                                      data-ouia-safe="true"
+                                                      data-pf-content="true"
+                                                    >
+                                                      Analyze platforms and applications from the console to better manage your hybrid cloud environments.
+                                                    </small>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="pf-m-flex-1"
+                                            style="max-width: calc(33.333% - 8px);"
+                                          >
+                                            <div
+                                              class="pf-v6-c-card pf-m-compact pf-m-secondary explore-capability-card"
+                                              data-ouia-component-id="OUIA-Generated-Card-12"
+                                              data-ouia-component-type="PF6/Card"
+                                              data-ouia-safe="true"
+                                              id=""
+                                            >
+                                              <div
+                                                class="pf-v6-c-card__body"
+                                              >
+                                                <div
+                                                  class="pf-v6-l-flex pf-m-space-items-sm pf-m-column"
+                                                >
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <h4
+                                                      class="pf-v6-c-title pf-m-md"
+                                                      data-ouia-component-id="OUIA-Generated-Title-14"
+                                                      data-ouia-component-type="PF6/Title"
+                                                      data-ouia-safe="true"
+                                                    >
+                                                      Convert from CentOS to RHEL
+                                                    </h4>
+                                                  </div>
+                                                  <div
+                                                    class=""
+                                                  >
+                                                    <small
+                                                      class="pf-v6-c-content--small"
+                                                      data-ouia-component-id="OUIA-Generated-Content-14"
+                                                      data-ouia-component-type="PF6/Content"
+                                                      data-ouia-safe="true"
+                                                      data-pf-content="true"
+                                                    >
+                                                      Seamlessly migrate your CentOS systems to Red Hat Enterprise Linux with our conversion tools and guidance.
+                                                    </small>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-13"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-15"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Advanced Cluster Security
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-17"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-18"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-15"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Fully hosted software as a service for protecting cloud-native applications and Kubernetes.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-12"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        RHACS Cloud Service
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 448 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height settings-card-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-14"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-16"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Red Hat OpenShift AI
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-19"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-20"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-c-content"
+                                      data-ouia-component-id="OUIA-Generated-Content-16"
+                                      data-ouia-component-type="PF6/Content"
+                                      data-ouia-safe="true"
+                                      data-pf-content="true"
+                                    >
+                                      Create, train, and serve artificial intelligence and machine learning (AI/ML) models.
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="pf-v6-c-card__footer"
+                                  >
+                                    <button
+                                      class="pf-v6-c-button pf-m-link"
+                                      data-ouia-component-id="OUIA-Generated-Button-link-13"
+                                      data-ouia-component-type="PF6/Button"
+                                      data-ouia-safe="true"
+                                      type="button"
+                                    >
+                                      <span
+                                        class="pf-v6-c-button__text"
+                                      >
+                                        OpenShift AI
+                                      </span>
+                                      <span
+                                        class="pf-v6-c-button__icon pf-m-end"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          class="pf-v6-svg"
+                                          fill="currentColor"
+                                          height="1em"
+                                          role="img"
+                                          viewBox="0 0 512 512"
+                                          width="1em"
+                                        >
+                                          <path
+                                            d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div
+                                  class="pf-v6-c-card pf-m-full-height subscriptions-extra-wide"
+                                  data-ouia-component-id="OUIA-Generated-Card-15"
+                                  data-ouia-component-type="PF6/Card"
+                                  data-ouia-safe="true"
+                                  id=""
+                                >
+                                  <div
+                                    class="pf-v6-c-card__header"
+                                  >
+                                    <div
+                                      class="pf-v6-c-card__header-main"
+                                    >
+                                      <div
+                                        class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between"
+                                      >
+                                        <div
+                                          class=""
+                                        >
+                                          <h4
+                                            class="pf-v6-c-title pf-m-h4 pf-v6-c-card__title"
+                                            data-ouia-component-id="OUIA-Generated-Title-17"
+                                            data-ouia-component-type="PF6/Title"
+                                            data-ouia-safe="true"
+                                          >
+                                            Subscriptions
+                                          </h4>
+                                        </div>
+                                        <div
+                                          class=""
+                                        >
+                                          <div
+                                            class="pf-v6-l-flex pf-m-space-items-xs"
+                                          >
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="More actions"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-21"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 192 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                            <div
+                                              class=""
+                                            >
+                                              <button
+                                                aria-label="Drag to reorder"
+                                                class="pf-v6-c-button pf-m-plain"
+                                                data-ouia-component-id="OUIA-Generated-Button-plain-22"
+                                                data-ouia-component-type="PF6/Button"
+                                                data-ouia-safe="true"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="pf-v6-c-button__text"
+                                                >
+                                                  <svg
+                                                    aria-hidden="true"
+                                                    class="pf-v6-svg"
+                                                    fill="currentColor"
+                                                    height="1em"
+                                                    role="img"
+                                                    viewBox="0 0 320 512"
+                                                    width="1em"
+                                                  >
+                                                    <path
+                                                      d="M96 32H32C14.33 32 0 46.33 0 64v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160H32c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zM288 32h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32zm0 160h-64c-17.67 0-32 14.33-32 32v64c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64c0-17.67-14.33-32-32-32z"
+                                                    />
+                                                  </svg>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <hr
+                                    class="pf-v6-c-divider"
+                                  />
+                                  <div
+                                    class="pf-v6-c-card__body"
+                                  >
+                                    <div
+                                      class="pf-v6-l-flex pf-m-space-items-md pf-m-row"
+                                    >
+                                      <div
+                                        class="pf-m-flex-1"
+                                      >
+                                        <div
+                                          class="pf-v6-c-alert pf-m-inline pf-m-info"
+                                          data-ouia-component-id="OUIA-Generated-Alert-info-1"
+                                          data-ouia-component-type="PF6/Alert"
+                                          data-ouia-safe="true"
+                                        >
+                                          <div
+                                            class="pf-v6-c-alert__icon"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-v6-svg"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              viewBox="0 0 512 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <h4
+                                            class="pf-v6-c-alert__title"
+                                          >
+                                            <span
+                                              class="pf-v6-screen-reader"
+                                            >
+                                              Info alert:
+                                            </span>
+                                            Active Subscriptions
+                                          </h4>
+                                          <div
+                                            class="pf-v6-c-alert__description"
+                                          >
+                                            15 active
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="pf-m-flex-1"
+                                      >
+                                        <div
+                                          class="pf-v6-c-alert pf-m-inline pf-m-warning"
+                                          data-ouia-component-id="OUIA-Generated-Alert-warning-1"
+                                          data-ouia-component-type="PF6/Alert"
+                                          data-ouia-safe="true"
+                                        >
+                                          <div
+                                            class="pf-v6-c-alert__icon"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-v6-svg"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              viewBox="0 0 576 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <h4
+                                            class="pf-v6-c-alert__title"
+                                          >
+                                            <span
+                                              class="pf-v6-screen-reader"
+                                            >
+                                              Warning alert:
+                                            </span>
+                                            Expiring Soon
+                                          </h4>
+                                          <div
+                                            class="pf-v6-c-alert__description"
+                                          >
+                                            3 expiring
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="pf-m-flex-1"
+                                      >
+                                        <div
+                                          class="pf-v6-c-alert pf-m-inline pf-m-danger"
+                                          data-ouia-component-id="OUIA-Generated-Alert-danger-1"
+                                          data-ouia-component-type="PF6/Alert"
+                                          data-ouia-safe="true"
+                                        >
+                                          <div
+                                            class="pf-v6-c-alert__icon"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-v6-svg"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              viewBox="0 0 512 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <h4
+                                            class="pf-v6-c-alert__title"
+                                          >
+                                            <span
+                                              class="pf-v6-screen-reader"
+                                            >
+                                              Danger alert:
+                                            </span>
+                                            Usage Alerts
+                                          </h4>
+                                          <div
+                                            class="pf-v6-c-alert__description"
+                                          >
+                                            2 alerts
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="pf-m-flex-1"
+                                      >
+                                        <div
+                                          class="pf-v6-c-alert pf-m-inline pf-m-success"
+                                          data-ouia-component-id="OUIA-Generated-Alert-success-1"
+                                          data-ouia-component-type="PF6/Alert"
+                                          data-ouia-safe="true"
+                                        >
+                                          <div
+                                            class="pf-v6-c-alert__icon"
+                                          >
+                                            <svg
+                                              aria-hidden="true"
+                                              class="pf-v6-svg"
+                                              fill="currentColor"
+                                              height="1em"
+                                              role="img"
+                                              viewBox="0 0 512 512"
+                                              width="1em"
+                                            >
+                                              <path
+                                                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <h4
+                                            class="pf-v6-c-alert__title"
+                                          >
+                                            <span
+                                              class="pf-v6-screen-reader"
+                                            >
+                                              Success alert:
+                                            </span>
+                                            Available Credits
+                                          </h4>
+                                          <div
+                                            class="pf-v6-c-alert__description"
+                                          >
+                                            $12,500
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class=""
+                          >
+                            <div
+                              style="max-width: 1566px; margin: 0px auto; width: 100%;"
+                            >
+                              <div
+                                style="text-align: center; margin-top: 32px;"
+                              >
+                                <button
+                                  class="pf-v6-c-button pf-m-secondary pf-m-display-lg"
+                                  data-ouia-component-id="OUIA-Generated-Button-secondary-1"
+                                  data-ouia-component-type="PF6/Button"
+                                  data-ouia-safe="true"
+                                  type="button"
+                                >
+                                  <span
+                                    class="pf-v6-c-button__text"
+                                  >
+                                    Explore All Services
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div
+                    class="pf-v6-c-drawer__panel"
+                    hidden=""
+                    id="pf-drawer-panel-10"
+                    style="--pf-v6-c-drawer__panel--md--FlexBasis: 580px;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="pf-v6-c-drawer__panel"
+              hidden=""
+              id="pf-drawer-panel-11"
+              style="--pf-v6-c-drawer__panel--md--FlexBasis: 580px;"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;

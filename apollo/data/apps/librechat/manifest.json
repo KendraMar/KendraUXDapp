@@ -1,0 +1,20 @@
+{
+  "id": "librechat",
+  "displayName": "LibreChat",
+  "description": "LibreChat integration for AI conversations",
+  "icon": "CommentsIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/librechat",
+    "displayName": "LibreChat",
+    "icon": "CommentsIcon"
+  },
+  "routes": [
+    {
+      "path": "/librechat",
+      "page": "LibreChat"
+    }
+  ],
+  "apiPath": "/api/librechat"
+}

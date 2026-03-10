@@ -1,0 +1,153 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Apollo Logo Variant 9 - Firefly Swarm
+        Floating glowing particles with trails
+    -->
+    
+    <style>
+        @keyframes fireflyFloat1 {
+            0%, 100% { transform: translate(0, 0); opacity: 0.9; }
+            25% { transform: translate(15px, -20px); opacity: 1; }
+            50% { transform: translate(-10px, -15px); opacity: 0.7; }
+            75% { transform: translate(20px, 10px); opacity: 1; }
+        }
+        
+        @keyframes fireflyFloat2 {
+            0%, 100% { transform: translate(0, 0); opacity: 0.8; }
+            33% { transform: translate(-20px, 15px); opacity: 1; }
+            66% { transform: translate(10px, -25px); opacity: 0.6; }
+        }
+        
+        @keyframes fireflyFloat3 {
+            0%, 100% { transform: translate(0, 0); opacity: 0.7; }
+            50% { transform: translate(25px, 20px); opacity: 1; }
+        }
+        
+        @keyframes fireflyPulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        
+        @keyframes glowWave {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+        
+        .firefly-1 { animation: fireflyFloat1 8s ease-in-out infinite; }
+        .firefly-2 { animation: fireflyFloat2 7s ease-in-out infinite; }
+        .firefly-3 { animation: fireflyFloat3 9s ease-in-out infinite; }
+        .firefly-4 { animation: fireflyFloat1 6s ease-in-out infinite reverse; }
+        .firefly-5 { animation: fireflyFloat2 8s ease-in-out infinite 2s; }
+        .firefly-6 { animation: fireflyFloat3 7s ease-in-out infinite 1s; }
+        .firefly-7 { animation: fireflyFloat1 9s ease-in-out infinite 3s; }
+        .firefly-8 { animation: fireflyFloat2 6s ease-in-out infinite reverse 1.5s; }
+        
+        .firefly-glow {
+            animation: fireflyPulse 2s ease-in-out infinite;
+        }
+        
+        .ambient-glow {
+            animation: glowWave 4s ease-in-out infinite;
+        }
+        
+        .firefly-container:hover .firefly-1,
+        .firefly-container:hover .firefly-2,
+        .firefly-container:hover .firefly-3,
+        .firefly-container:hover .firefly-4,
+        .firefly-container:hover .firefly-5,
+        .firefly-container:hover .firefly-6,
+        .firefly-container:hover .firefly-7,
+        .firefly-container:hover .firefly-8 {
+            animation-duration: 3s;
+        }
+    </style>
+    
+    <defs>
+        <clipPath id="circleClipV9">
+            <circle cx="200" cy="200" r="148"/>
+        </clipPath>
+        
+        <filter id="fireflyGlow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+        </filter>
+        
+        <radialGradient id="fireflyBg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1a1a2e"/>
+            <stop offset="100%" stop-color="#0a0a14"/>
+        </radialGradient>
+        
+        <radialGradient id="fireflyLight" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="50%" stop-color="#fbbf24"/>
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+        </radialGradient>
+        
+        <radialGradient id="fireflyLightBlue" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a5f3fc"/>
+            <stop offset="50%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+        </radialGradient>
+        
+        <radialGradient id="fireflyLightGreen" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#bbf7d0"/>
+            <stop offset="50%" stop-color="#4ade80"/>
+            <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    
+    <g class="firefly-container">
+        <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="24" fill="none"/>
+        
+        <g clip-path="url(#circleClipV9)">
+            <circle cx="200" cy="200" r="148" fill="url(#fireflyBg)"/>
+            
+            <!-- Ambient glow layer -->
+            <g filter="url(#fireflyGlow)" class="ambient-glow">
+                <circle cx="150" cy="180" r="40" fill="#fbbf24" opacity="0.15"/>
+                <circle cx="250" cy="220" r="35" fill="#22d3ee" opacity="0.12"/>
+                <circle cx="200" cy="150" r="30" fill="#4ade80" opacity="0.1"/>
+            </g>
+            
+            <!-- Fireflies with glow -->
+            <g class="firefly-1">
+                <circle cx="140" cy="160" r="12" fill="url(#fireflyLight)" filter="url(#fireflyGlow)" class="firefly-glow"/>
+                <circle cx="140" cy="160" r="4" fill="#fef9c3"/>
+            </g>
+            
+            <g class="firefly-2">
+                <circle cx="260" cy="180" r="10" fill="url(#fireflyLightBlue)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 0.5s"/>
+                <circle cx="260" cy="180" r="3" fill="#e0f2fe"/>
+            </g>
+            
+            <g class="firefly-3">
+                <circle cx="180" cy="240" r="11" fill="url(#fireflyLightGreen)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 1s"/>
+                <circle cx="180" cy="240" r="3.5" fill="#dcfce7"/>
+            </g>
+            
+            <g class="firefly-4">
+                <circle cx="220" cy="140" r="9" fill="url(#fireflyLight)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 1.5s"/>
+                <circle cx="220" cy="140" r="3" fill="#fef9c3"/>
+            </g>
+            
+            <g class="firefly-5">
+                <circle cx="280" cy="250" r="8" fill="url(#fireflyLightBlue)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 0.3s"/>
+                <circle cx="280" cy="250" r="2.5" fill="#e0f2fe"/>
+            </g>
+            
+            <g class="firefly-6">
+                <circle cx="120" cy="220" r="10" fill="url(#fireflyLightGreen)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 0.8s"/>
+                <circle cx="120" cy="220" r="3" fill="#dcfce7"/>
+            </g>
+            
+            <g class="firefly-7">
+                <circle cx="200" cy="200" r="14" fill="url(#fireflyLight)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 0.2s"/>
+                <circle cx="200" cy="200" r="5" fill="#fef9c3"/>
+            </g>
+            
+            <g class="firefly-8">
+                <circle cx="160" cy="280" r="7" fill="url(#fireflyLightBlue)" filter="url(#fireflyGlow)" class="firefly-glow" style="animation-delay: 1.2s"/>
+                <circle cx="160" cy="280" r="2" fill="#e0f2fe"/>
+            </g>
+        </g>
+    </g>
+</svg>

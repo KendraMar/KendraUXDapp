@@ -1,0 +1,20 @@
+{
+  "id": "screenshots",
+  "displayName": "Screenshots",
+  "description": "Capture and manage screenshots",
+  "icon": "CameraIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/screenshots",
+    "displayName": "Screenshots",
+    "icon": "CameraIcon"
+  },
+  "routes": [
+    {
+      "path": "/screenshots",
+      "page": "Screenshots"
+    }
+  ],
+  "apiPath": "/api/screenshots"
+}

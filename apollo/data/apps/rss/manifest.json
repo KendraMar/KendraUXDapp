@@ -1,0 +1,42 @@
+{
+  "id": "rss",
+  "displayName": "RSS",
+  "description": "RSS feed reader and aggregator",
+  "icon": "RssIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/rss",
+    "displayName": "RSS",
+    "icon": "RssIcon"
+  },
+  "routes": [
+    {
+      "path": "/rss",
+      "page": "Rss"
+    }
+  ],
+  "apiPath": "/api/rss",
+  "widgets": [
+    {
+      "id": "unread-count",
+      "name": "RSS Unread",
+      "description": "Total unread RSS articles",
+      "type": "stats",
+      "defaultSize": { "w": 3, "h": 3 },
+      "dataEndpoint": "/api/rss/feeds",
+      "dataTransform": "rssUnread",
+      "refreshInterval": 120
+    },
+    {
+      "id": "recent-articles",
+      "name": "Recent Articles",
+      "description": "Latest articles from RSS feeds",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/rss/items?limit=10",
+      "dataTransform": "rssItems",
+      "refreshInterval": 120
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ntx3ze2o0pex",
+  "title": "Explore Open Decision Framework relationship to Apollo",
+  "type": "spike",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-08T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "research",
+    "governance",
+    "ai",
+    "design",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

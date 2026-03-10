@@ -1,0 +1,1226 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Apollo Chat — Native PatternFly 6 Chat Application Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Layout ──────────────────────────────────────────────────────────────── */
+
+/* The PageSection acts as the positioning anchor */
+.apollo-chat-page-section {
+  position: relative !important;
+  padding: 0 !important;
+  flex-grow: 1 !important;
+  overflow: hidden !important;
+}
+
+/* Absolute positioning guarantees we fill the PageSection
+   regardless of PatternFly's flex chain */
+.apollo-chat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  background: var(--pf-t--global--background--color--primary--default);
+}
+
+/* ─── Conversation Sidebar (Left Panel) ───────────────────────────────────── */
+
+.apollo-chat__sidebar {
+  width: 280px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  transition: width 0.2s ease, min-width 0.2s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+.apollo-chat__sidebar--collapsed {
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  border-right: none;
+}
+
+.apollo-chat__sidebar-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  flex-shrink: 0;
+}
+
+.apollo-chat__sidebar-header h3 {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__sidebar-search {
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+
+.apollo-chat__sidebar-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px;
+}
+
+.apollo-chat__sidebar-group-label {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px 8px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pf-t--global--text--color--subtle);
+  background: var(--pf-t--global--background--color--primary--default);
+}
+
+.apollo-chat__conversation-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  margin-bottom: 2px;
+  border: 1px solid transparent;
+}
+
+.apollo-chat__conversation-item:hover {
+  background: var(--pf-t--global--background--color--primary--default);
+}
+
+.apollo-chat__conversation-item--active {
+  background: var(--pf-t--global--background--color--primary--default);
+  border-color: var(--pf-t--global--border--color--clicked);
+}
+
+.apollo-chat__conversation-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.apollo-chat__conversation-item-title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--pf-t--global--text--color--regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.apollo-chat__conversation-item-meta {
+  font-size: 0.6875rem;
+  color: var(--pf-t--global--text--color--subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.apollo-chat__conversation-item-actions {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.apollo-chat__conversation-item:hover .apollo-chat__conversation-item-actions {
+  opacity: 1;
+}
+
+/* ─── Main Chat Area (Center Panel) ───────────────────────────────────────── */
+
+.apollo-chat__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.apollo-chat__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--primary--default);
+  flex-shrink: 0;
+  min-height: 48px;
+}
+
+.apollo-chat__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apollo-chat__header-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.apollo-chat__model-selector {
+  position: relative;
+}
+
+.apollo-chat__model-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  color: var(--pf-t--global--text--color--regular);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.apollo-chat__model-selector-btn:hover {
+  border-color: var(--pf-t--global--border--color--hover);
+  background: var(--pf-t--global--background--color--primary--hover);
+}
+
+.apollo-chat__model-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 1000;
+  min-width: 280px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.apollo-chat__model-search {
+  padding: 8px;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  flex-shrink: 0;
+}
+
+.apollo-chat__model-dropdown-list {
+  overflow-y: auto;
+  max-height: 350px;
+  padding: 4px;
+}
+
+.apollo-chat__model-group-label {
+  padding: 8px 12px 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__model-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.apollo-chat__model-item:hover {
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+.apollo-chat__model-item--selected {
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+.apollo-chat__model-item-name {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__model-item-desc {
+  font-size: 0.6875rem;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__model-divider {
+  height: 1px;
+  background: var(--pf-t--global--border--color--default);
+  margin: 4px 0;
+}
+
+/* ─── Messages Area ───────────────────────────────────────────────────────── */
+
+.apollo-chat__messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+.apollo-chat__welcome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 32px;
+}
+
+.apollo-chat__welcome-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.apollo-chat__welcome h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__welcome p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--pf-t--global--text--color--subtle);
+  max-width: 480px;
+}
+
+.apollo-chat__welcome-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.apollo-chat__welcome-prompt {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  color: var(--pf-t--global--text--color--regular);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.apollo-chat__welcome-prompt:hover {
+  border-color: var(--pf-t--global--border--color--hover);
+  background: var(--pf-t--global--background--color--primary--hover);
+}
+
+/* ─── Message Bubbles ─────────────────────────────────────────────────────── */
+
+.apollo-chat__message {
+  display: flex;
+  gap: 12px;
+  max-width: 90%;
+  padding: 6px 0;
+  position: relative;
+}
+
+.apollo-chat__message--user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+  max-width: 80%;
+}
+
+.apollo-chat__message--assistant {
+  align-self: flex-start;
+  max-width: 90%;
+}
+
+.apollo-chat__message-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.apollo-chat__message-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apollo-chat__message-avatar--user {
+  background: var(--pf-t--global--color--brand--default);
+  color: #fff;
+}
+
+.apollo-chat__message-avatar--bot {
+  background: var(--pf-t--global--background--color--secondary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.apollo-chat__message-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.apollo-chat__message-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__message-name {
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+  font-size: 0.8125rem;
+}
+
+.apollo-chat__message-content {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--pf-t--global--text--color--regular);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ─── User messages: clean blue bubble ─────────────────────────────────────── */
+
+.apollo-chat__message--user .apollo-chat__message-content {
+  background: var(--pf-t--global--color--brand--default);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 16px 16px 4px 16px;
+}
+
+/* Links inside user messages */
+.apollo-chat__message--user .apollo-chat__message-content a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Assistant messages: flat document style (no bubble) ─────────────────── */
+
+.apollo-chat__message--assistant .apollo-chat__message-content {
+  background: none;
+  border: none;
+  padding: 2px 0;
+}
+
+/* ─── Markdown typography inside messages ──────────────────────────────────── */
+
+.apollo-chat__message-content p {
+  margin: 0 0 10px;
+}
+
+.apollo-chat__message-content p:last-child {
+  margin-bottom: 0;
+}
+
+.apollo-chat__message-content h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 18px 0 8px;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 14px 0 6px;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-content h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 12px 0 4px;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-content h5 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 10px 0 4px;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-content strong {
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-content hr {
+  border: none;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+  margin: 14px 0;
+}
+
+/* ─── Code blocks with language header ─────────────────────────────────────── */
+
+.apollo-chat__code-block {
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  overflow: hidden;
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+.apollo-chat__code-header {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.apollo-chat__code-lang {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--pf-t--global--text--color--subtle);
+  font-family: 'RedHatMono', 'SF Mono', 'Menlo', monospace;
+}
+
+.apollo-chat__code-block pre {
+  margin: 0;
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: none;
+  border-radius: 0;
+}
+
+.apollo-chat__code-block code {
+  font-family: 'RedHatMono', 'SF Mono', 'Menlo', monospace;
+  font-size: 0.8125rem;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+/* Standalone pre/code (without wrapper) */
+.apollo-chat__message-content pre {
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 8px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  margin: 10px 0;
+  line-height: 1.55;
+}
+
+.apollo-chat__message-content code {
+  font-family: 'RedHatMono', 'SF Mono', 'Menlo', monospace;
+  font-size: 0.8125rem;
+}
+
+/* ─── Inline code ──────────────────────────────────────────────────────────── */
+
+.apollo-chat__inline-code,
+.apollo-chat__message-content :not(pre) > code {
+  background: var(--pf-t--global--background--color--secondary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-family: 'RedHatMono', 'SF Mono', 'Menlo', monospace;
+  white-space: nowrap;
+}
+
+/* Make inline code in user bubble blend nicely */
+.apollo-chat__message--user .apollo-chat__inline-code,
+.apollo-chat__message--user .apollo-chat__message-content :not(pre) > code {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* ─── Lists ────────────────────────────────────────────────────────────────── */
+
+.apollo-chat__message-content ul,
+.apollo-chat__message-content ol {
+  margin: 6px 0;
+  padding-left: 22px;
+}
+
+.apollo-chat__message-content ul {
+  list-style-type: disc;
+}
+
+.apollo-chat__message-content ol {
+  list-style-type: decimal;
+}
+
+.apollo-chat__message-content li {
+  margin: 3px 0;
+  line-height: 1.55;
+}
+
+.apollo-chat__message-content li::marker {
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+/* ─── Blockquotes ──────────────────────────────────────────────────────────── */
+
+.apollo-chat__message-content blockquote {
+  border-left: 3px solid var(--pf-t--global--color--brand--default);
+  margin: 10px 0;
+  padding: 6px 14px;
+  color: var(--pf-t--global--text--color--subtle);
+  background: var(--pf-t--global--background--color--secondary--default);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+}
+
+/* ─── Links ────────────────────────────────────────────────────────────────── */
+
+.apollo-chat__message-content a {
+  color: var(--pf-t--global--color--brand--default);
+  text-decoration: none;
+}
+
+.apollo-chat__message-content a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Message Actions ─────────────────────────────────────────────────────── */
+
+.apollo-chat__message-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 2px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.apollo-chat__message:hover .apollo-chat__message-actions {
+  opacity: 1;
+}
+
+.apollo-chat__message-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  color: var(--pf-t--global--text--color--subtle);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  padding: 0;
+}
+
+.apollo-chat__message-action-btn:hover {
+  background: var(--pf-t--global--background--color--secondary--default);
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__message-action-btn--active-up {
+  color: var(--pf-t--global--color--status--success--default);
+}
+
+.apollo-chat__message-action-btn--active-down {
+  color: var(--pf-t--global--color--status--danger--default);
+}
+
+/* ─── Think Block ─────────────────────────────────────────────────────────── */
+
+.apollo-chat__think-block {
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  overflow: hidden;
+}
+
+.apollo-chat__think-block summary {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--pf-t--global--text--color--subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  list-style: none;
+}
+
+.apollo-chat__think-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.apollo-chat__think-block .think-toggle-icon {
+  width: 10px;
+  height: 10px;
+  transition: transform 0.2s ease;
+}
+
+.apollo-chat__think-block[open] .think-toggle-icon {
+  transform: rotate(90deg);
+}
+
+.apollo-chat__think-block-content {
+  padding: 0 12px 10px;
+  font-size: 0.8125rem;
+  color: var(--pf-t--global--text--color--subtle);
+  white-space: pre-wrap;
+  line-height: 1.5;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+  padding-top: 10px;
+}
+
+/* ─── Streaming indicator ─────────────────────────────────────────────────── */
+
+.apollo-chat__streaming-indicator {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.apollo-chat__streaming-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pf-t--global--text--color--subtle);
+  animation: apollo-chat-bounce 1.4s infinite ease-in-out both;
+}
+
+.apollo-chat__streaming-dot:nth-child(1) { animation-delay: -0.32s; }
+.apollo-chat__streaming-dot:nth-child(2) { animation-delay: -0.16s; }
+.apollo-chat__streaming-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes apollo-chat-bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+/* ─── Chat Input Area ─────────────────────────────────────────────────────── */
+
+.apollo-chat__input-area {
+  padding: 12px 16px;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--primary--default);
+  flex-shrink: 0;
+}
+
+.apollo-chat__input-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 12px;
+  padding: 8px;
+  background: var(--pf-t--global--background--color--secondary--default);
+  transition: border-color 0.15s ease;
+}
+
+.apollo-chat__input-container:focus-within {
+  border-color: var(--pf-t--global--border--color--clicked);
+}
+
+.apollo-chat__input-attachments {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-bottom: 2px;
+}
+
+.apollo-chat__input-attach-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--pf-t--global--text--color--subtle);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  padding: 0;
+}
+
+.apollo-chat__input-attach-btn:hover {
+  background: var(--pf-t--global--background--color--primary--default);
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__input-attach-btn--recording {
+  color: var(--pf-t--global--color--status--danger--default);
+  animation: apollo-chat-pulse 1.5s infinite;
+}
+
+@keyframes apollo-chat-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.apollo-chat__textarea {
+  flex: 1;
+  border: none;
+  background: none;
+  resize: none;
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.5;
+  color: var(--pf-t--global--text--color--regular);
+  outline: none;
+  min-height: 24px;
+  max-height: 200px;
+  padding: 4px 0;
+}
+
+.apollo-chat__textarea::placeholder {
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: var(--pf-t--global--color--brand--default);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.apollo-chat__send-btn:hover {
+  opacity: 0.9;
+}
+
+.apollo-chat__send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.apollo-chat__input-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 8px 4px;
+}
+
+.apollo-chat__input-file-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 6px;
+  border-radius: 10px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  font-size: 0.75rem;
+  color: var(--pf-t--global--text--color--regular);
+  max-width: 220px;
+  position: relative;
+}
+
+.apollo-chat__input-file-chip--image {
+  padding: 4px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 140px;
+}
+
+.apollo-chat__input-file-thumb {
+  width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.apollo-chat__input-file-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__input-file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__input-file-chip--image .apollo-chat__input-file-name {
+  padding: 2px 4px 0;
+}
+
+.apollo-chat__input-file-chip button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pf-t--global--background--color--secondary--default);
+  color: var(--pf-t--global--text--color--subtle);
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.625rem;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+}
+
+.apollo-chat__input-file-chip--image button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apollo-chat__input-file-chip button:hover {
+  background: var(--pf-t--global--color--status--danger--default);
+  color: #fff;
+}
+
+/* ─── Message Attachments ──────────────────────────────────────────────────── */
+
+.apollo-chat__message-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.apollo-chat__message-attachment-img-link {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  transition: opacity 0.15s ease;
+  max-width: 300px;
+}
+
+.apollo-chat__message-attachment-img-link:hover {
+  opacity: 0.85;
+}
+
+.apollo-chat__message-attachment-img {
+  display: block;
+  max-width: 300px;
+  max-height: 240px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.apollo-chat__message-attachment-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  font-size: 0.8125rem;
+  color: var(--pf-t--global--color--brand--default);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.apollo-chat__message-attachment-file:hover {
+  background: var(--pf-t--global--background--color--secondary--default);
+  text-decoration: none;
+}
+
+.apollo-chat__footnote {
+  text-align: center;
+  font-size: 0.6875rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-top: 6px;
+}
+
+/* ─── Preferences Panel (Right Side) ──────────────────────────────────────── */
+
+.apollo-chat__preferences {
+  width: 320px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  transition: width 0.2s ease, min-width 0.2s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+.apollo-chat__preferences--collapsed {
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  border-left: none;
+}
+
+.apollo-chat__preferences-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  flex-shrink: 0;
+}
+
+.apollo-chat__preferences-header h3 {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__preferences-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.apollo-chat__pref-group {
+  margin-bottom: 20px;
+}
+
+.apollo-chat__pref-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-chat__pref-label-value {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--pf-t--global--text--color--subtle);
+  background: var(--pf-t--global--background--color--primary--default);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'RedHatMono', 'SF Mono', monospace;
+}
+
+.apollo-chat__pref-description {
+  font-size: 0.6875rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.apollo-chat__pref-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--pf-t--global--border--color--default);
+  outline: none;
+}
+
+.apollo-chat__pref-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--pf-t--global--color--brand--default);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.apollo-chat__pref-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--pf-t--global--color--brand--default);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.apollo-chat__pref-textarea {
+  width: 100%;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  line-height: 1.5;
+  background: var(--pf-t--global--background--color--primary--default);
+  color: var(--pf-t--global--text--color--regular);
+  resize: vertical;
+  min-height: 80px;
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.apollo-chat__pref-textarea:focus {
+  border-color: var(--pf-t--global--border--color--clicked);
+}
+
+.apollo-chat__pref-input {
+  width: 100%;
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  background: var(--pf-t--global--background--color--primary--default);
+  color: var(--pf-t--global--text--color--regular);
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.apollo-chat__pref-input:focus {
+  border-color: var(--pf-t--global--border--color--clicked);
+}
+
+.apollo-chat__pref-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.apollo-chat__pref-separator {
+  height: 1px;
+  background: var(--pf-t--global--border--color--default);
+  margin: 16px 0;
+}
+
+.apollo-chat__pref-reset-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ─── Empty state ─────────────────────────────────────────────────────────── */
+
+.apollo-chat__empty-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  text-align: center;
+  gap: 8px;
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+.apollo-chat__empty-sidebar p {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+/* ─── Responsive tweaks ───────────────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .apollo-chat__preferences {
+    width: 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 900px) {
+  .apollo-chat__sidebar {
+    width: 240px;
+    min-width: 240px;
+  }
+  .apollo-chat__preferences {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ─── Dark mode overrides ─────────────────────────────────────────────────── */
+
+.pf-v6-theme-dark .apollo-chat__model-dropdown {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pf-v6-theme-dark .apollo-chat__message--user .apollo-chat__message-content {
+  background: var(--pf-t--global--color--brand--default);
+}
+
+.pf-v6-theme-dark .apollo-chat__code-block {
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+.pf-v6-theme-dark .apollo-chat__code-block pre {
+  background: #0d1117;
+}
+
+.pf-v6-theme-dark .apollo-chat__inline-code,
+.pf-v6-theme-dark .apollo-chat__message-content :not(pre) > code {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pf-v6-theme-dark .apollo-chat__pref-slider::-webkit-slider-thumb {
+  border-color: var(--pf-t--global--background--color--secondary--default);
+}

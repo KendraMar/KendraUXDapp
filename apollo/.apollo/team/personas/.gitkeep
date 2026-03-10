@@ -1,0 +1,9 @@
+# User Personas
+
+This folder contains user persona documentation.
+
+Add persona files here, such as:
+- designer.md (primary persona)
+- developer.md (secondary persona)
+- product-manager.md (secondary persona)
+- anti-personas.md (who we're NOT designing for)

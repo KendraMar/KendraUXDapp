@@ -1,0 +1,36 @@
+{
+  "id": "kubernetes",
+  "displayName": "Kubernetes",
+  "description": "Kubernetes cluster management and resource explorer",
+  "icon": "CubesIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/kubernetes",
+    "displayName": "Kubernetes",
+    "icon": "CubesIcon"
+  },
+  "routes": [
+    {
+      "path": "/kubernetes",
+      "page": "Kubernetes"
+    },
+    {
+      "path": "/kubernetes/:resourceType/:namespace/:name",
+      "page": "KubernetesResourceDetail"
+    }
+  ],
+  "apiPath": "/api/kubernetes",
+  "widgets": [
+    {
+      "id": "cluster-status",
+      "name": "Cluster Status",
+      "description": "Kubernetes cluster health overview",
+      "type": "chart",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/kubernetes/dashboard",
+      "dataTransform": "k8sDashboard",
+      "refreshInterval": 60
+    }
+  ]
+}

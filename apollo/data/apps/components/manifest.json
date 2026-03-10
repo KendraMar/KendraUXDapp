@@ -1,0 +1,19 @@
+{
+  "id": "components",
+  "displayName": "Components",
+  "description": "PatternFly 6 component library with interactive examples",
+  "icon": "CubesIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/components",
+    "displayName": "Components",
+    "icon": "CubesIcon"
+  },
+  "routes": [
+    {
+      "path": "/components",
+      "page": "Components"
+    }
+  ]
+}

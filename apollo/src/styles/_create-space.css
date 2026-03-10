@@ -1,0 +1,164 @@
+/* ===================================
+   CREATE SPACE SETUP PAGE
+   =================================== */
+
+.create-space-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100%;
+  padding: 2rem;
+  padding-top: max(2rem, calc(15vh - 100px));
+  font-family: 'Sora', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: create-space-fade-in 0.6s ease-out;
+}
+
+@keyframes create-space-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.create-space-content {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+
+/* Icon */
+.create-space-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--pf-t--global--color--brand--default);
+  line-height: 1;
+}
+
+.create-space-icon svg {
+  width: 56px;
+  height: 56px;
+}
+
+/* Title & subtitle */
+.create-space-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg,
+    var(--pf-t--global--text--color--regular) 0%,
+    var(--pf-t--global--text--color--subtle) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.create-space-subtitle {
+  font-size: 1.05rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin: 0 0 2.5rem 0;
+  line-height: 1.5;
+}
+
+/* Field groups */
+.create-space-field {
+  margin-bottom: 1.75rem;
+  text-align: left;
+}
+
+.create-space-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Override the welcome-name-input centering for this context */
+.create-space-field .welcome-name-input-wrapper {
+  max-width: 100%;
+}
+
+.create-space-field .welcome-name-input {
+  text-align: left;
+  font-size: 1rem !important;
+  padding: 14px 18px !important;
+}
+
+/* Emoji row */
+.create-space-emoji-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.create-space-emoji-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: 12px;
+  border: 2px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.create-space-emoji-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--pf-t--global--color--brand--default);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-space-emoji-btn.selected {
+  border-color: var(--pf-t--global--color--brand--default);
+  background: linear-gradient(135deg,
+    rgba(56, 189, 248, 0.1) 0%,
+    rgba(34, 211, 238, 0.1) 100%);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Task input overrides for this context */
+.create-space-field .welcome-task-input-wrapper {
+  max-width: 100%;
+}
+
+/* AI toggle */
+.create-space-ai-toggle {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding: 0 0.25rem;
+}
+
+/* Actions bar */
+.create-space-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.create-space-submit-btn {
+  padding: 12px 28px !important;
+  font-size: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.create-space-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+}

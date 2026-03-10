@@ -1,0 +1,32 @@
+{
+  "id": "feed",
+  "displayName": "Feed",
+  "description": "Activity feed aggregating updates from all integrations",
+  "icon": "InboxIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/feed",
+    "displayName": "Feed",
+    "icon": "InboxIcon"
+  },
+  "routes": [
+    {
+      "path": "/feed",
+      "page": "Feed"
+    }
+  ],
+  "apiPath": "/api/feed",
+  "widgets": [
+    {
+      "id": "recent-activity",
+      "name": "Recent Activity",
+      "description": "Latest activity from all integrations",
+      "type": "feed",
+      "defaultSize": { "w": 6, "h": 4 },
+      "dataEndpoint": "/api/feed",
+      "dataTransform": "feedItems",
+      "refreshInterval": 30
+    }
+  ]
+}

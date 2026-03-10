@@ -1,0 +1,32 @@
+{
+  "id": "homeassistant",
+  "displayName": "Home Assistant",
+  "description": "Home Assistant integration for smart home control",
+  "icon": "HomeIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/homeassistant",
+    "displayName": "Home Assistant",
+    "icon": "HomeIcon"
+  },
+  "routes": [
+    {
+      "path": "/homeassistant",
+      "page": "HomeAssistant"
+    }
+  ],
+  "apiPath": "/api/homeassistant",
+  "widgets": [
+    {
+      "id": "home-summary",
+      "name": "Home Summary",
+      "description": "Smart home entity status overview",
+      "type": "chart",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/homeassistant/summary",
+      "dataTransform": "haSummary",
+      "refreshInterval": 30
+    }
+  ]
+}

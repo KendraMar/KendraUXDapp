@@ -1,0 +1,218 @@
+/* ============================================
+   Page Main Container Adjustments
+   ============================================ */
+
+/* Remove the browser focus outline on the main content area.
+   This thin blue ring appears when Escape is pressed or content is deselected,
+   moving focus to the <main> container. It's non-interactive, so no outline needed. */
+.pf-v6-c-page__main-container:focus,
+.pf-v6-c-page__main-container:focus-visible {
+  outline: none;
+}
+
+/* Remove spacing on left, right, and bottom; keep only top-left corner rounded */
+.pf-v6-c-page__main-container {
+  --pf-v6-c-page__main-container--MarginInlineEnd: 0;
+  --pf-v6-c-page__main-container--MarginBlockEnd: 0;
+  --pf-v6-c-page__main-container--MaxHeight: 100%;
+  border-radius: var(--pf-v6-c-page__main-container--BorderRadius) 0 0 0;
+  height: 100%;
+}
+
+/* ============================================
+   Sidebar Overlay Behavior - Only on Mobile
+   ============================================ */
+
+/* 
+ * PatternFly 6 uses the xl breakpoint (75rem / 1200px) to switch from a
+ * single-column grid ("header" / "main") to a two-column grid
+ * ("header header" / "sidebar main"). Below xl, the sidebar has no grid
+ * column and overlaps the main content area—visible only as an overlay.
+ *
+ * We replicate PF's xl grid layout at 576px so the sidebar gets its own
+ * column and is always visible as a static element (pushing content).
+ * Below 576px, we keep PF's overlay behavior for true mobile viewports.
+ */
+
+/* Apply "xl" grid and sidebar behavior starting at 576px instead of 1200px.
+ * PatternFly's default uses a single-column grid below xl (1200px), which means
+ * the sidebar has no dedicated column and overlaps with the main content.
+ * We replicate PF's xl grid layout at 576px so the sidebar is always visible. */
+@media screen and (min-width: 576px) {
+  .pf-v6-c-page {
+    /* Override the sidebar variables to show sidebar as static */
+    --pf-v6-c-page__sidebar--TranslateX: 0;
+    --pf-v6-c-page__sidebar--Opacity: 1;
+    --pf-v6-c-page__sidebar--BorderInlineEndWidth: 0;
+    /* Enable two-column grid (same as PF's xl breakpoint) so the sidebar
+       gets its own column instead of overlapping the main content area. */
+    grid-template-areas: "header header" "sidebar main";
+    grid-template-columns: var(--pf-v6-c-page__sidebar--Width) 1fr;
+  }
+
+  /* Remove the box-shadow overlay effect since sidebar is inline */
+  .pf-v6-c-page__sidebar.pf-m-expanded {
+    box-shadow: none;
+  }
+
+  /* Remove any overlay backdrop that might be present */
+  .pf-v6-c-page__sidebar::before {
+    display: none !important;
+  }
+}
+
+/* On very small mobile screens (below 576px), keep overlay behavior */
+@media screen and (max-width: 575.98px) {
+  .pf-v6-c-page__sidebar {
+    /* On mobile, sidebar can overlay with fixed positioning */
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--pf-v6-c-page__sidebar--Width, 250px);
+    z-index: var(--pf-v6-c-page__sidebar--ZIndex, 400);
+    background-color: var(--pf-t--global--background--color--primary--default);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    overflow-y: auto;
+  }
+  
+  /* Hidden sidebar on mobile */
+  .pf-v6-c-page__sidebar:not(.pf-m-expanded) {
+    transform: translateX(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  
+  /* Expanded sidebar on mobile overlays content */
+  .pf-v6-c-page__sidebar.pf-m-expanded {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+  }
+  
+  /* Backdrop overlay behind expanded sidebar */
+  .pf-v6-c-page__sidebar.pf-m-expanded::before {
+    content: '';
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+/* Ensure masthead grid adapts correctly above mobile breakpoint */
+@media screen and (min-width: 576px) {
+  .pf-v6-c-masthead {
+    /* Keep the grid template columns responsive to sidebar width */
+    grid-template-columns: var(--pf-v6-c-page__sidebar--Width, 250px) 1fr;
+  }
+}
+
+/* Remove bottom padding from sidebar and reduce horizontal padding */
+.pf-v6-c-page__sidebar {
+  --pf-v6-c-page__sidebar--PaddingBlockEnd: 0;
+  --pf-v6-c-page__sidebar--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-page__sidebar--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-page__sidebar--PaddingInlineEnd: 0;
+}
+
+/* Compact sidebar body padding */
+.pf-v6-c-page__sidebar-body {
+  --pf-v6-c-page__sidebar-body--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-page__sidebar-body--PaddingInlineStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-page__sidebar-body--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+}
+
+/* Compact nav list items */
+.pf-v6-c-page__sidebar .pf-v6-c-nav__item {
+  --pf-v6-c-nav__link--PaddingInlineStart: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-nav__link--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+}
+
+/* ============================================
+   Right-side Navigation Layout
+   ============================================ */
+
+/*
+ * PatternFly 6 pins the sidebar to grid-column 1 via explicit
+ *   grid-area: sidebar; grid-row-start: 2; grid-column-start: 1;
+ * and uses translateX(-100%) to hide it off the left edge.
+ *
+ * To move the sidebar to the right, we must:
+ *   1. Swap grid-template-areas and grid-template-columns on the page
+ *   2. Override grid-column-start on the sidebar to column 2
+ *   3. Flip the hide/show transform direction to translateX(+100%)
+ *   4. Mirror margins, borders, and border-radius
+ */
+
+/* Desktop (≥576px): swap grid columns so sidebar is on the right */
+@media screen and (min-width: 576px) {
+  .pf-v6-c-page.apollo-nav-right {
+    grid-template-areas: "header header" "main sidebar" !important;
+    grid-template-columns: 1fr var(--pf-v6-c-page__sidebar--Width) !important;
+  }
+}
+
+/* Sidebar: move to right column and mirror positioning */
+.pf-v6-c-page.apollo-nav-right .pf-v6-c-page__sidebar {
+  grid-column-start: 2 !important;
+  /* Swap margin: original has margin-inline-end, we need margin-inline-start */
+  margin-inline-end: 0;
+  margin-inline-start: var(--pf-v6-c-page__sidebar--MarginInlineEnd);
+  /* Swap border: original has border-inline-end, we need border-inline-start */
+  border-inline-end: none;
+  border-inline-start: var(--pf-v6-c-page__sidebar--BorderInlineEndWidth) solid var(--pf-v6-c-page__sidebar--BorderInlineEndColor);
+  /* Mirror padding */
+  --pf-v6-c-page__sidebar--PaddingInlineStart: 0;
+  --pf-v6-c-page__sidebar--PaddingInlineEnd: var(--pf-t--global--spacer--xs);
+}
+
+/* Flip the sidebar hide/show transform to slide from the right instead of left.
+ * Default PF uses translateX(-100%) to hide (slide left), translateX(0) to show.
+ * For right-side nav: translateX(100%) to hide (slide right), translateX(0) to show. */
+.pf-v6-c-page.apollo-nav-right {
+  --pf-v6-c-page__sidebar--TranslateX: 100%;
+  --pf-v6-c-page__sidebar--m-expanded--TranslateX: 0;
+  --pf-v6-c-page__sidebar--xl--TranslateX: 0;
+}
+
+/* Main container: flip border-radius so the rounded corner is top-right */
+.pf-v6-c-page.apollo-nav-right .pf-v6-c-page__main-container {
+  border-radius: 0 var(--pf-v6-c-page__main-container--BorderRadius) 0 0;
+}
+
+/* Main container: when sidebar is visible, remove margin on the right side (where sidebar now is) */
+@media screen and (min-width: 576px) {
+  .pf-v6-c-page.apollo-nav-right .pf-v6-c-page__sidebar:not(.pf-m-collapsed) ~ .pf-v6-c-page__main-container {
+    margin-inline-end: 0;
+  }
+}
+
+/* Resize handle: move to left edge of sidebar (since sidebar is on the right) */
+.pf-v6-c-page.apollo-nav-right .apollo-sidebar-resize-handle {
+  right: auto;
+  left: 0;
+  margin-right: 0;
+  margin-left: -8px;
+}
+
+/* Mobile (< 576px): position sidebar overlay on the right side */
+@media screen and (max-width: 575.98px) {
+  .pf-v6-c-page.apollo-nav-right .pf-v6-c-page__sidebar {
+    left: auto !important;
+    right: 0 !important;
+  }
+
+  .pf-v6-c-page.apollo-nav-right .pf-v6-c-page__sidebar:not(.pf-m-expanded) {
+    transform: translateX(100%) !important;
+  }
+
+  .pf-v6-c-page.apollo-nav-right .pf-v6-c-page__sidebar.pf-m-expanded {
+    transform: translateX(0) !important;
+  }
+}
+

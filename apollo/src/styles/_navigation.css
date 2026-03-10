@@ -1,0 +1,769 @@
+/* ===================================
+   NAV CUSTOMIZE MODE STYLES
+   =================================== */
+
+/* Ensure nav items have consistent left padding */
+.pf-v6-c-page__sidebar .pf-v6-c-nav__list {
+  padding: 0 8px;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-nav__link {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Override DragDropSort DataList variant spacing */
+.pf-v6-c-page__sidebar .pf-v6-c-data-list {
+  --pf-v6-c-data-list--RowGap: 0;
+  --pf-v6-c-data-list__item--PaddingTop: 0;
+  --pf-v6-c-data-list__item--PaddingBottom: 0;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item {
+  padding: 0;
+  background: transparent;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item-row {
+  padding: 0;
+  gap: 0;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item-content {
+  padding: 0;
+  flex: 1;
+}
+
+/* Reduce drag handle cell width and padding */
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item-control {
+  padding: 0;
+  margin-right: 0;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item-draggable-button {
+  padding: 6px 4px 6px 8px;
+  cursor: grab;
+}
+
+.pf-v6-c-page__sidebar .pf-v6-c-data-list__item-draggable-button:active {
+  cursor: grabbing;
+}
+
+/* Customize mode item container */
+.apollo-nav-customize-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 8px 0;
+  width: 100%;
+}
+
+.apollo-nav-customize-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.apollo-nav-customize-item-content span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Remove button */
+.apollo-nav-customize-remove-btn {
+  flex-shrink: 0;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  opacity: 0.6;
+  transition: all 0.15s ease;
+}
+
+.apollo-nav-customize-remove-btn:hover {
+  opacity: 1;
+  color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.apollo-nav-customize-remove-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Available items section (legacy - kept for backward compat) */
+.apollo-nav-available-section {
+  margin-top: 16px;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+  padding-top: 8px;
+}
+
+.apollo-nav-available-header {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--pf-t--global--text--color--subtle);
+  padding: 4px 16px 8px;
+}
+
+.apollo-nav-available-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 8px;
+  overflow-y: auto;
+}
+
+.apollo-nav-available-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0.7;
+}
+
+.apollo-nav-available-item:hover {
+  opacity: 1;
+  background: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.apollo-nav-available-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.apollo-nav-available-item-content span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+}
+
+.apollo-nav-available-add-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--pf-t--global--color--brand--default);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.apollo-nav-available-item:hover .apollo-nav-available-add-icon {
+  opacity: 1;
+}
+
+/* Navigation Drag and Drop (always-on reordering with sliding animation) */
+.apollo-nav-item-draggable {
+  --nav-item-height: 40px;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  user-select: none;
+  position: relative;
+  will-change: transform;
+}
+
+/* Ensure the wrapper doesn't break nav styling */
+.pf-v6-c-nav__list > .apollo-nav-item-draggable,
+.pf-v6-c-nav__section > .apollo-nav-item-draggable {
+  display: block;
+}
+
+.apollo-nav-item-draggable[draggable="true"] {
+  cursor: grab;
+}
+
+.apollo-nav-item-draggable[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+/* The item being dragged */
+.apollo-nav-item-dragging {
+  opacity: 0.3;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.apollo-nav-item-dragging .pf-v6-c-nav__link {
+  background: var(--pf-t--global--background--color--action--plain--hover) !important;
+  border-radius: 6px;
+}
+
+/* Cursor during active drag operation */
+.apollo-nav-dragging-active {
+  cursor: grabbing !important;
+}
+
+.apollo-nav-dragging-active * {
+  cursor: grabbing !important;
+}
+
+/* Items that should slide down (make room above) */
+.apollo-nav-item-slide-down {
+  transform: translateY(40px) !important;
+}
+
+/* Items that should slide up (make room below) */
+.apollo-nav-item-slide-up {
+  transform: translateY(-40px) !important;
+}
+
+
+/* Reset transition during rapid movements for responsiveness */
+.apollo-nav-item-draggable.no-transition {
+  transition: none !important;
+}
+
+/* ===================================
+   AGENT SUGGESTION BADGE STYLES
+   =================================== */
+
+/* Nav item with badge needs relative positioning for absolute badge placement */
+.apollo-nav-item-with-badge .pf-v6-c-nav__link {
+  position: relative;
+}
+
+/* Agent suggestion badge - blue notification dot positioned on the right */
+.apollo-nav-agent-badge {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--pf-t--global--color--brand--default);
+  border-radius: 50%;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: apollo-badge-pulse 2s ease-in-out infinite;
+}
+
+/* Subtle pulse animation for the badge */
+@keyframes apollo-badge-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(var(--pf-t--global--color--brand--default-rgb, 0, 102, 204), 0.4);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 4px rgba(var(--pf-t--global--color--brand--default-rgb, 0, 102, 204), 0);
+  }
+}
+
+/* Hover state - stop animation and brighten */
+.apollo-nav-item-with-badge:hover .apollo-nav-agent-badge {
+  animation: none;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Active nav item - hide badge since we're already on that page */
+.pf-v6-c-nav__link.pf-m-current .apollo-nav-agent-badge {
+  display: none;
+}
+
+/* ===================================
+   NAV SECTION HEADING STYLES
+   =================================== */
+
+/* NavGroup styling in normal view */
+.apollo-nav-group {
+  margin-top: 8px;
+}
+
+.apollo-nav-group:first-child {
+  margin-top: 0;
+}
+
+/* NavGroup section title - PatternFly 6 overrides for smaller, bolder, left-aligned text */
+.apollo-nav-group .pf-v6-c-nav__section-title {
+  --pf-v6-c-nav__section-title--FontWeight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--pf-t--global--text--color--subtle);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Custom section header with collapse button */
+.apollo-nav-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.apollo-nav-section-header-title {
+  flex: 1;
+}
+
+/* Section collapse/expand button - hidden by default, visible on hover */
+.apollo-nav-section-collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--pf-t--global--icon--color--subtle);
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.apollo-nav-section-collapse-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Show collapse button on section header hover */
+.apollo-nav-group .pf-v6-c-nav__section-title:hover .apollo-nav-section-collapse-btn {
+  opacity: 1;
+}
+
+.apollo-nav-section-collapse-btn:hover {
+  background: var(--pf-t--global--background--color--action--plain--hover);
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-nav-section-collapse-btn:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.apollo-nav-section-collapse-btn:focus-visible {
+  box-shadow: 0 0 0 2px var(--pf-t--global--color--brand--default);
+}
+
+/* Always show the collapse button when section is collapsed */
+.apollo-nav-group-collapsed .apollo-nav-section-collapse-btn {
+  opacity: 1;
+}
+
+.pf-v6-c-nav__section {
+  row-gap: 0;
+}
+
+/* Section heading in customize mode */
+.apollo-nav-customize-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 10px 0;
+  width: 100%;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.apollo-nav-customize-section-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Drag handle provided by DragDropSort component */
+
+.apollo-nav-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--pf-t--global--text--color--subtle);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.apollo-nav-section-title:hover {
+  background: var(--pf-t--global--background--color--action--plain--hover);
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-nav-section-title-input {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 4px;
+  height: auto;
+  min-height: unset;
+  line-height: 1.4;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--pf-t--global--text--color--subtle);
+  width: 100%;
+  font-family: inherit;
+}
+
+.apollo-nav-section-title-input::placeholder {
+  color: var(--pf-t--global--text--color--disabled);
+  opacity: 0.6;
+}
+
+.apollo-nav-section-title-input:focus {
+  color: var(--pf-t--global--text--color--regular);
+}
+
+.apollo-nav-customize-section-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.apollo-nav-customize-section:hover .apollo-nav-customize-section-actions {
+  opacity: 1;
+}
+
+/* Edit button removed — click section title to edit inline */
+
+/* Add section + Add page buttons container */
+.apollo-nav-add-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 4px 12px;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.apollo-nav-add-actions .pf-v6-c-button {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  justify-content: flex-start;
+}
+
+/* ===================================
+   INLINE ADD PAGE ROW
+   =================================== */
+
+.apollo-nav-add-page-row {
+  padding: 4px 8px 8px;
+}
+
+.apollo-nav-add-page-row-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* Icon button */
+.apollo-nav-add-page-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.apollo-nav-add-page-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px dashed var(--pf-t--global--border--color--default);
+  border-radius: 6px;
+  background: var(--pf-t--global--background--color--primary--default);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  font-size: 14px;
+}
+
+.apollo-nav-add-page-icon-btn:hover {
+  border-color: var(--pf-t--global--color--brand--default);
+  background: var(--pf-t--global--background--color--action--plain--hover);
+}
+
+.apollo-nav-add-page-icon-btn span {
+  filter: none !important;
+}
+
+/* Icon picker popover */
+.apollo-nav-icon-picker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  margin-top: 4px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  width: 220px;
+}
+
+.apollo-nav-icon-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.apollo-nav-icon-picker-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.apollo-nav-icon-picker-item:hover {
+  background: var(--pf-t--global--background--color--action--plain--hover);
+  transform: scale(1.15);
+}
+
+.apollo-nav-icon-picker-item.selected {
+  background: var(--pf-t--global--color--brand--default);
+  border-radius: 6px;
+}
+
+/* Page name input */
+.apollo-nav-add-page-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: var(--pf-t--global--text--color--regular);
+  font-family: inherit;
+  padding: 4px 0;
+}
+
+.apollo-nav-add-page-input::placeholder {
+  color: var(--pf-t--global--text--color--disabled);
+  opacity: 0.7;
+}
+
+/* Save / Cancel action buttons */
+.apollo-nav-add-page-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.apollo-nav-add-page-save-btn {
+  padding: 2px !important;
+  color: var(--pf-t--global--color--status--success--default) !important;
+}
+
+.apollo-nav-add-page-save-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.apollo-nav-add-page-cancel-btn {
+  padding: 2px !important;
+  opacity: 0.6;
+}
+
+.apollo-nav-add-page-cancel-btn:hover {
+  opacity: 1;
+  color: var(--pf-t--global--color--status--danger--default) !important;
+}
+
+.apollo-nav-add-page-cancel-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ===================================
+   SUGGESTION PANEL
+   =================================== */
+
+.apollo-nav-suggestion-panel {
+  margin-top: 8px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-height: 240px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: apollo-suggestion-slide-in 0.2s ease-out;
+  position: relative;
+}
+
+/* Fade-out gradient at the bottom to hint at more content */
+.apollo-nav-suggestion-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--pf-t--global--background--color--primary--default)
+  );
+  border-radius: 0 0 8px 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes apollo-suggestion-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apollo-nav-suggestion-header {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--pf-t--global--text--color--subtle);
+  padding: 8px 12px 4px;
+  flex-shrink: 0;
+}
+
+.apollo-nav-suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px 4px 32px;
+  overflow-y: auto;
+}
+
+.apollo-nav-suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.apollo-nav-suggestion-item:hover {
+  background: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.apollo-nav-suggestion-item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.apollo-nav-suggestion-item-content span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.825rem;
+}
+
+.apollo-nav-suggestion-add-icon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--pf-t--global--color--brand--default);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.apollo-nav-suggestion-item:hover .apollo-nav-suggestion-add-icon {
+  opacity: 1;
+}
+
+/* ===================================
+   NAV ITEMS "FALL INTO PLACE" ANIMATION
+   Triggered when a new space is created
+   =================================== */
+
+@keyframes apollo-nav-item-materialize {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(-8px) scale(0.97);
+  }
+  60% {
+    opacity: 0.8;
+    filter: blur(1px);
+    transform: translateY(2px) scale(1.0);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes apollo-nav-section-materialize {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-6px);
+  }
+  60% {
+    opacity: 0.6;
+    filter: blur(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Applied to each nav item wrapper during animation */
+.apollo-nav-item-animate-in {
+  animation: apollo-nav-item-materialize 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Applied to section headings during animation */
+.apollo-nav-section-animate-in {
+  animation: apollo-nav-section-materialize 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Staggered delays — items cascade into place */
+.apollo-nav-animate-delay-0 { animation-delay: 0.03s; }
+.apollo-nav-animate-delay-1 { animation-delay: 0.07s; }
+.apollo-nav-animate-delay-2 { animation-delay: 0.11s; }
+.apollo-nav-animate-delay-3 { animation-delay: 0.15s; }
+.apollo-nav-animate-delay-4 { animation-delay: 0.19s; }
+.apollo-nav-animate-delay-5 { animation-delay: 0.23s; }
+.apollo-nav-animate-delay-6 { animation-delay: 0.27s; }
+.apollo-nav-animate-delay-7 { animation-delay: 0.31s; }
+.apollo-nav-animate-delay-8 { animation-delay: 0.35s; }
+.apollo-nav-animate-delay-9 { animation-delay: 0.39s; }
+.apollo-nav-animate-delay-10 { animation-delay: 0.43s; }
+.apollo-nav-animate-delay-11 { animation-delay: 0.47s; }
+.apollo-nav-animate-delay-12 { animation-delay: 0.51s; }
+.apollo-nav-animate-delay-13 { animation-delay: 0.55s; }
+.apollo-nav-animate-delay-14 { animation-delay: 0.59s; }
+

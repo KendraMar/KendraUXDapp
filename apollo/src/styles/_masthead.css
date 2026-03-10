@@ -1,0 +1,840 @@
+/* ===================================
+   APP MASTHEAD STYLES
+   =================================== */
+
+/* Masthead navigation state classes */
+.pf-v6-c-masthead.apollo-masthead-nav-open {
+  /* Sidebar is fully expanded */
+}
+
+.pf-v6-c-masthead.apollo-masthead-nav-collapsed {
+  /* Sidebar is collapsed to icons only */
+  .pf-v6-c-masthead__content {
+    padding-inline-start: calc(var(--pf-t--global--spacer--md) + 80px);
+  }
+}
+
+.pf-v6-c-masthead.apollo-masthead-nav-hidden {
+  /* Sidebar is completely hidden */
+  .pf-v6-c-masthead__content {
+    padding-inline-start: calc(var(--pf-t--global--spacer--md) + 162px);
+  }
+}
+
+/* Compact Masthead - reduce outer padding */
+.pf-v6-c-masthead {
+  display: grid;
+  align-items: center;
+  height: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  /* Remove left padding so grid column aligns exactly with sidebar */
+  --pf-v6-c-masthead--PaddingInlineStart: 0;
+  --pf-v6-c-masthead--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
+  --pf-v6-c-masthead--PaddingBlockStart: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-masthead--PaddingBlockEnd: var(--pf-t--global--spacer--xs);
+  --pf-v6-c-masthead--inset: var(--pf-t--global--spacer--sm);
+  /* First column matches sidebar width exactly; search bar aligns with content area */
+  --pf-v6-c-masthead--GridTemplateColumns: var(--pf-v6-c-page__sidebar--Width, 250px) 1fr;
+  --pf-v6-c-masthead--ColumnGap: 0;
+  grid-template-columns: var(--pf-v6-c-page__sidebar--Width, 250px) 1fr;
+  column-gap: 0;
+
+  /* Force inline display mode at ALL viewports (override PF's stack mode below 768px).
+   * This prevents the logo/brand from stacking onto its own top row. */
+  --pf-v6-c-masthead__brand--GridColumn: initial;
+  --pf-v6-c-masthead__brand--Order: initial;
+  --pf-v6-c-masthead__brand--PaddingBlockEnd: 0;
+  --pf-v6-c-masthead__brand--BorderBlockEnd: 0;
+  --pf-v6-c-masthead__main--GridColumn: 1;
+  --pf-v6-c-masthead__content--GridColumn: 2;
+  --pf-v6-c-masthead__content--Order: 0;
+  --pf-v6-c-masthead__main--toggle--content--GridColumn: 2;
+  --pf-v6-c-masthead__main--Display: flex;
+  --pf-v6-c-masthead__main--ColumnGap: var(--pf-t--global--spacer--md);
+}
+
+.pf-v6-c-masthead__main {
+  --pf-v6-c-masthead__main--PaddingInlineEnd: 0;
+  /* Add left padding to match sidebar padding for the logo/toggle area */
+  padding-inline-start: var(--pf-t--global--spacer--xs);
+  /* Let it fill its grid column (which matches sidebar width) */
+  width: 100%;
+  justify-self: start;
+}
+
+.pf-v6-c-masthead__brand {
+  flex: 0 0 auto;
+  width: auto;
+  --pf-v6-c-masthead__brand--MinWidth: 0;
+}
+
+.pf-v6-c-masthead__logo {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.pf-v6-c-masthead__toggle {
+  --pf-v6-c-masthead__toggle--MarginInlineEnd: var(--pf-t--global--spacer--xs);
+}
+
+/* Apollo Logo - white in dark mode */
+.pf-v6-theme-dark .apollo-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Monochrome assistant avatars (e.g. Cursor CLI) - invert in dark mode */
+.pf-v6-theme-dark .masthead-assistant-avatar--mono {
+  filter: brightness(0) invert(1);
+}
+
+/* Apollo logo text styling */
+.apollo-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--pf-v6-global--Color--100);
+  white-space: nowrap;
+}
+
+/* Hide "Apollo" text on narrower viewports to keep masthead single-line */
+@media screen and (max-width: 960px) {
+  .apollo-logo-text {
+    display: none;
+  }
+}
+
+.pf-v6-c-masthead__content {
+  width: 100%;
+  --pf-v6-c-masthead__content--MarginInlineStart: 0;
+  margin-inline-start: 0;
+  /* Align with the content area below */
+  padding-inline-start: var(--pf-t--global--spacer--md);
+  padding-left: 0;
+}
+
+/* Adjustments for sidebar when fully collapsed */
+.pf-v6-c-page__sidebar:not(.pf-m-collapsed) + .pf-v6-c-page__main-container, .pf-v6-c-page__sidebar:not(.pf-m-collapsed) + .pf-v6-c-page__drawer {
+  --pf-v6-c-page__main-container--MarginInlineStart: 0;
+}
+
+.pf-v6-c-toolbar__content-section .pf-v6-c-toolbar__group:first-child {
+  flex: 1;
+}
+
+.pf-v6-c-toolbar__content-section .pf-v6-c-toolbar__group:first-child .pf-v6-c-toolbar__item {
+  flex-grow: 1;
+}
+
+/* Fix vertical centering of icon-only buttons in masthead toolbar */
+.pf-v6-c-masthead .pf-v6-c-button.pf-m-plain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-v6-c-masthead .pf-v6-c-button.pf-m-plain svg {
+  vertical-align: middle;
+}
+
+/* Masthead Search with Microphone */
+.masthead-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.masthead-search-wrapper .pf-v6-c-search-input {
+  flex: 1;
+}
+
+.masthead-search-wrapper .pf-v6-c-search-input__bar {
+  border-radius: var(--pf-v6-c-page__main-container--BorderRadius);
+}
+
+.masthead-search-wrapper .pf-v6-c-search-input__text-input {
+  padding-right: 80px !important;
+}
+
+/* Assistant Selector in Search Bar */
+.masthead-assistant-toggle {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  width: 26px;
+}
+
+.masthead-assistant-toggle:hover {
+  background: transparent !important;
+}
+
+.masthead-assistant-toggle:focus {
+  box-shadow: none !important;
+}
+
+.masthead-assistant-toggle[aria-expanded="true"] {
+  background: transparent !important;
+}
+
+.masthead-assistant-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
+}
+
+.masthead-assistant-toggle:hover .masthead-assistant-avatar {
+  transform: scale(1.1);
+}
+
+/* Hide the default toggle arrow */
+.masthead-assistant-toggle .pf-v6-c-menu-toggle__controls {
+  display: none;
+}
+
+/* Person avatar in masthead toggle */
+.masthead-person-avatar {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Assistant Dropdown Enhanced Styles */
+.assistant-dropdown-content {
+  width: 280px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.assistant-filter-bar {
+  padding: 12px;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.assistant-filter-input {
+  width: 100%;
+  border-radius: 8px !important;
+}
+
+.assistant-tabs {
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.assistant-tabs .pf-v6-c-tabs__list {
+  padding: 0 8px;
+}
+
+.assistant-tabs .pf-v6-c-tabs__item {
+  flex: 1;
+}
+
+.assistant-tabs .pf-v6-c-tabs__link {
+  justify-content: center;
+  font-size: 0.85rem;
+  padding-block: 8px;
+}
+
+.assistant-dropdown-list {
+  overflow-y: auto;
+  max-height: 280px;
+  padding: 8px 0;
+}
+
+.assistant-dropdown-person-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.assistant-dropdown-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--pf-t--global--text--color--subtle);
+  font-size: 0.9rem;
+}
+
+/* @ Mention Dropdown Styles */
+.mention-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 8px;
+  box-shadow: var(--pf-t--global--box-shadow--lg);
+  z-index: 1001;
+  overflow: hidden;
+  animation: mentionDropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes mentionDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mention-dropdown-header {
+  padding: 10px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--pf-t--global--text--color--subtle);
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+.mention-dropdown-list {
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.mention-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease;
+}
+
+.mention-dropdown-item:hover,
+.mention-dropdown-item-selected {
+  background: var(--pf-t--global--background--color--secondary--hover);
+}
+
+.mention-dropdown-item-selected {
+  position: relative;
+}
+
+.mention-dropdown-item-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--pf-t--global--color--brand--default);
+}
+
+.mention-item-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.mention-person-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.mention-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mention-item-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pf-t--global--text--color--regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mention-item-description {
+  font-size: 0.75rem;
+  color: var(--pf-t--global--text--color--subtle);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mention-item-type {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--pf-t--global--text--color--subtle);
+  padding: 2px 6px;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.mention-dropdown-empty {
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--pf-t--global--text--color--subtle);
+  font-size: 0.875rem;
+}
+
+/* [[ Navigation Dropdown Styles */
+.nav-dropdown .mention-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-dropdown-hint {
+  font-size: 0.65rem;
+  color: var(--pf-t--global--text--color--subtle);
+  opacity: 0.7;
+}
+
+.nav-dropdown-hint kbd {
+  display: inline-block;
+  padding: 1px 4px;
+  font-size: 0.6rem;
+  font-family: inherit;
+  line-height: 1.2;
+  color: var(--pf-t--global--text--color--subtle);
+  background: var(--pf-t--global--background--color--secondary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 3px;
+}
+
+.mention-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background: var(--pf-t--global--background--color--secondary--default);
+}
+
+/* Custom inline search input */
+.masthead-custom-search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 36px;
+  background: var(--pf-t--global--background--color--primary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: var(--pf-v6-c-page__main-container--BorderRadius);
+  padding: 4px 110px 4px 36px; /* Left padding for assistant avatar, right for buttons */
+  gap: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.masthead-custom-search-input:focus-within {
+  border-color: var(--pf-t--global--border--color--clicked);
+  box-shadow: 0 0 0 1px var(--pf-t--global--border--color--clicked);
+}
+
+.masthead-search-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.masthead-inline-text-input {
+  flex: 1;
+  min-width: 100px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--pf-t--global--text--color--regular);
+  font-size: 0.875rem;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  height: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.masthead-inline-text-input::placeholder {
+  color: var(--pf-t--global--text--color--subtle);
+}
+
+/* Dynamic placeholder overlay — positioned over the input when empty */
+.masthead-placeholder-overlay {
+  position: absolute;
+  top: 0;
+  left: 36px; /* Match container's left padding (assistant avatar space) */
+  right: 110px; /* Match container's right padding (buttons space) */
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.masthead-placeholder-text {
+  color: var(--pf-t--global--text--color--subtle);
+  font-size: 0.875rem;
+  font-family: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: opacity 400ms ease;
+  user-select: none;
+}
+
+.masthead-placeholder-text.placeholder-hidden {
+  opacity: 0;
+}
+
+.masthead-placeholder-text.placeholder-visible {
+  opacity: 1;
+}
+
+.masthead-inline-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background: var(--pf-t--global--background--color--brand--default);
+  border: 1px solid var(--pf-t--global--border--color--brand--default);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  flex-shrink: 0;
+  height: 22px;
+  animation: chipFadeIn 0.15s ease-out;
+}
+
+@keyframes chipFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.masthead-search-clear {
+  position: absolute;
+  right: 92px; /* Position before mic/attach/annotate buttons */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--pf-t--global--icon--color--subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  padding: 0;
+  z-index: 2;
+}
+
+.masthead-search-clear:hover {
+  background: var(--pf-t--global--background--color--secondary--hover);
+  color: var(--pf-t--global--icon--color--regular);
+}
+
+.masthead-search-clear svg {
+  width: 12px;
+  height: 12px;
+}
+
+.masthead-chip-avatar {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.masthead-chip-person-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.masthead-chip-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.masthead-chip-name {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.masthead-chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.masthead-chip-remove:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.masthead-chip-remove svg {
+  width: 8px;
+  height: 8px;
+}
+
+/* Adjust search input padding when chips are present */
+/* No longer needed - using custom inline input */
+
+/* Hide the default search icon and add padding for assistant avatar */
+/* Assistant selector button positioning */
+
+.masthead-mic-button {
+  position: absolute;
+  right: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--pf-t--global--icon--color--subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.masthead-attach-button {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--pf-t--global--icon--color--subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.masthead-attach-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: var(--pf-t--global--icon--color--regular);
+}
+
+.masthead-attach-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.masthead-annotate-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--pf-t--global--icon--color--subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.masthead-annotate-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: var(--pf-t--global--color--brand--default);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.masthead-annotate-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Adjust input padding to make room for the pencil button */
+.masthead-search-wrapper .pf-v6-c-search-input__text-input {
+  padding-right: 108px !important;
+}
+
+.masthead-mic-button:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: var(--pf-t--global--icon--color--regular);
+}
+
+.masthead-mic-button.recording {
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+  animation: masthead-pulse-recording 1.5s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes masthead-pulse-recording {
+  0%, 100% { box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 4px 16px rgba(239, 68, 68, 0.6); }
+}
+
+.masthead-mic-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Masthead Waveform Animation */
+.masthead-waveform {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.masthead-waveform .wave-bar {
+  width: 2px;
+  background: white;
+  border-radius: 1px;
+  animation: wave-bounce 0.8s ease-in-out infinite;
+}
+
+.masthead-waveform .wave-bar:nth-child(1) { height: 6px; animation-delay: 0s; }
+.masthead-waveform .wave-bar:nth-child(2) { height: 10px; animation-delay: 0.1s; }
+.masthead-waveform .wave-bar:nth-child(3) { height: 8px; animation-delay: 0.2s; }
+.masthead-waveform .wave-bar:nth-child(4) { height: 12px; animation-delay: 0.3s; }
+.masthead-waveform .wave-bar:nth-child(5) { height: 7px; animation-delay: 0.4s; }
+
+/* Speech model starting state — pulsing mic icon */
+.masthead-mic-button.starting {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+  animation: masthead-pulse-starting 1.2s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes masthead-pulse-starting {
+  0%, 100% { box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4); transform: translateY(-50%) scale(1); }
+  50% { box-shadow: 0 4px 16px rgba(245, 158, 11, 0.6); transform: translateY(-50%) scale(1.08); }
+}
+
+.masthead-mic-starting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masthead-mic-starting .mic-pulse {
+  width: 14px;
+  height: 14px;
+  color: white;
+  animation: mic-icon-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes mic-icon-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Status message shown while the speech model is starting */
+.masthead-speech-status {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--pf-t--global--text--color--subtle);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: speech-status-fade-in 0.3s ease;
+}
+
+@keyframes speech-status-fade-in {
+  from { opacity: 0; transform: translateY(-50%) translateX(4px); }
+  to { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+

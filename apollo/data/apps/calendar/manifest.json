@@ -1,0 +1,19 @@
+{
+  "id": "calendar",
+  "displayName": "Calendar",
+  "description": "Google Calendar integration for scheduling and events",
+  "icon": "CalendarAltIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/calendar",
+    "displayName": "Calendar",
+    "icon": "CalendarAltIcon"
+  },
+  "routes": [
+    {
+      "path": "/calendar",
+      "page": "Calendar"
+    }
+  ]
+}

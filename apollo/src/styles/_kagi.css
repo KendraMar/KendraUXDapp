@@ -1,0 +1,133 @@
+/* ===================================
+   KAGI SEARCH RESULTS STYLES
+   =================================== */
+
+.kagi-search-results {
+  padding: 4px 0;
+}
+
+.kagi-results-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid var(--pf-t--global--border--color--default);
+  margin-bottom: 8px;
+}
+
+.kagi-results-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.kagi-results-count {
+  font-size: 0.75rem;
+  color: var(--pf-t--global--text--color--subtle);
+  font-weight: 500;
+}
+
+.kagi-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kagi-result-item {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.kagi-result-item:hover {
+  background-color: var(--pf-t--global--background--color--secondary--default);
+  text-decoration: none;
+  color: inherit;
+}
+
+.kagi-result-url {
+  font-size: 0.7rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kagi-result-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--pf-t--global--color--brand--default);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kagi-result-item:hover .kagi-result-title {
+  text-decoration: underline;
+}
+
+.kagi-result-snippet {
+  font-size: 0.78rem;
+  color: var(--pf-t--global--text--color--regular);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.kagi-result-date {
+  font-size: 0.7rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-top: 3px;
+}
+
+.kagi-related-searches {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--pf-t--global--border--color--default);
+}
+
+.kagi-related-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--subtle);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kagi-related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.kagi-related-term {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border-radius: 12px;
+  color: var(--pf-t--global--text--color--regular);
+  cursor: default;
+  transition: background-color 0.15s ease;
+}
+
+.kagi-related-term:hover {
+  background: var(--pf-t--global--background--color--secondary--hover);
+}
+
+/* Dark mode adjustments */
+.pf-v6-theme-dark .kagi-result-snippet {
+  color: var(--pf-t--global--text--color--subtle);
+}
+

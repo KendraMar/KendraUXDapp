@@ -1,0 +1,24 @@
+# Features Folder
+
+This folder contains feature-specific design documentation.
+
+Each feature should have its own subfolder with:
+- README.md (use _templates/feature.md as a starting point)
+- design-history.md (optional, for feature-specific history)
+- context-sources.md (optional, for feature-specific sources)
+- stakeholders.md (optional, if different from project-level)
+- Dated iteration folders (e.g., 2025-01-21-initial-design/)
+
+Example structure:
+```
+features/
+├── context-sidebar/
+│   ├── README.md
+│   ├── design-history.md
+│   └── 2025-01-21-initial-design/
+│       ├── README.md
+│       └── tasks.md
+└── ai-assistant/
+    ├── README.md
+    └── ...
+```

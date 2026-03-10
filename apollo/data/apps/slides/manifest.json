@@ -1,0 +1,24 @@
+{
+  "id": "slides",
+  "displayName": "Slides",
+  "description": "Create and present slide decks with markdown support",
+  "icon": "ScreenIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/slides",
+    "displayName": "Slides",
+    "icon": "ScreenIcon"
+  },
+  "routes": [
+    {
+      "path": "/slides",
+      "page": "Slides"
+    },
+    {
+      "path": "/slides/:id",
+      "page": "SlideDetail"
+    }
+  ],
+  "apiPath": "/api/slides"
+}

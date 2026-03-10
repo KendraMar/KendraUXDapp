@@ -1,0 +1,32 @@
+{
+  "id": "figma",
+  "displayName": "Figma",
+  "description": "Figma integration for design files and collaboration",
+  "icon": "ObjectGroupIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/figma",
+    "displayName": "Figma",
+    "icon": "ObjectGroupIcon"
+  },
+  "routes": [
+    {
+      "path": "/figma",
+      "page": "Figma"
+    }
+  ],
+  "apiPath": "/api/figma",
+  "widgets": [
+    {
+      "id": "recent-files",
+      "name": "Recent Figma Files",
+      "description": "Recently modified Figma files",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/figma/files/recent",
+      "dataTransform": "figmaFiles",
+      "refreshInterval": 300
+    }
+  ]
+}

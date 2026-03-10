@@ -1,0 +1,218 @@
+/* ===================================
+   CUSTOM PAGE STYLES
+   (Page builder prompt placeholder)
+   =================================== */
+
+.custom-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.custom-page-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+}
+
+.custom-page-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    var(--pf-t--global--color--brand--default) 0%,
+    color-mix(in srgb, var(--pf-t--global--color--brand--default) 70%, #8B5CF6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 102, 204, 0.2);
+}
+
+.custom-page-icon svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.custom-page-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+  margin: 0 0 1.5rem;
+  line-height: 1.4;
+}
+
+.custom-page-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.custom-page-input-wrapper .pf-v6-c-form-control {
+  border-radius: 16px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --pf-v6-c-form-control--after--BorderBottomWidth: 0;
+  --pf-v6-c-form-control--before--BorderWidth: 0;
+}
+
+.custom-page-input-wrapper .pf-v6-c-form-control::before,
+.custom-page-input-wrapper .pf-v6-c-form-control::after {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-page-input {
+  width: 100%;
+  padding: 16px 60px 16px 16px !important;
+  border-radius: 16px !important;
+  font-size: 1rem !important;
+  background: var(--pf-t--global--background--color--secondary--default) !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  resize: none !important;
+  min-height: 80px;
+}
+
+.custom-page-input:focus {
+  border-color: var(--pf-t--global--color--brand--default) !important;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.12) !important;
+}
+
+/* Microphone button */
+.custom-page-mic-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pf-t--global--color--brand--default);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.custom-page-mic-button:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: var(--pf-t--global--color--brand--hover);
+  box-shadow: 0 4px 16px rgba(0, 102, 204, 0.3);
+}
+
+.custom-page-mic-button.recording {
+  background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+  animation: custom-page-pulse-recording 1.5s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes custom-page-pulse-recording {
+  0%, 100% { box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 4px 24px rgba(239, 68, 68, 0.6); }
+}
+
+.custom-page-mic-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Waveform animation */
+.custom-page-waveform {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 18px;
+}
+
+.custom-page-waveform .wave-bar {
+  width: 3px;
+  background: white;
+  border-radius: 2px;
+  animation: custom-page-wave 0.8s ease-in-out infinite;
+}
+
+.custom-page-waveform .wave-bar:nth-child(1) { height: 6px; animation-delay: 0s; }
+.custom-page-waveform .wave-bar:nth-child(2) { height: 12px; animation-delay: 0.1s; }
+.custom-page-waveform .wave-bar:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+.custom-page-waveform .wave-bar:nth-child(4) { height: 10px; animation-delay: 0.3s; }
+.custom-page-waveform .wave-bar:nth-child(5) { height: 8px; animation-delay: 0.4s; }
+
+@keyframes custom-page-wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.2); }
+}
+
+/* Hint text */
+.custom-page-hint {
+  font-size: 0.8rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin: 0;
+}
+
+.custom-page-hint kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  background: var(--pf-t--global--background--color--secondary--default);
+  border: 1px solid var(--pf-t--global--border--color--default);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 var(--pf-t--global--border--color--default);
+}
+
+/* Submitted state */
+.custom-page-submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+}
+
+.custom-page-submitted-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: custom-page-bounce-in 0.5s ease-out;
+}
+
+@keyframes custom-page-bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.custom-page-submitted-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--pf-t--global--text--color--regular);
+  margin: 0 0 0.5rem;
+}
+
+.custom-page-submitted-description {
+  font-size: 0.95rem;
+  color: var(--pf-t--global--text--color--subtle);
+  margin: 0 0 1rem;
+}
+
+.custom-page-submitted-detail {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--pf-t--global--text--color--subtle);
+  background: var(--pf-t--global--background--color--secondary--default);
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin: 0;
+  max-width: 100%;
+}

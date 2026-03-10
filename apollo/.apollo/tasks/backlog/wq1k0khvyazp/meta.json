@@ -1,0 +1,14 @@
+{
+  "id": "wq1k0khvyazp",
+  "title": "Real Artifact Change Notifications: Replace Mock Blue Dots with Actual Change Tracking",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "high",
+  "created": "2026-02-12T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": ["frontend", "backend", "ux", "ai", "notifications"],
+  "component": null,
+  "starred": true,
+  "flag": null
+}

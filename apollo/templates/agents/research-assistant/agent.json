@@ -1,0 +1,10 @@
+{
+  "id": "research-assistant",
+  "color": "#8B5CF6",
+  "enabledIntegrations": ["confluence", "slack", "google-drive"],
+  "tools": {
+    "confluence": ["search_pages", "get_page_content", "list_spaces"],
+    "slack": ["search_messages", "get_channel_history"],
+    "google-drive": ["search_files", "get_file_content"]
+  }
+}

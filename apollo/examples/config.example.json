@@ -1,0 +1,31 @@
+{
+  "jira": {
+    "url": "https://issues.redhat.com",
+    "token": "your_jira_token_here",
+    "username": "your.email@redhat.com"
+  },
+  "google": {
+    "clientId": "your-client-id.apps.googleusercontent.com",
+    "clientSecret": "your-client-secret",
+    "refreshToken": "your-refresh-token"
+  },
+  "transcription": {
+    "apiUrl": "http://localhost:8000",
+    "model": "whisper-large-v3"
+  },
+  "claudeCode": {
+    "authType": "apiKey",
+    "apiKey": "your-anthropic-api-key-here",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "_claudeCode_vertex_example": {
+    "authType": "vertex",
+    "vertexProjectId": "your-gcp-project-id",
+    "vertexRegion": "us-east5",
+    "model": "claude-sonnet-4@20250514"
+  },
+  "librechat": {
+    "url": "http://localhost:3080",
+    "enabled": true
+  }
+}

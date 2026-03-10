@@ -1,0 +1,36 @@
+{
+  "id": "documents",
+  "displayName": "Documents",
+  "description": "Create and manage rich text documents",
+  "icon": "BookOpenIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/documents",
+    "displayName": "Documents",
+    "icon": "BookOpenIcon"
+  },
+  "routes": [
+    {
+      "path": "/documents",
+      "page": "Documents"
+    },
+    {
+      "path": "/documents/:id",
+      "page": "DocumentDetail"
+    }
+  ],
+  "apiPath": "/api/documents",
+  "widgets": [
+    {
+      "id": "recent-docs",
+      "name": "Recent Documents",
+      "description": "Recently modified documents",
+      "type": "list",
+      "defaultSize": { "w": 4, "h": 4 },
+      "dataEndpoint": "/api/documents",
+      "dataTransform": "documentList",
+      "refreshInterval": 120
+    }
+  ]
+}

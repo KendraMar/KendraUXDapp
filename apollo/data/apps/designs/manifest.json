@@ -1,0 +1,19 @@
+{
+  "id": "designs",
+  "displayName": "Designs",
+  "description": "Browse design mockups, prototypes, and visual assets",
+  "icon": "PaintBrushIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/designs",
+    "displayName": "Designs",
+    "icon": "PaintBrushIcon"
+  },
+  "routes": [
+    {
+      "path": "/designs",
+      "page": "Designs"
+    }
+  ]
+}

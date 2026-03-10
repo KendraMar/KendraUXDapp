@@ -1,0 +1,13 @@
+{
+  "repositories": [
+    {
+      "id": "artifacts",
+      "name": "Artifacts",
+      "url": "git@gitlab.cee.redhat.com:uxd/artifacts.git",
+      "branch": "main",
+      "lastSync": "2026-02-13T02:06:22.363Z",
+      "status": "synced",
+      "autoSync": true
+    }
+  ]
+}

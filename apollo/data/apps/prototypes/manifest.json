@@ -1,0 +1,24 @@
+{
+  "id": "prototypes",
+  "displayName": "Prototypes",
+  "description": "Create and manage interactive prototypes",
+  "icon": "CubesIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/prototypes",
+    "displayName": "Prototypes",
+    "icon": "CubesIcon"
+  },
+  "routes": [
+    {
+      "path": "/prototypes",
+      "page": "Prototypes"
+    },
+    {
+      "path": "/prototypes/:id",
+      "page": "PrototypeDetail"
+    }
+  ],
+  "apiPath": "/api/prototypes"
+}

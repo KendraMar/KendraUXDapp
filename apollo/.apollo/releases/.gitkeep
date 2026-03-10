@@ -1,0 +1,25 @@
+# Releases Folder
+
+This folder contains release/version-specific design documentation.
+
+Use when design work is organized by release version rather than feature.
+
+Example structure:
+```
+releases/
+├── v1.0/
+│   ├── README.md
+│   ├── navigation.md
+│   └── features/
+│       └── ...
+├── v1.1/
+│   └── ...
+└── v2.0/
+    └── ...
+```
+
+Each release folder can contain:
+- README.md with release overview
+- Feature-specific documentation
+- Release notes drafts
+- Migration guides

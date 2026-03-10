@@ -1,0 +1,19 @@
+{
+  "id": "research",
+  "displayName": "Research",
+  "description": "Research workspace for exploring topics and gathering insights",
+  "icon": "BookIcon",
+  "version": "1.0.0",
+  "enabled": true,
+  "navItem": {
+    "path": "/research",
+    "displayName": "Research",
+    "icon": "BookIcon"
+  },
+  "routes": [
+    {
+      "path": "/research",
+      "page": "Research"
+    }
+  ]
+}

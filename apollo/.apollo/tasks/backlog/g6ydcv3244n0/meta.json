@@ -1,0 +1,20 @@
+{
+  "id": "g6ydcv3244n0",
+  "title": "Integrate browser extension browsing history with Spaces source suggestions",
+  "type": "feature",
+  "status": "backlog",
+  "priority": "medium",
+  "created": "2026-02-08T00:00:00.000Z",
+  "due": null,
+  "assignees": [],
+  "labels": [
+    "integration",
+    "browser-extension",
+    "spaces",
+    "ai",
+    "apollo"
+  ],
+  "component": null,
+  "starred": false,
+  "flag": null
+}

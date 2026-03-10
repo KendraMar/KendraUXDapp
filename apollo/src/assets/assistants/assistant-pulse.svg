@@ -1,0 +1,122 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 
+        Apollo Logo Variant 8 - Pulse Ring
+        Concentric pulsing rings with glow effect
+    -->
+    
+    <style>
+        @keyframes ringPulse1 {
+            0%, 100% { r: 30; opacity: 1; }
+            50% { r: 35; opacity: 0.8; }
+        }
+        
+        @keyframes ringPulse2 {
+            0%, 100% { r: 55; opacity: 0.8; }
+            50% { r: 62; opacity: 0.6; }
+        }
+        
+        @keyframes ringPulse3 {
+            0%, 100% { r: 80; opacity: 0.6; }
+            50% { r: 88; opacity: 0.4; }
+        }
+        
+        @keyframes ringPulse4 {
+            0%, 100% { r: 105; opacity: 0.4; }
+            50% { r: 115; opacity: 0.25; }
+        }
+        
+        @keyframes ringPulse5 {
+            0%, 100% { r: 130; opacity: 0.25; }
+            50% { r: 140; opacity: 0.15; }
+        }
+        
+        @keyframes coreBreath {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.85; }
+        }
+        
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        
+        .pulse-ring-1 { animation: ringPulse1 2s ease-in-out infinite; }
+        .pulse-ring-2 { animation: ringPulse2 2s ease-in-out infinite 0.2s; }
+        .pulse-ring-3 { animation: ringPulse3 2s ease-in-out infinite 0.4s; }
+        .pulse-ring-4 { animation: ringPulse4 2s ease-in-out infinite 0.6s; }
+        .pulse-ring-5 { animation: ringPulse5 2s ease-in-out infinite 0.8s; }
+        
+        .pulse-core {
+            animation: coreBreath 2s ease-in-out infinite;
+            transform-origin: 200px 200px;
+        }
+        
+        .pulse-glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        
+        .pulse-container:hover .pulse-ring-1 { animation-duration: 1s; }
+        .pulse-container:hover .pulse-ring-2 { animation-duration: 1s; }
+        .pulse-container:hover .pulse-ring-3 { animation-duration: 1s; }
+        .pulse-container:hover .pulse-ring-4 { animation-duration: 1s; }
+        .pulse-container:hover .pulse-ring-5 { animation-duration: 1s; }
+        .pulse-container:hover .pulse-core { animation-duration: 1s; }
+    </style>
+    
+    <defs>
+        <clipPath id="circleClipV8">
+            <circle cx="200" cy="200" r="148"/>
+        </clipPath>
+        
+        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+        </filter>
+        
+        <radialGradient id="pulseBg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1e1b4b"/>
+            <stop offset="100%" stop-color="#0f0a1a"/>
+        </radialGradient>
+        
+        <radialGradient id="pulseCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="40%" stop-color="#c4b5fd"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+        </radialGradient>
+        
+        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a78bfa"/>
+            <stop offset="50%" stop-color="#8b5cf6"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+        </linearGradient>
+    </defs>
+    
+    <g class="pulse-container">
+        <circle cx="200" cy="200" r="160" stroke="currentColor" stroke-width="24" fill="none"/>
+        
+        <g clip-path="url(#circleClipV8)">
+            <circle cx="200" cy="200" r="148" fill="url(#pulseBg)"/>
+            
+            <!-- Glow layer -->
+            <g filter="url(#pulseGlow)" class="pulse-glow">
+                <circle cx="200" cy="200" r="130" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.3"/>
+                <circle cx="200" cy="200" r="105" stroke="#8b5cf6" stroke-width="4" fill="none" opacity="0.4"/>
+                <circle cx="200" cy="200" r="80" stroke="#a78bfa" stroke-width="5" fill="none" opacity="0.5"/>
+                <circle cx="200" cy="200" r="55" stroke="#a78bfa" stroke-width="6" fill="none" opacity="0.6"/>
+                <circle cx="200" cy="200" r="30" stroke="#c4b5fd" stroke-width="8" fill="none" opacity="0.8"/>
+            </g>
+            
+            <!-- Sharp rings -->
+            <circle class="pulse-ring-5" cx="200" cy="200" r="130" stroke="url(#ringGrad)" stroke-width="2" fill="none"/>
+            <circle class="pulse-ring-4" cx="200" cy="200" r="105" stroke="url(#ringGrad)" stroke-width="2.5" fill="none"/>
+            <circle class="pulse-ring-3" cx="200" cy="200" r="80" stroke="url(#ringGrad)" stroke-width="3" fill="none"/>
+            <circle class="pulse-ring-2" cx="200" cy="200" r="55" stroke="url(#ringGrad)" stroke-width="3.5" fill="none"/>
+            <circle class="pulse-ring-1" cx="200" cy="200" r="30" stroke="url(#ringGrad)" stroke-width="4" fill="none"/>
+            
+            <!-- Core -->
+            <g class="pulse-core">
+                <circle cx="200" cy="200" r="15" fill="url(#pulseCore)"/>
+                <circle cx="200" cy="200" r="6" fill="#fff"/>
+            </g>
+        </g>
+    </g>
+</svg>
