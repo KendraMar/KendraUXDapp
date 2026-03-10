@@ -1,0 +1,64 @@
+# Deploy KendraUXDapp to GitHub Pages
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apollo/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: apollo
+
+      - name: Build
+        run: npm run build
+        working-directory: apollo
+        env:
+          ASSET_PATH: /KendraUXDapp/
+
+      - name: Copy public assets
+        run: |
+          cp public/favicon.svg public/favicon.ico public/apple-touch-icon.svg public/site.webmanifest dist/ 2>/dev/null || true
+        working-directory: apollo
+
+      - name: Add 404 for SPA routing
+        run: cp dist/index.html dist/404.html
+        working-directory: apollo
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@3
+        with:
+          path: apollo/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
