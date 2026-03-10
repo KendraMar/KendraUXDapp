@@ -8,6 +8,8 @@ const {
   parseMarkdownToSlides,
   listTemplates
 } = require('./slideHelpers');
+const { loadJiraConfig } = require('../../../../server/lib/config');
+const { makeJiraRequest } = require('../../../../server/lib/jira');
 const { listSharedArtifactDirs } = require('../../../../server/lib/sharing');
 const {
   getScreenshotPaths,
@@ -333,12 +335,15 @@ router.post('/', (req, res) => {
       return res.status(400).json({ success: false, error: 'Name is required' });
     }
     
-    // Create folder ID from name
-    const folderId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    const folderPath = path.join(slidesDir, folderId);
-    
-    if (fs.existsSync(folderPath)) {
-      return res.status(400).json({ success: false, error: 'Slide deck already exists' });
+    // Create folder ID from name; append -1, -2, ... if exists
+    const baseId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    let folderId = baseId;
+    let folderPath = path.join(slidesDir, folderId);
+    let suffix = 0;
+    while (fs.existsSync(folderPath)) {
+      suffix++;
+      folderId = `${baseId}-${suffix}`;
+      folderPath = path.join(slidesDir, folderId);
     }
     
     // Create folder
@@ -393,6 +398,286 @@ Add more content here.
     });
   } catch (error) {
     console.error('Error creating slide deck:', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+// Extract plain text from Jira ADF (Atlassian Document Format), HTML, or legacy storage
+function jiraBodyToPlainText(body) {
+  if (!body) return '';
+  if (typeof body === 'string') {
+    return body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  if (typeof body !== 'object') return '';
+  if (body.storage && body.storage.value) {
+    return body.storage.value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  return extractTextFromAdfNode(body);
+}
+
+// Recursively extract text from ADF node (handles any nesting)
+function extractTextFromAdfNode(node) {
+  if (!node) return '';
+  if (typeof node === 'string') return node;
+  if (node.text != null && typeof node.text === 'string') return node.text;
+  const children = node.content || node.nodes;
+  if (children && Array.isArray(children)) {
+    return children.map(extractTextFromAdfNode).filter(Boolean).join(' ');
+  }
+  return '';
+}
+
+// Extract comment body text - handles string, ADF, storage, plain, and unknown formats
+function extractCommentBody(c) {
+  if (!c || !c.body) return '';
+  const b = c.body;
+  if (typeof b === 'string') return b.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Jira sometimes includes plain text
+  if (b.plain && typeof b.plain === 'string') return b.plain.trim();
+  if (b.storage && b.storage.value) {
+    return b.storage.value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  // ADF document may be at root or under .document
+  const adfNode = b.content ? b : (b.document || null);
+  const adf = extractTextFromAdfNode(adfNode || b);
+  if (adf) return adf;
+  // Fallback: stringify and strip tags for unknown object shapes
+  if (typeof b === 'object' && b !== null) {
+    const str = JSON.stringify(b);
+    const textMatch = str.match(/"text"\s*:\s*"((?:[^"\\]|\\.)*)"/g);
+    if (textMatch) {
+      return textMatch
+        .map(m => m.replace(/^"text"\s*:\s*"/, '').replace(/"$/, '').replace(/\\"/g, '"'))
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+  }
+  return '';
+}
+
+// Debug: fetch raw Jira issue + comments for a key (GET /api/slides/jira-debug/CPUX-6140)
+router.get('/jira-debug/:key', async (req, res) => {
+  try {
+    const jiraConfig = loadJiraConfig();
+    if (!jiraConfig || !jiraConfig.url || !jiraConfig.token || !jiraConfig.username) {
+      return res.status(400).json({ success: false, error: 'Jira not configured' });
+    }
+    const makeRequest = (endpoint) => {
+      try {
+        return makeJiraRequest(jiraConfig, endpoint, false);
+      } catch (e) {
+        if (e.message && e.message.includes('401')) {
+          return makeJiraRequest(jiraConfig, endpoint, true);
+        }
+        throw e;
+      }
+    };
+    const key = req.params.key;
+    const [issue, commentRes] = await Promise.all([
+      makeRequest(`/rest/api/2/issue/${key}?fields=summary,description,comment`),
+      makeRequest(`/rest/api/2/issue/${key}/comment`)
+    ]);
+    const extracted = (commentRes.comments || []).map(c => ({
+      rawBodyType: typeof c.body,
+      rawBodyKeys: c.body && typeof c.body === 'object' ? Object.keys(c.body) : null,
+      extracted: extractCommentBody(c),
+      author: c.author?.displayName || c.author?.name
+    }));
+    res.json({
+      success: true,
+      issue: { key, summary: issue.fields?.summary },
+      commentResponse: { total: commentRes.total, commentCount: (commentRes.comments || []).length },
+      commentBodies: extracted,
+      rawFirstComment: commentRes.comments?.[0] || null
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// Create slide deck from Jira "In Progress" issues with comment bullets
+router.post('/jira-highlights', async (req, res) => {
+  try {
+    const jiraConfig = loadJiraConfig();
+    if (!jiraConfig || !jiraConfig.url || !jiraConfig.token || !jiraConfig.username) {
+      return res.status(400).json({
+        success: false,
+        error: 'Jira is not configured. Please edit data/config.json with your Jira credentials.'
+      });
+    }
+
+    const onlyKey = req.query.only || req.body?.only;
+
+    const makeRequest = (endpoint) => {
+      try {
+        return makeJiraRequest(jiraConfig, endpoint, false);
+      } catch (e) {
+        if (e.message && e.message.includes('401')) {
+          return makeJiraRequest(jiraConfig, endpoint, true);
+        }
+        throw e;
+      }
+    };
+
+    let issuesToProcess = [];
+    if (onlyKey) {
+      try {
+        const singleIssue = await makeRequest(`/rest/api/2/issue/${onlyKey}?fields=summary,project,issuetype`);
+        issuesToProcess = [{ key: onlyKey, fields: singleIssue.fields }];
+      } catch (e) {
+        return res.status(400).json({
+          success: false,
+          error: `Issue ${onlyKey} not found: ${e.message}`
+        });
+      }
+    } else {
+      const jql = 'assignee = currentUser() AND status = "In Progress" ORDER BY updated DESC';
+      const searchEndpoint = `/rest/api/2/search?jql=${encodeURIComponent(jql)}&maxResults=100&fields=summary,project,issuetype`;
+      let data;
+      try {
+        data = await makeJiraRequest(jiraConfig, searchEndpoint, false);
+      } catch (basicAuthError) {
+        if (basicAuthError.message && basicAuthError.message.includes('401')) {
+          data = await makeJiraRequest(jiraConfig, searchEndpoint, true);
+        } else {
+          throw basicAuthError;
+        }
+      }
+      issuesToProcess = data.issues || [];
+    }
+
+    const issues = await Promise.all(issuesToProcess.map(async (issue) => {
+      const key = issue.key;
+      const summary = issue.fields?.summary || 'No summary';
+
+      let description = '';
+      let comments = [];
+
+      try {
+        const fullIssue = await makeRequest(`/rest/api/2/issue/${key}?fields=summary,description`);
+        description = jiraBodyToPlainText(fullIssue.fields?.description);
+      } catch (fetchErr) {
+        console.warn(`[jira-highlights] Issue fetch failed for ${key}:`, fetchErr.message);
+      }
+
+      try {
+        const commentRes = await makeRequest(`/rest/api/2/issue/${key}/comment`);
+        const rawComments = commentRes.comments || [];
+        if (rawComments.length > 0 && key === 'CPUX-6140') {
+          console.log('[jira-highlights] Raw first comment body for', key, ':', JSON.stringify(rawComments[0].body, null, 2).slice(0, 800));
+        }
+        comments = rawComments
+          .map(c => {
+            try {
+              const text = extractCommentBody(c).trim();
+              return { text, author: c.author?.displayName || c.author?.name || 'Unknown', created: c.created || '' };
+            } catch (e) {
+              console.warn('[jira-highlights] Comment extract failed:', e.message);
+              return null;
+            }
+          })
+          .filter(Boolean)
+          .filter(c => c.text);
+        console.log(`[jira-highlights] ${key}: ${comments.length} comments extracted (raw count: ${rawComments.length})`);
+      } catch (commentErr) {
+        console.warn(`[jira-highlights] Comments fetch failed for ${key}:`, commentErr.message);
+      }
+
+      if (!description && comments.length === 0) {
+        try {
+          const descOnly = await makeRequest(`/rest/api/2/issue/${key}?fields=description`);
+          description = jiraBodyToPlainText(descOnly.fields?.description);
+        } catch (e) {
+          /* ignore */
+        }
+      }
+
+      const commentBullets = comments.map(c => {
+        const short = c.text.length > 150 ? c.text.slice(0, 147) + '...' : c.text;
+        return `  - ${short}`;
+      }).join('\n');
+
+      let block;
+      if (comments.length > 0) {
+        block = `- **${key}** — ${summary}\n${commentBullets}`;
+      } else if (description && description.trim()) {
+        const descShort = description.length > 120 ? description.slice(0, 117) + '...' : description;
+        block = `- **${key}** — ${summary}\n  - ${descShort}`;
+      } else {
+        block = `- **${key}** — ${summary} (no comments yet)`;
+      }
+
+      return block;
+    }));
+
+    const now = new Date();
+    const dateStr = now.toISOString().slice(0, 10);
+
+    let nextNum = 1;
+    try {
+      const entries = fs.readdirSync(slidesDir, { withFileTypes: true });
+      const jiraFolders = entries
+        .filter(e => e.isDirectory() && e.name.startsWith('jira-highlights-'))
+        .map(e => {
+          const m = e.name.match(/-(\d+)$/);
+          return m ? parseInt(m[1], 10) : 0;
+        })
+        .filter(n => n > 0);
+      if (jiraFolders.length > 0) {
+        nextNum = Math.max(...jiraFolders) + 1;
+      }
+    } catch (e) {
+      /* use 1 */
+    }
+
+    let folderId = `jira-highlights-${dateStr}-${nextNum}`;
+    let folderPath = path.join(slidesDir, folderId);
+    while (fs.existsSync(folderPath)) {
+      nextNum++;
+      folderId = `jira-highlights-${dateStr}-${nextNum}`;
+      folderPath = path.join(slidesDir, folderId);
+    }
+    fs.mkdirSync(folderPath, { recursive: true });
+
+    const metadata = {
+      title: `Jira highlights-${nextNum}`,
+      description: `Issues in progress as of ${dateStr}`,
+      template: 'uxd',
+      aspectRatio: '16:9',
+      author: '',
+      createdAt: now.toISOString()
+    };
+    fs.writeFileSync(
+      path.join(folderPath, 'metadata.json'),
+      JSON.stringify(metadata, null, 2)
+    );
+
+    const bulletLines = issues.length > 0
+      ? issues.join('\n\n')
+      : '- No issues in progress';
+
+    const markdown = `<!-- type: title -->
+# Jira Highlights
+
+## In Progress — ${dateStr}
+
+---
+
+<!-- type: content -->
+# In Progress Items
+
+${bulletLines}
+`;
+
+    fs.writeFileSync(path.join(folderPath, 'slides.md'), markdown);
+
+    res.json({
+      success: true,
+      slideDeck: loadSlideMetadata(folderId)
+    });
+  } catch (error) {
+    console.error('Error creating Jira highlights slides:', error);
     res.status(500).json({ success: false, error: error.message });
   }
 });

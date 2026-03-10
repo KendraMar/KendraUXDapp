@@ -530,6 +530,7 @@ function App() {
     <MusicProvider>
     <RecordingProvider>
     <Router
+      basename={process.env.PUBLIC_PATH && process.env.PUBLIC_PATH !== '/' ? process.env.PUBLIC_PATH.replace(/\/$/, '') : undefined}
       future={{
         v7_startTransition: true,
         v7_relativeSplatPath: true

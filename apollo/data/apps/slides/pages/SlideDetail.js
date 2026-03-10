@@ -34,7 +34,7 @@ const SlideDetail = () => {
   const [slideDeck, setSlideDeck] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [activeTab, setActiveTab] = useState('preview');
+  const [activeTab, setActiveTab] = useState('split');
   const [markdown, setMarkdown] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);

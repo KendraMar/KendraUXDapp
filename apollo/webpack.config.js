@@ -1,9 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
+  const basePath = process.env.ASSET_PATH || process.env.PUBLIC_PATH || '/';
   
   return {
     // Only show errors and warnings — suppress verbose build stats
@@ -13,7 +15,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: isProduction ? 'bundle.[contenthash].js' : 'bundle.js',
-      publicPath: '/',
+      publicPath: basePath,
       clean: true
     },
     module: {
@@ -51,9 +53,13 @@ module.exports = (env, argv) => {
       }
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env.PUBLIC_PATH': JSON.stringify(basePath)
+      }),
       new HtmlWebpackPlugin({
         template: './public/index.html',
-        favicon: './public/favicon.ico'
+        favicon: './public/favicon.ico',
+        templateParameters: { basePath: basePath || '/' }
       }),
       // Enable React Fast Refresh in development (overlay disabled; custom floating panel handles errors)
       !isProduction && new ReactRefreshWebpackPlugin({
@@ -64,6 +70,9 @@ module.exports = (env, argv) => {
     devServer: {
       port: 1225,
       hot: true,
+      devMiddleware: {
+        writeToDisk: true,
+      },
       liveReload: false,  // Disable full-page reload; React Fast Refresh handles component updates
       client: {
         overlay: false,  // Disable full-page error overlay; custom floating panel handles this

@@ -1,6 +1,7 @@
 const express = require('express');
 const expressWs = require('express-ws');
 const path = require('path');
+const fs = require('fs');
 
 // Import route modules
 const cacheRoutes = require('./routes/cache');
@@ -86,7 +87,15 @@ app.get('/api/apps', (req, res) => {
 
 // Serve the React app for all other routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
+  const indexPath = path.join(__dirname, '..', 'dist', 'index.html');
+  if (!fs.existsSync(indexPath)) {
+    // In dev, dist may not exist yet (webpack still compiling). Redirect to webpack dev server.
+    if (process.env.NODE_ENV === 'development') {
+      return res.redirect('http://localhost:1225' + req.url);
+    }
+    return res.status(503).send('Build in progress. Run "npm run build" first.');
+  }
+  res.sendFile(indexPath);
 });
 
 const server = app.listen(PORT, () => {

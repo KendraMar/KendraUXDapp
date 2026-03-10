@@ -32,7 +32,9 @@ import {
   CalendarAltIcon,
   ShareAltIcon,
   CodeBranchIcon,
-  UndoIcon
+  UndoIcon,
+  ListIcon,
+  TrashIcon
 } from '@patternfly/react-icons';
 import ShareArtifactModal from '../../../../src/components/ShareArtifactModal';
 import UnshareArtifactModal from '../../../../src/components/UnshareArtifactModal';
@@ -52,8 +54,11 @@ const Slides = () => {
     aspectRatio: '16:9'
   });
   const [creating, setCreating] = useState(false);
+  const [creatingJiraHighlights, setCreatingJiraHighlights] = useState(false);
   const [shareTarget, setShareTarget] = useState(null);
   const [unshareTarget, setUnshareTarget] = useState(null);
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [deleting, setDeleting] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -134,6 +139,49 @@ const Slides = () => {
       alert('Failed to create slide deck');
     }
     setCreating(false);
+  };
+
+  const handleDeleteDeck = async () => {
+    if (!deleteTarget) return;
+    setDeleting(true);
+    try {
+      const response = await fetch(`/api/slides/${deleteTarget.id}`, { method: 'DELETE' });
+      if (response.ok) {
+        setSlideDecks(slideDecks.filter(d => d.id !== deleteTarget.id));
+        setDeleteTarget(null);
+      } else {
+        const data = await response.json();
+        alert(data.error || 'Failed to delete slide deck');
+      }
+    } catch (err) {
+      console.error('Error deleting slide deck:', err);
+      alert('Failed to delete slide deck');
+    }
+    setDeleting(false);
+  };
+
+  const handleCreateJiraHighlights = async (onlyKey) => {
+    setCreatingJiraHighlights(true);
+    try {
+      const url = onlyKey ? `/api/slides/jira-highlights?only=${encodeURIComponent(onlyKey)}` : '/api/slides/jira-highlights';
+      const opts = { method: 'POST' };
+      if (onlyKey) {
+        opts.headers = { 'Content-Type': 'application/json' };
+        opts.body = JSON.stringify({ only: onlyKey });
+      }
+      const response = await fetch(url, opts);
+      const data = await response.json().catch(() => ({ success: false, error: 'Invalid response from server' }));
+      if (data.success) {
+        setSlideDecks([data.slideDeck, ...slideDecks]);
+        navigate(`/slides/${data.slideDeck.id}`);
+      } else {
+        alert(data.error || 'Failed to create Jira highlights slides');
+      }
+    } catch (err) {
+      console.error('Error creating Jira highlights:', err);
+      alert(err.message || 'Failed to create Jira highlights slides');
+    }
+    setCreatingJiraHighlights(false);
   };
 
   // ── Card renderer ──────────────────────────────────────────────────
@@ -276,7 +324,7 @@ const Slides = () => {
           </FlexItem>
 
           <FlexItem>
-            <div style={{ borderTop: '1px solid var(--pf-v6-global--BorderColor--100)', paddingTop: '0.5rem' }}>
+            <div style={{ borderTop: '1px solid var(--pf-v6-global--BorderColor--100)', paddingTop: '0.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {deck.shared ? (
                 <Button variant="link" isSmall icon={<UndoIcon />}
                   onClick={(e) => { e.stopPropagation(); setUnshareTarget({ id: deck.id, title: deck.title, repoId: deck.repoId, repoName: deck.repoName }); }}>
@@ -286,6 +334,12 @@ const Slides = () => {
                 <Button variant="link" isSmall icon={<ShareAltIcon />}
                   onClick={(e) => { e.stopPropagation(); setShareTarget({ id: deck.id, title: deck.title }); }}>
                   Share
+                </Button>
+              )}
+              {!deck.shared && (
+                <Button variant="link" isSmall icon={<TrashIcon />} style={{ color: 'var(--pf-v6-global--danger-color--100)' }}
+                  onClick={(e) => { e.stopPropagation(); setDeleteTarget({ id: deck.id, title: deck.title }); }}>
+                  Delete
                 </Button>
               )}
             </div>
@@ -378,6 +432,32 @@ const Slides = () => {
       render: (item) => item.shared ? (
         <Label color="purple" isCompact icon={<CodeBranchIcon />}>Shared</Label>
       ) : null
+    },
+    {
+      key: 'actions',
+      label: 'Actions',
+      width: 15,
+      render: (item) => (
+        <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+          {item.shared ? (
+            <Button variant="link" isSmall icon={<UndoIcon />}
+              onClick={(e) => { e.stopPropagation(); setUnshareTarget({ id: item.id, title: item.title, repoId: item.repoId, repoName: item.repoName }); }}>
+              Unshare
+            </Button>
+          ) : (
+            <Button variant="link" isSmall icon={<ShareAltIcon />}
+              onClick={(e) => { e.stopPropagation(); setShareTarget({ id: item.id, title: item.title }); }}>
+              Share
+            </Button>
+          )}
+          {!item.shared && (
+            <Button variant="link" isSmall icon={<TrashIcon />} style={{ color: 'var(--pf-v6-global--danger-color--100)' }}
+              onClick={(e) => { e.stopPropagation(); setDeleteTarget({ id: item.id, title: item.title }); }}>
+              Delete
+            </Button>
+          )}
+        </Flex>
+      )
     }
   ];
 
@@ -421,6 +501,33 @@ const Slides = () => {
                 <Badge isRead>{slideDecks.length} slide decks</Badge>
               </FlexItem>
               <FlexItem>
+                <Button
+                  variant="secondary"
+                  icon={<ListIcon />}
+                  onClick={() => handleCreateJiraHighlights()}
+                  isLoading={creatingJiraHighlights}
+                  isDisabled={creatingJiraHighlights}
+                >
+                  Create Jira highlights slides
+                </Button>
+              </FlexItem>
+              <FlexItem>
+                <Button
+                  variant="tertiary"
+                  icon={<ListIcon />}
+                  onClick={() => handleCreateJiraHighlights('CPUX-6140')}
+                  isLoading={creatingJiraHighlights}
+                  isDisabled={creatingJiraHighlights}
+                >
+                  Test CPUX-6140 only
+                </Button>
+              </FlexItem>
+              <FlexItem>
+                <a href="/api/slides/jira-debug/CPUX-6140" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.875rem' }}>
+                  Debug comments (CPUX-6140)
+                </a>
+              </FlexItem>
+              <FlexItem>
                 <Button variant="primary" icon={<PlusCircleIcon />} onClick={() => setIsCreateModalOpen(true)}>
                   New Slide Deck
                 </Button>
@@ -444,9 +551,14 @@ const Slides = () => {
             <EmptyStateBody>
               Create your first slide deck to get started. Slide decks are stored in the data/slides folder.
             </EmptyStateBody>
-            <Button variant="primary" icon={<PlusCircleIcon />} onClick={() => setIsCreateModalOpen(true)}>
-              Create Slide Deck
-            </Button>
+            <Flex spaceItems={{ default: 'spaceItemsSm' }}>
+              <Button variant="secondary" icon={<ListIcon />} onClick={() => handleCreateJiraHighlights()} isLoading={creatingJiraHighlights} isDisabled={creatingJiraHighlights}>
+                Create Jira highlights slides
+              </Button>
+              <Button variant="primary" icon={<PlusCircleIcon />} onClick={() => setIsCreateModalOpen(true)}>
+                Create Slide Deck
+              </Button>
+            </Flex>
           </EmptyState>
         }
       />
@@ -550,6 +662,27 @@ const Slides = () => {
         repoName={unshareTarget?.repoName}
         onUnshareComplete={() => fetchSlideDecks()}
       />
+
+      <Modal
+        variant={ModalVariant.small}
+        isOpen={!!deleteTarget}
+        onClose={() => setDeleteTarget(null)}
+        aria-labelledby="delete-slide-deck-modal-title"
+      >
+        <ModalHeader
+          title="Delete Slide Deck"
+          labelId="delete-slide-deck-modal-title"
+          description={`Are you sure you want to delete "${deleteTarget?.title}"? This cannot be undone.`}
+        />
+        <ModalFooter>
+          <Button variant="danger" onClick={handleDeleteDeck} isLoading={deleting} isDisabled={deleting}>
+            Delete
+          </Button>
+          <Button variant="link" onClick={() => setDeleteTarget(null)} isDisabled={deleting}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
     </div>
   );
 };
